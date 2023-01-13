@@ -165,7 +165,7 @@ app.post('/newuser', (req, res) => { // 정상작동 확인함
         updateUserDB("newuser");
         return res.send("<script>alert('성공적으로 구독하였습니다!');location.href='http://caunotify.me';</script>"); 
     } else {
-        return res.send("<script>alert('문제가 발생했습니다');location.href='http://caunotify.me';</script>");
+        return res.send("<script>alert('문제가 발생했습니다. 구독이 완료되지 않았습니다.');location.href='http://caunotify.me';</script>");
     }
 
     // res.send(requestBody);
