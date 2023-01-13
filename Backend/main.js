@@ -78,10 +78,11 @@ app.use(function(req, res, next) {
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static(path.join(__dirname, 'Frontend', 'public')));
+app.use(express.static(path.join(__dirname, '..', 'Frontend', 'public')));
+app.use('/public', express.static(path.join(__dirname, '..', 'Frontend', 'public')));
 
 app.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname, '..','Frontend', 'index.html'));
+    res.sendFile(path.join(__dirname, '..', 'Frontend', 'index.html'));
 });
 
 app.get('/unsubscribe', function(req, res) { // 구독해지 요청
