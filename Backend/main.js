@@ -176,7 +176,7 @@ app.post('/newuser', (req, res) => { // 정상작동 확인함
 app.post('/posttest', (req, res) => { // 정상작동 확인함
     let requestBody = req.body;
     console.log(requestBody);
-    res.send(requestBody);
+    res.send("<script>alert('성공적으로 구독하였습니다!');location.href='http://caunotify.me';</script>");
 });
 
 
