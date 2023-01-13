@@ -173,6 +173,11 @@ app.post('/newuser', (req, res) => { // 정상작동 확인함
     // console.log(req.body);
     
 });
+app.post('/posttest', (req, res) => { // 정상작동 확인함
+    let requestBody = req.body;
+    console.log(requestBody);
+    res.send(requestBody);
+});
 
 
 
