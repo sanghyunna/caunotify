@@ -64,7 +64,7 @@ let userDataBase = JSON.parse(userDBjsonFile,"utf8");
 let bounceDB = JSON.parse(bounceDBjsonFile,"utf8");
 let complaintDB = JSON.parse(complaintDBjsonFile,"utf8");
 
-await refresh(nextIdNum); // 서버 시작시 업데이트하여 충돌 방지
+// await refresh(nextIdNum); // 서버 시작시 업데이트하여 충돌 방지
 
 // ***************************************************** 이 밑으로는 서버( express.js ) 코드 *****************************************************
 
