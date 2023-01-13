@@ -79,26 +79,11 @@ app.use(function(req, res, next) {
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'Frontend', 'public')));
-app.use('/public', express.static(path.join(__dirname, 'Frontend', 'public')));
 
 app.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname, 'Frontend', 'main.html'));
+    res.sendFile(path.join(__dirname, '..','Frontend', 'index.html'));
 });
-app.get('/main.html', function(req, res) {
-    res.sendFile(path.join(__dirname, 'Frontend', 'main.html'));
-});
-app.get('/about.html', function(req, res) {
-    res.sendFile(path.join(__dirname, 'Frontend', 'about.html'));
-});
-app.get('/join.html', function(req, res) {
-    res.sendFile(path.join(__dirname, 'Frontend', 'join.html'));
-});
-app.get('/success.html', function(req, res) {
-    res.sendFile(path.join(__dirname, 'Frontend', 'success.html'));
-});
-app.get('/fail.html', function(req, res) {
-    res.sendFile(path.join(__dirname, 'Frontend', 'fail.html'));
-});
+
 app.get('/unsubscribe', function(req, res) { // 구독해지 요청
     const idNum = decryptStringToInt(req.query.id);
     if(idNum != "" && idNum > 0 && idNum < nextIdNum){
