@@ -213,7 +213,7 @@
    		</div> 
    	</div> <!-- end section-intro -->
 
-   	<div class="row subscribe-content">
+   	<div class="row subscribe-content" style="align-content: center;">
 
    		<div class="col-eight tab-full animate-this">
 
@@ -243,9 +243,9 @@
 						</div>
 					</div>
                 </div>
-				<div class="tab-full" style="line-height: 0.5; display: block; font-family: 'Noto Sans KR', sans-serif; font-weight: 400; color: #9c9c9c;">
-					<div class="row tab-full" style="width: 223px;">
-						<div class="form-field">
+				<div class="tab-full listMajors" style="margin-top: 5em; margin-left: auto; margin-right: auto; font-family: 'Noto Sans KR', sans-serif; font-weight: 400; color: #9c9c9c;">
+					<div class="row tab-full mobile" style="text-align: left;">
+						<div class="form-field" id="list-one">
 							<h3 style="color: #FFF;">전체 공지</h3>
 							<input type="checkbox" id="cbCAUnotice" name="CAUnotice" value="true"> CAU Notice<br>
 							<h3 style="color: #FFF;">사범대학</h3>
@@ -267,8 +267,8 @@
 							<input type="checkbox" id="cbnursing" name="nursing" value="true"> 간호학과<br>							
 						</div>
 					</div>		      			                           
-					<div class="row tab-full" style="width: 223px;">
-						<div class="form-field">
+					<div class="row tab-full mobile" style="text-align: left;">
+						<div class="form-field" id="list-two">
 							<h3 style="color: #FFF;">인문대학</h3>
 							<input type="checkbox" id="cbkorean" name="korean" value="true"> 국어국문학과<br>
 							<input type="checkbox" id="cbenglish" name="english" value="true"> 영어영문학과<br>
@@ -290,8 +290,8 @@
 							<input type="checkbox" id="cbsociology" name="sociology" value="true"> 사회학과<br>
 						</div>
 					</div>		      			   
-					<div class="row tab-full" style="width: 223px;">
-						<div class="form-field">
+					<div class="row tab-full mobile" style="text-align: left;">
+						<div class="form-field" id="list-three">
 							<h3 style="color: #FFF;">자연과학대학</h3>
 							<input type="checkbox" id="cbphysics" name="physics" value="true"> 물리학과<br>
 							<input type="checkbox" id="cbchem" name="chem" value="true"> 화학과<br>
@@ -313,19 +313,20 @@
 							<input type="checkbox" id="cbpharm" name="pharm" value="true"> 약학과<br>
 						</div>
 					</div>		      			                           
+					<div class="form-field">
+						<button class="submitform" style="margin: auto; font-family: 'Noto Sans KR', sans-serif; font-weight: 700;">입 력</button>
+	  
+						<div id="submit-loader">
+							   <div class="text-loader" style="font-family: 'Noto Sans KR', sans-serif; font-weight: 700;">전송 중...</div>                             
+								   <div class="s-loader">
+										<div class="bounce1"></div>
+										<div class="bounce2"></div>
+										<div class="bounce3"></div>
+							  </div>
+						  </div>
+					 </div>
 				</div>
-               <div class="form-field">
-                  <button class="submitform" style="font-family: 'Noto Sans KR', sans-serif; font-weight: 700;">입 력</button>
-
-                  <div id="submit-loader">
-                     	<div class="text-loader" style="font-family: 'Noto Sans KR', sans-serif; font-weight: 700;">전송 중...</div>                             
-       			      	<div class="s-loader">
-							  	<div class="bounce1"></div>
-							  	<div class="bounce2"></div>
-							  	<div class="bounce3"></div>
-						</div>
-					</div>
-               </div>
+               
 
       		</form> <!-- end form -->
 
