@@ -33,9 +33,19 @@ function updateComplaintDB(){
     fs.writeFileSync(path.join(__dirname, 'mailDB') + '/complaintDB.json', JSON.stringify(complaintDB,null,4), { encoding: "utf8", flag: "w" });
     console.log(`***ComplaintDB updated`);
 }
-function findUserByEmail(mailAddress){
-    for(let i=0;i<nextIdNum;i++){
-        if(userDataBase[i].email == mailAddress) return i;
+function findUserByEmail(mailAddress,includeUnsubbedUsers){ // includeUnsubbedUsers는 true 또는 false
+    if(includeUnsubbedUsers == "true"){
+        for(let i=0;i<nextIdNum;i++){
+            if(userDataBase[i].email == mailAddress) return i;
+        }
+    }
+    else{ // 비구독자까지 포함한 요청인 경우 배열로 모든 경우를 반환함
+        let res = [];
+        for(let i=0;i<nextIdNum;i++){
+            if(userDataBase[i].email == mailAddress && userDataBase[i].subStatus == "true") res.push(i);
+        }
+        if(res.length == 0) return -1;
+        else return res;
     }
     return -1;
 }
@@ -192,6 +202,24 @@ app.post('/currentuserDB', (req, res) => {
     console.log(`nextIdNum : ${nextIdNum}`);
     return res.end(JSON.stringify(userDataBase,null,4));
 });
+app.post('/findUserByEmail', (req, res) => {
+    const mailAddress = req.body.email;
+    const includeUnsubbedUsers = req.body.includeUnsubbedUsers;
+    const idNum = findUserByEmail(mailAddress,includeUnsubbedUsers);
+    console.log(`** Data of User[${idNum}](${userDataBase[idNum].name}) Sent`);
+    return res.end(JSON.stringify(userDataBase[idNum],null,4));
+});
+app.post('/findUserById', (req, res) => {
+    const idNum = req.body.id;
+    console.log(`** Data of User[${idNum}](${userDataBase[idNum].name}) Sent`);
+    return res.end(JSON.stringify(userDataBase[idNum],null,4));
+});
+app.post('/delUserById', (req, res) => {
+    const idNum = req.body.id;
+    userDataBase[idNum].subStatus = "false";
+    console.log(`** Data of User[${idNum}](${userDataBase[idNum].name}) unsubscribed`);
+    return res.end(`User[${idNum}](${userDataBase[idNum].name}) unsubbed`);
+});
 app.post('/delLastUser', (req, res) => {
     console.log("** Deleted last user");
     nextIdNum--;
@@ -213,7 +241,7 @@ app.post('/complainthandling', (req, res) => {
         console.log(`complain by ${user}`);
         complaintDB.push(requestBody);
         updateComplaintDB();
-        const userIdNum = findUserByEmail(user);
+        const userIdNum = findUserByEmail(user,"false");
         if(userIdNum == -1) return res.status(404).send("Not Found"); // complaint notification이 왔는데 우리 DB에서는 못찾은 상황. 발생 가능성 매우 드묾.
         else{
             userDataBase[userIdNum].subStatus = "false";
