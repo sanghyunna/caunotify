@@ -18,7 +18,7 @@ import moment from 'moment';
 import { refresh } from "./refresh.js"
 import { decryptStringToInt } from "./encrypter.js"
 import { DayOrNight } from "./dayOrNight.js";
-import { updateFiles } from "./refresh.js"
+import { sendTemplateEmail } from "./sendEmail.js";
 
 function updateUserDB(src){
     fs.writeFileSync(path.join(__dirname, 'userDB_log', 'userDB.json'), JSON.stringify(userDataBase,null,4), { encoding: "utf8", flag: "w" });
@@ -163,6 +163,7 @@ app.post('/newuser', (req, res) => { // 정상작동 확인함
         userDataBase.push(requestBody); // DB array에 저장
         // console.log(userDataBase);
         updateUserDB("newuser");
+        sendTemplateEmail(requestBody.email,requestBody.name,requestBody.id); // 가입메일
         return res.send("<script>alert('성공적으로 구독하였습니다!');location.href='http://caunotify.me';</script>"); 
     } else {
         return res.send("<script>alert('문제가 발생했습니다. 구독이 완료되지 않았습니다.');location.href='http://caunotify.me';</script>");
@@ -208,12 +209,15 @@ app.post('/complainthandling', (req, res) => {
     if(requestBody.notificationType == "AmazonSnsSubscriptionSucceeded") return res.status(200).send("OK");
     else if(requestBody.notificationType == "Complaint"){
         // 여기서 필요한 정보는: Complaint한 사람 주소인데, 로그는 전체를 남겨두자
+        const user = requestBody.mail.destination.toString();
+        console.log(`complain by ${user}`);
         complaintDB.push(requestBody);
         updateComplaintDB();
-        const userIdNum = findUserByEmail(requestBody.mail.destination.toString());
+        const userIdNum = findUserByEmail(user);
         if(userIdNum == -1) return res.status(404).send("Not Found"); // complaint notification이 왔는데 우리 DB에서는 못찾은 상황. 발생 가능성 매우 드묾.
         else{
             userDataBase[userIdNum].subStatus = "false";
+            console.log(`user[${userIdNum}] - ${userDataBase[userIdNum].name}, ${userDataBase[userIdNum].email} unsubscribed`);
             return res.status(200).send("OK");
         }
     }
@@ -224,12 +228,15 @@ app.post('/bouncehandling', (req, res) => {
     if(requestBody.notificationType == "AmazonSnsSubscriptionSucceeded") return res.status(200).send("OK");
     else if(requestBody.notificationType == "Bounce"){
         // 여기서 필요한 정보는: bounce한 사람 주소인데, 로그는 전체를 남겨두자
+        const user = requestBody.mail.destination.toString();
+        console.log(`bounce by ${user}`);
         bounceDB.push(requestBody);
         updateBounceDB();
-        const userIdNum = findUserByEmail(requestBody.mail.destination.toString());
+        const userIdNum = findUserByEmail(user);
         if(userIdNum == -1) return res.status(404).send("Not Found"); // bounce notification이 왔는데 우리 DB에서는 못찾은 상황. 발생 가능성 매우 드묾.
         else{
             userDataBase[userIdNum].subStatus = "false";
+            console.log(`user[${userIdNum}] - ${userDataBase[userIdNum].name}, ${userDataBase[userIdNum].email} unsubscribed`);
             return res.status(200).send("OK");
         }
     }
