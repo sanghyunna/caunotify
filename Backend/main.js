@@ -105,7 +105,6 @@ app.get('/unsubscribe', function(req, res) { // 구독해지 요청
 app.post('/newuser', (req, res) => { // 정상작동 확인함
     let requestBody = req.body;
     if(requestBody.name != undefined){
-        if(requestBody.email.includes("@") == false) return res.sendFile(path.join(__dirname, 'Frontend', 'fail.html'));
         // undefined 인 경우도 잡아냄
         if(requestBody.industSec != "true")         requestBody.industSec = "false";
         if(requestBody.software != "true")          requestBody.software = "false";
@@ -164,9 +163,9 @@ app.post('/newuser', (req, res) => { // 정상작동 확인함
         userDataBase.push(requestBody); // DB array에 저장
         // console.log(userDataBase);
         updateUserDB("newuser");
-        return res.sendFile(path.join(__dirname, 'Frontend', 'success.html')); 
+        return res.send("<script>alert('성공적으로 구독하였습니다!');location.href='http://caunotify.me';</script>"); 
     } else {
-        return res.sendFile(path.join(__dirname, 'Frontend', 'fail.html'));
+        return res.send("<script>alert('문제가 발생했습니다');location.href='http://caunotify.me';</script>");
     }
 
     // res.send(requestBody);
