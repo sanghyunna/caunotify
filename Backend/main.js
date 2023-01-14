@@ -19,6 +19,7 @@ import { refresh } from "./refresh.js"
 import { decryptStringToInt } from "./encrypter.js"
 import { DayOrNight } from "./dayOrNight.js";
 import { sendTemplateEmail } from "./sendEmail.js";
+import { mailHandler } from "./mailHandler.js";
 
 function updateUserDB(src){
     fs.writeFileSync(path.join(__dirname, 'userDB_log', 'userDB.json'), JSON.stringify(userDataBase,null,4), { encoding: "utf8", flag: "w" });
@@ -161,19 +162,20 @@ app.post('/newuser', (req, res) => { // 정상작동 확인함
         if(requestBody.med != "true")               requestBody.med = "false";
         if(requestBody.pharm != "true")             requestBody.pharm = "false";
         // console.log(`<Received>\n\tName:${requestBody.name}\n\tindustSec:${requestBody.industSec}\n\tsoftware:${requestBody.software}\n\tCAUnotice:${requestBody.CAUnotice}`);
-        requestBody.id = nextIdNum; // key값 추가
+        requestBody.id = parseInt(nextIdNum); // key값 추가
         requestBody.subStatus = "true"; 
         nextIdNum++; // 다음 사용자를 위해 증감
 
         console.log(requestBody);
 
         // 가끔 id가 string으로 저장되는 오류가 있어서 코드 추가
-
         fs.writeFileSync(path.join(__dirname, 'userDB_log', 'nextIdNum.txt'), nextIdNum.toString(), "utf8");
+
         userDataBase.push(requestBody); // DB array에 저장
         // console.log(userDataBase);
         updateUserDB("newuser");
-        // sendTemplateEmail(requestBody.email,requestBody.name,requestBody.id); // 가입메일
+        mailHandler(requestBody.name, requestBody.email, userDataBase[requestBody.id], requestBody.id, "true"); // 가입메일
+        // recipientName, recipientEmail, data, id, IsItSubMail
         return res.send("<script>alert('성공적으로 구독하였습니다!');location.href='http://caunotify.me';</script>"); 
     } else {
         return res.send("<script>alert('문제가 발생했습니다. 구독이 완료되지 않았습니다.');location.href='http://caunotify.me';</script>");
