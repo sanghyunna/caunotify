@@ -173,7 +173,7 @@ app.post('/newuser', (req, res) => { // 정상작동 확인함
         userDataBase.push(requestBody); // DB array에 저장
         // console.log(userDataBase);
         updateUserDB("newuser");
-        sendTemplateEmail(requestBody.email,requestBody.name,requestBody.id); // 가입메일
+        // sendTemplateEmail(requestBody.email,requestBody.name,requestBody.id); // 가입메일
         return res.send("<script>alert('성공적으로 구독하였습니다!');location.href='http://caunotify.me';</script>"); 
     } else {
         return res.send("<script>alert('문제가 발생했습니다. 구독이 완료되지 않았습니다.');location.href='http://caunotify.me';</script>");
