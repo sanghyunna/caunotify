@@ -301,7 +301,7 @@
   /* subscribe Form
    * ------------------------------------------------------ */
   document.getElementById('instaClicked').onclick = function () {
-    alert("¾ÆÁ÷ ÀÎ½ºÅ¸±×·¥ °èÁ¤ÀÌ ¾ø½À´Ï´Ù?");
+    alert("ì•„ì§ ì¸ìŠ¤íƒ€ê·¸ë¨ ê³„ì •ì´ ì—†ìŠµë‹ˆë‹¤?");
 };  
  
   var sssubscribeForm = function() {   	
