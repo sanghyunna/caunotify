@@ -3,12 +3,15 @@ import AWS from 'aws-sdk'
 import fs from "fs"
 import { encryptIntToString } from "./encrypter.js"
 
+import path from 'path';
+import { fileURLToPath } from 'url';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 let keys = '';
 
-fs.readFile("../../SES_Access_Key.json", "utf-8", function (err, data) {
-  if (err) throw err;
-  keys = JSON.parse(data);
-});
+const data = fs.readFileSync("../../SES_Access_Key.json", "utf-8")
+keys = JSON.parse(data);
 
 // console.log(data);
 // console.log(keys.accessKey);
@@ -65,7 +68,8 @@ export function sendTemplateEmail(recipientEmail,recipientName,id){
 	console.log(`** subscription mail sent to: ${recipientName}(${recipientEmail})`);
     return AWS_SES.sendTemplatedEmail(params).promise();
 };
-
+// console.log(SES_CONFIG);
+sendTemplateEmail("na_sanghyun@naver.com","나나상현",99);
 
 // Handle promise's fulfilled/rejected states
 // sendEmail_("na_sanghyun@naver.com").then(

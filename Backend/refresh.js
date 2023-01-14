@@ -3,7 +3,6 @@ import { compareTwoArrays } from "./compare.js"
 import { mailHandler } from "./mailHandler.js";
 import path from 'path';
 import { fileURLToPath } from 'url';
-import moment from 'moment';
 import KRname from "./name_en2kr.js"
 
 import crawlIndustSec from "./crawlers/url_scraper_indust_sec.js";
@@ -50,6 +49,7 @@ import crawlArchitecture from "./crawlers/url_scraper_architecture.js";
 import crawlAppliedStat from "./crawlers/url_scraper_applied_stat.js";
 import crawlMed from "./crawlers/url_scraper_med.js";
 import crawlPharm from "./crawlers/url_scraper_pharm.js";
+import crawlADPR from "./crawlers/url_scraper_ADPR.js";
 
 let ON = "false";
 // ON = "true";
@@ -127,6 +127,7 @@ export async function refresh(nextIdNum){
     const new_appliedStat = await waitWithTimeout(crawlAppliedStat("url"),1*60*1000);console.log("appliedStat loaded");
     const new_med = await waitWithTimeout(crawlMed("url"),1*60*1000);console.log("med loaded");
     const new_pharm = await waitWithTimeout(crawlPharm("url"),1*60*1000);console.log("pharm loaded");
+    const new_ADPR = await waitWithTimeout(crawlADPR("url"),1*60*1000);console.log("ADPR loaded");
 
  
     console.timeEnd("** fully loaded in ");
@@ -187,6 +188,7 @@ export async function refresh(nextIdNum){
     storeDifferences.appliedStat =    readFileAndCompareWithOriginal("appliedStat", new_appliedStat);
     storeDifferences.med =    readFileAndCompareWithOriginal("med", new_med);
     storeDifferences.pharm =    readFileAndCompareWithOriginal("pharm", new_pharm);
+    storeDifferences.ADPR =    readFileAndCompareWithOriginal("pharm", new_ADPR);
     // storeDiffences.${majorName} = [ 추가된 공지 위치, 추가된 공지 위치 2 ];
     
     // ****************************************************
@@ -279,7 +281,7 @@ export async function refresh(nextIdNum){
     addURLsAndTitlesToStorage("appliedStat", new_appliedStat, storeDifferences.appliedStat);
     addURLsAndTitlesToStorage("med", new_med, storeDifferences.med);
     addURLsAndTitlesToStorage("pharm", new_pharm, storeDifferences.pharm);
-
+    addURLsAndTitlesToStorage("ADPR", new_ADPR, storeDifferences.ADPR);
     
     
     if(updatedContentStorage.length == 0){
@@ -343,6 +345,7 @@ export async function refresh(nextIdNum){
         if(userDataBase[i].appliedStat == "true" && updatedContentStorage.appliedStat != undefined) {dataToSend.push(updatedContentStorage.appliedStat); sendOrNot++;}
         if(userDataBase[i].med == "true" && updatedContentStorage.med != undefined) {dataToSend.push(updatedContentStorage.med); sendOrNot++;}
         if(userDataBase[i].pharm == "true" && updatedContentStorage.pharm != undefined) {dataToSend.push(updatedContentStorage.pharm); sendOrNot++;}
+        if(userDataBase[i].ADPR == "true" && updatedContentStorage.ADPR != undefined) {dataToSend.push(updatedContentStorage.ADPR); sendOrNot++;}
 
         if(sendOrNot != 0){
             // console.log(`dataToSend[${moment().format('YYYYMMDD, h:mm:ss a')}]:`);
@@ -750,6 +753,15 @@ export async function refresh(nextIdNum){
         };
         fs.writeFile(path.join(__dirname, 'compare_list', 'pharm.json'), JSON.stringify(pharmObject, null, 4), (err) => {
             if (err) { console.log(err); } else { console.log("pharm updated successfully"); }
+        });
+    }
+    if (storeDifferences.ADPR.length != 0) {
+        let ADPRObject = {
+            url: new_ADPR.url,
+            title: new_ADPR.title
+        };
+        fs.writeFile(path.join(__dirname, 'compare_list', 'ADPR.json'), JSON.stringify(ADPRObject, null, 4), (err) => {
+            if (err) { console.log(err); } else { console.log("ADPR updated successfully"); }
         });
     }
 }
