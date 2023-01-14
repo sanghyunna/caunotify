@@ -31,6 +31,19 @@ const KRname = function func(input){
     if(input == "mediaComm") return "미디어커뮤니케이션학부";
     if(input == "sociology") return "사회학과";
     if(input == "socialWelfare") return "사회복지학과";
+    if(input == "russian") return "러시아어문학전공";
+    if(input == "french") return "프랑스어문학전공";
+    if(input == "german") return "독일어문학전공";
+    if(input == "philosophy") return "철학과";
+    if(input == "history") return "역사학과";
+    if(input == "publicService") return "공공인재학부";
+    if(input == "civilEnvPlanEng") return "건설환경플랜트공학과";
+    if(input == "urbanEngineering") return "도시시스템공학과";
+    if(input == "architecture") return "건축학부";
+    if(input == "appliedStat") return "응용통계학과";
+    if(input == "med") return "의학과";
+    if(input == "pharm") return "약학과";
+    if(input == "ADPR") return "광고홍보학과";
 }
 
 export default KRname;
