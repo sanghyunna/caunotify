@@ -196,7 +196,7 @@ app.post('/posttest', (req, res) => { // 정상작동 확인함
 // refresh, currentuserDB, delLastUser 이렇게 3가지는 보안 위협이 될 수 있으므로 배포 단계에서 제거할 코드
 // ======================================================================
 app.post('/refresh', (req, res) => {
-    refresh(nextIdNum);
+    refresh(nextIdNum,0);
     return res.end("Refreshed")
 });
 app.post('/currentuserDB', (req, res) => {
@@ -281,9 +281,9 @@ server.listen(PORT, function(){
 });
 
 setInterval(() => {
-    // refresh(nextIdNum);
+    // refresh(nextIdNum,1);
     if(DayOrNight == "Day"){
-        refresh(nextIdNum);
+        refresh(nextIdNum,1);
         console.log("*** interval reached");
     }
     else console.log("* interval skipped - Night");

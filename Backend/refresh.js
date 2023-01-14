@@ -72,7 +72,7 @@ async function waitWithTimeout(asyncPromise, timeLimit){
 
 // refresh 함수에서는
 // 크롤러 실행 -> 기존 목록과 대조 -> 변화 있으면 sendMail() 후 원래 목록 대체, 없으면 행동하지 않음 -> 다음 크롤러 실행.
-export async function refresh(nextIdNum){
+export async function refresh(nextIdNum, silentMode){
 
     console.log("*** Refreshing Started ***")
 
@@ -81,53 +81,59 @@ export async function refresh(nextIdNum){
     // *********************************
     // 하나의 오류 발생시 전체 코드 충돌 방지를 위해 타임아웃 제한
     
+
+    // if문은 0만 아니면 실행한다. 즉, 0 은 false고, 0을 제외한 모든 값은 true이다.
+    // 즉 silentMode의 값이 1이라면,
+    // if(!silentMode) console.log 는 silentMode일 때만 실행된다
+
+
     console.time("** fully loaded in "); // 로딩시간 기록
     // const naw_integEngineering = await waitWithTimeout(crawlIntegEngineering("url"),1*60*1000);
-    const new_industSec = await waitWithTimeout(crawlIndustSec("url"),1*60*1000);               console.log("industSec loaded");
-    const new_software = await waitWithTimeout(crawlSoftware("url"),1*60*1000);                 console.log("software loaded");
-    const new_CAUnotice = await waitWithTimeout(crawlCAUnotice("url"),1*60*1000);               console.log("CAUnotice loaded");
-    const new_integEngineering = await waitWithTimeout(crawlIntegEngineering("url"),1*60*1000); console.log("integEngineering loaded");
-    const new_korean = await waitWithTimeout(crawlKorean("url"),1*60*1000);                     console.log("korean loaded");
-    const new_mechEngineering = await waitWithTimeout(crawlMechEngineering("url"),1*60*1000);   console.log("mechEngineering loaded");
-    const new_psychology = await waitWithTimeout(crawlPsychology("url"),1*60*1000);             console.log("psychology loaded");
-    const new_business = await waitWithTimeout(crawlBusiness("url"),1*60*1000);                 console.log("business loaded");
-    const new_elecEngineering = await waitWithTimeout(crawlElecEngineering("url"),1*60*1000);   console.log("elecEngineering loaded");
-    const new_english = await waitWithTimeout(crawlEnglish("url"),1*60*1000);                   console.log("english loaded");
-    const new_enerEngineering = await waitWithTimeout(crawlEnerEngineering("url"),1*60*1000);   console.log("enerEngineering loaded");
-    const new_urbanPlanRealEstate = await waitWithTimeout(crawlUrbanPlanRealEstate("url"),1*60*1000);console.log("urbanPlanRealEstate loaded");
-    const new_nursing = await waitWithTimeout(crawlNursing("url"),1*60*1000);                   console.log("nursing loaded");
-    const new_politics = await waitWithTimeout(crawlPolitics("url"),1*60*1000);                 console.log("politics loaded");
-    const new_physicalEd = await waitWithTimeout(crawlPhysicalEd("url"),1*60*1000);             console.log("physicalEd loaded");
-    const new_education = await waitWithTimeout(crawlEducation("url"),1*60*1000);               console.log("education loaded");
-    const new_earlyChildhoodEd = await waitWithTimeout(crawlEarlyChildhoodEd("url"),1*60*1000); console.log("earlyChildhoodEd loaded");
-    const new_englishEd = await waitWithTimeout(crawlEnglishEd("url"),1*60*1000);               console.log("englishEd loaded");
-    const new_chem = await waitWithTimeout(crawlChem("url"),1*60*1000);                         console.log("chem loaded");
-    const new_lifeScience = await waitWithTimeout(crawlLifeScience("url"),1*60*1000);           console.log("lifeScience loaded");
-    const new_japanese = await waitWithTimeout(crawlJapanese("url"),1*60*1000);                 console.log("japanese loaded");
-    const new_chinese = await waitWithTimeout(crawlChinese("url"),1*60*1000);                   console.log("chinese loaded");
-    const new_math = await waitWithTimeout(crawlMath("url"),1*60*1000);                         console.log("math loaded");
-    const new_ai = await waitWithTimeout(crawlAi("url"),1*60*1000);                             console.log("ai loaded");
-    const new_chemEngineering = await waitWithTimeout(crawlChemEngineering("url"),1*60*1000);   console.log("chemEngineering loaded");
-    const new_logistics = await waitWithTimeout(crawlLogistics("url"),1*60*1000);               console.log("logistics loaded");
-    const new_econ = await waitWithTimeout(crawlEcon("url"),1*60*1000);                         console.log("econ loaded");
-    const new_physics = await waitWithTimeout(crawlPhysics("url"),1*60*1000);                   console.log("physics loaded");
-    const new_libInfoScience = await waitWithTimeout(crawlLibInfoScience("url"),1*60*1000);     console.log("libInfoScience loaded");
-    const new_mediaComm = await waitWithTimeout(crawlMediaComm("url"),1*60*1000);               console.log("mediaComm loaded");
-    const new_sociology = await waitWithTimeout(crawlSociology("url"),1*60*1000);               console.log("sociology loaded");
-    const new_socialWelfare = await waitWithTimeout(crawlSocialWelfare("url"),1*60*1000);       console.log("socialWelfare loaded");
-    const new_russian = await waitWithTimeout(crawlRussian("url"),1*60*1000);console.log("russian loaded");
-    const new_french = await waitWithTimeout(crawlFrench("url"),1*60*1000);console.log("french loaded");
-    const new_german = await waitWithTimeout(crawlGerman("url"),1*60*1000);console.log("german loaded");
-    const new_philosophy = await waitWithTimeout(crawlPhilosophy("url"),1*60*1000);console.log("philosophy loaded");
-    const new_history = await waitWithTimeout(crawlHistory("url"),1*60*1000);console.log("history loaded");
-    const new_publicService = await waitWithTimeout(crawlPublicService("url"),1*60*1000);console.log("publicService loaded");
-    const new_civilEnvPlanEng = await waitWithTimeout(crawlCivilEnvPlanEng("url"),1*60*1000);console.log("civilEnvPlanEng loaded");
-    const new_urbanEngineering = await waitWithTimeout(crawlUrbanEngineering("url"),1*60*1000);console.log("urbanEngineering loaded");
-    const new_architecture = await waitWithTimeout(crawlArchitecture("url"),1*60*1000);console.log("architecture loaded");
-    const new_appliedStat = await waitWithTimeout(crawlAppliedStat("url"),1*60*1000);console.log("appliedStat loaded");
-    const new_med = await waitWithTimeout(crawlMed("url"),1*60*1000);console.log("med loaded");
-    const new_pharm = await waitWithTimeout(crawlPharm("url"),1*60*1000);console.log("pharm loaded");
-    const new_ADPR = await waitWithTimeout(crawlADPR("url"),1*60*1000);console.log("ADPR loaded");
+    const new_industSec = await waitWithTimeout(crawlIndustSec("url"),1*60*1000);               if(!silentMode) console.log("industSec loaded");
+    const new_software = await waitWithTimeout(crawlSoftware("url"),1*60*1000);                 if(!silentMode) console.log("software loaded");
+    const new_CAUnotice = await waitWithTimeout(crawlCAUnotice("url"),1*60*1000);               if(!silentMode) console.log("CAUnotice loaded");
+    const new_integEngineering = await waitWithTimeout(crawlIntegEngineering("url"),1*60*1000); if(!silentMode) console.log("integEngineering loaded");
+    const new_korean = await waitWithTimeout(crawlKorean("url"),1*60*1000);                     if(!silentMode) console.log("korean loaded");
+    const new_mechEngineering = await waitWithTimeout(crawlMechEngineering("url"),1*60*1000);   if(!silentMode) console.log("mechEngineering loaded");
+    const new_psychology = await waitWithTimeout(crawlPsychology("url"),1*60*1000);             if(!silentMode) console.log("psychology loaded");
+    const new_business = await waitWithTimeout(crawlBusiness("url"),1*60*1000);                 if(!silentMode) console.log("business loaded");
+    const new_elecEngineering = await waitWithTimeout(crawlElecEngineering("url"),1*60*1000);   if(!silentMode) console.log("elecEngineering loaded");
+    const new_english = await waitWithTimeout(crawlEnglish("url"),1*60*1000);                   if(!silentMode) console.log("english loaded");
+    const new_enerEngineering = await waitWithTimeout(crawlEnerEngineering("url"),1*60*1000);   if(!silentMode) console.log("enerEngineering loaded");
+    const new_urbanPlanRealEstate = await waitWithTimeout(crawlUrbanPlanRealEstate("url"),1*60*1000); if(!silentMode) console.log("urbanPlanRealEstate loaded");
+    const new_nursing = await waitWithTimeout(crawlNursing("url"),1*60*1000);                   if(!silentMode) console.log("nursing loaded");
+    const new_politics = await waitWithTimeout(crawlPolitics("url"),1*60*1000);                 if(!silentMode) console.log("politics loaded");
+    const new_physicalEd = await waitWithTimeout(crawlPhysicalEd("url"),1*60*1000);             if(!silentMode) console.log("physicalEd loaded");
+    const new_education = await waitWithTimeout(crawlEducation("url"),1*60*1000);               if(!silentMode) console.log("education loaded");
+    const new_earlyChildhoodEd = await waitWithTimeout(crawlEarlyChildhoodEd("url"),1*60*1000); if(!silentMode) console.log("earlyChildhoodEd loaded");
+    const new_englishEd = await waitWithTimeout(crawlEnglishEd("url"),1*60*1000);               if(!silentMode) console.log("englishEd loaded");
+    const new_chem = await waitWithTimeout(crawlChem("url"),1*60*1000);                         if(!silentMode) console.log("chem loaded");
+    const new_lifeScience = await waitWithTimeout(crawlLifeScience("url"),1*60*1000);           if(!silentMode) console.log("lifeScience loaded");
+    const new_japanese = await waitWithTimeout(crawlJapanese("url"),1*60*1000);                 if(!silentMode) console.log("japanese loaded");
+    const new_chinese = await waitWithTimeout(crawlChinese("url"),1*60*1000);                   if(!silentMode) console.log("chinese loaded");
+    const new_math = await waitWithTimeout(crawlMath("url"),1*60*1000);                         if(!silentMode) console.log("math loaded");
+    const new_ai = await waitWithTimeout(crawlAi("url"),1*60*1000);                             if(!silentMode) console.log("ai loaded");
+    const new_chemEngineering = await waitWithTimeout(crawlChemEngineering("url"),1*60*1000);   if(!silentMode) console.log("chemEngineering loaded");
+    const new_logistics = await waitWithTimeout(crawlLogistics("url"),1*60*1000);               if(!silentMode) console.log("logistics loaded");
+    const new_econ = await waitWithTimeout(crawlEcon("url"),1*60*1000);                         if(!silentMode) console.log("econ loaded");
+    const new_physics = await waitWithTimeout(crawlPhysics("url"),1*60*1000);                   if(!silentMode) console.log("physics loaded");
+    const new_libInfoScience = await waitWithTimeout(crawlLibInfoScience("url"),1*60*1000);     if(!silentMode) console.log("libInfoScience loaded");
+    const new_mediaComm = await waitWithTimeout(crawlMediaComm("url"),1*60*1000);               if(!silentMode) console.log("mediaComm loaded");
+    const new_sociology = await waitWithTimeout(crawlSociology("url"),1*60*1000);               if(!silentMode) console.log("sociology loaded");
+    const new_socialWelfare = await waitWithTimeout(crawlSocialWelfare("url"),1*60*1000);       if(!silentMode) console.log("socialWelfare loaded");
+    const new_russian = await waitWithTimeout(crawlRussian("url"),1*60*1000);                   if(!silentMode) console.log("russian loaded");
+    const new_french = await waitWithTimeout(crawlFrench("url"),1*60*1000);                     if(!silentMode) console.log("french loaded");
+    const new_german = await waitWithTimeout(crawlGerman("url"),1*60*1000);                     if(!silentMode) console.log("german loaded");
+    const new_philosophy = await waitWithTimeout(crawlPhilosophy("url"),1*60*1000);             if(!silentMode) console.log("philosophy loaded");
+    const new_history = await waitWithTimeout(crawlHistory("url"),1*60*1000);                   if(!silentMode) console.log("history loaded");
+    const new_publicService = await waitWithTimeout(crawlPublicService("url"),1*60*1000);       if(!silentMode) console.log("publicService loaded");
+    const new_civilEnvPlanEng = await waitWithTimeout(crawlCivilEnvPlanEng("url"),1*60*1000);   if(!silentMode) console.log("civilEnvPlanEng loaded");
+    const new_urbanEngineering = await waitWithTimeout(crawlUrbanEngineering("url"),1*60*1000); if(!silentMode) console.log("urbanEngineering loaded");
+    const new_architecture = await waitWithTimeout(crawlArchitecture("url"),1*60*1000);         if(!silentMode) console.log("architecture loaded");
+    const new_appliedStat = await waitWithTimeout(crawlAppliedStat("url"),1*60*1000);           if(!silentMode) console.log("appliedStat loaded");
+    const new_med = await waitWithTimeout(crawlMed("url"),1*60*1000);                           if(!silentMode) console.log("med loaded");
+    const new_pharm = await waitWithTimeout(crawlPharm("url"),1*60*1000);                       if(!silentMode) console.log("pharm loaded");
+    const new_ADPR = await waitWithTimeout(crawlADPR("url"),1*60*1000);                         if(!silentMode) console.log("ADPR loaded");
 
  
     console.timeEnd("** fully loaded in ");
