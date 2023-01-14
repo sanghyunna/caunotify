@@ -2808,9 +2808,9 @@ html[data-useragent*='MSIE 10.0'] .scrolldown,
 .subscribe-content{
   text-align: center;
 }
-#list-one{
+/* #list-one{
   margin-right: -20px;
-}
+} */
 #list-two{
  /* margin-left: -20px;*/
 }

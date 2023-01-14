@@ -115,6 +115,19 @@ export async function refresh(nextIdNum){
     const new_mediaComm = await waitWithTimeout(crawlMediaComm("url"),1*60*1000);               console.log("mediaComm loaded");
     const new_sociology = await waitWithTimeout(crawlSociology("url"),1*60*1000);               console.log("sociology loaded");
     const new_socialWelfare = await waitWithTimeout(crawlSocialWelfare("url"),1*60*1000);       console.log("socialWelfare loaded");
+    const new_russian = await waitWithTimeout(crawlRussian("url"),1*60*1000);console.log("russian loaded");
+    const new_french = await waitWithTimeout(crawlFrench("url"),1*60*1000);console.log("french loaded");
+    const new_german = await waitWithTimeout(crawlGerman("url"),1*60*1000);console.log("german loaded");
+    const new_philosophy = await waitWithTimeout(crawlPhilosophy("url"),1*60*1000);console.log("philosophy loaded");
+    const new_history = await waitWithTimeout(crawlHistory("url"),1*60*1000);console.log("history loaded");
+    const new_publicService = await waitWithTimeout(crawlPublicService("url"),1*60*1000);console.log("publicService loaded");
+    const new_civilEnvPlanEng = await waitWithTimeout(crawlCivilEnvPlanEng("url"),1*60*1000);console.log("civilEnvPlanEng loaded");
+    const new_urbanEngineering = await waitWithTimeout(crawlUrbanEngineering("url"),1*60*1000);console.log("urbanEngineering loaded");
+    const new_architecture = await waitWithTimeout(crawlArchitecture("url"),1*60*1000);console.log("architecture loaded");
+    const new_appliedStat = await waitWithTimeout(crawlAppliedStat("url"),1*60*1000);console.log("appliedStat loaded");
+    const new_med = await waitWithTimeout(crawlMed("url"),1*60*1000);console.log("med loaded");
+    const new_pharm = await waitWithTimeout(crawlPharm("url"),1*60*1000);console.log("pharm loaded");
+
  
     console.timeEnd("** fully loaded in ");
     
@@ -162,6 +175,18 @@ export async function refresh(nextIdNum){
     storeDifferences.mediaComm =        readFileAndCompareWithOriginal("mediaComm", new_mediaComm);
     storeDifferences.sociology =        readFileAndCompareWithOriginal("sociology", new_sociology);
     storeDifferences.socialWelfare =    readFileAndCompareWithOriginal("socialWelfare", new_socialWelfare);
+    storeDifferences.russian =    readFileAndCompareWithOriginal("russian", new_russian);
+    storeDifferences.french =    readFileAndCompareWithOriginal("french", new_french);
+    storeDifferences.german =    readFileAndCompareWithOriginal("german", new_german);
+    storeDifferences.philosophy =    readFileAndCompareWithOriginal("philosophy", new_philosophy);
+    storeDifferences.history =    readFileAndCompareWithOriginal("history", new_history);
+    storeDifferences.publicService =    readFileAndCompareWithOriginal("publicService", new_publicService);
+    storeDifferences.civilEnvPlanEng =    readFileAndCompareWithOriginal("civilEnvPlanEng", new_civilEnvPlanEng);
+    storeDifferences.urbanEngineering =    readFileAndCompareWithOriginal("urbanEngineering", new_urbanEngineering);
+    storeDifferences.architecture =    readFileAndCompareWithOriginal("architecture", new_architecture);
+    storeDifferences.appliedStat =    readFileAndCompareWithOriginal("appliedStat", new_appliedStat);
+    storeDifferences.med =    readFileAndCompareWithOriginal("med", new_med);
+    storeDifferences.pharm =    readFileAndCompareWithOriginal("pharm", new_pharm);
     // storeDiffences.${majorName} = [ 추가된 공지 위치, 추가된 공지 위치 2 ];
     
     // ****************************************************
@@ -242,6 +267,19 @@ export async function refresh(nextIdNum){
     addURLsAndTitlesToStorage("mediaComm", new_mediaComm, storeDifferences.mediaComm);
     addURLsAndTitlesToStorage("sociology", new_sociology, storeDifferences.sociology);
     addURLsAndTitlesToStorage("socialWelfare", new_socialWelfare, storeDifferences.socialWelfare);
+    addURLsAndTitlesToStorage("russian", new_russian, storeDifferences.russian);
+    addURLsAndTitlesToStorage("french", new_french, storeDifferences.french);
+    addURLsAndTitlesToStorage("german", new_german, storeDifferences.german);
+    addURLsAndTitlesToStorage("philosophy", new_philosophy, storeDifferences.philosophy);
+    addURLsAndTitlesToStorage("history", new_history, storeDifferences.history);
+    addURLsAndTitlesToStorage("publicService", new_publicService, storeDifferences.publicService);
+    addURLsAndTitlesToStorage("civilEnvPlanEng", new_civilEnvPlanEng, storeDifferences.civilEnvPlanEng);
+    addURLsAndTitlesToStorage("urbanEngineering", new_urbanEngineering, storeDifferences.urbanEngineering);
+    addURLsAndTitlesToStorage("architecture", new_architecture, storeDifferences.architecture);
+    addURLsAndTitlesToStorage("appliedStat", new_appliedStat, storeDifferences.appliedStat);
+    addURLsAndTitlesToStorage("med", new_med, storeDifferences.med);
+    addURLsAndTitlesToStorage("pharm", new_pharm, storeDifferences.pharm);
+
     
     
     if(updatedContentStorage.length == 0){
@@ -293,6 +331,18 @@ export async function refresh(nextIdNum){
         if(userDataBase[i].mediaComm == "true" && updatedContentStorage.mediaComm != undefined) {dataToSend.push(updatedContentStorage.mediaComm); sendOrNot++;}
         if(userDataBase[i].sociology == "true" && updatedContentStorage.sociology != undefined) {dataToSend.push(updatedContentStorage.sociology); sendOrNot++;}
         if(userDataBase[i].socialWelfare == "true" && updatedContentStorage.socialWelfare != undefined) {dataToSend.push(updatedContentStorage.socialWelfare); sendOrNot++;}
+        if(userDataBase[i].russian == "true" && updatedContentStorage.russian != undefined) {dataToSend.push(updatedContentStorage.russian); sendOrNot++;}
+        if(userDataBase[i].french == "true" && updatedContentStorage.french != undefined) {dataToSend.push(updatedContentStorage.french); sendOrNot++;}
+        if(userDataBase[i].german == "true" && updatedContentStorage.german != undefined) {dataToSend.push(updatedContentStorage.german); sendOrNot++;}
+        if(userDataBase[i].philosophy == "true" && updatedContentStorage.philosophy != undefined) {dataToSend.push(updatedContentStorage.philosophy); sendOrNot++;}
+        if(userDataBase[i].history == "true" && updatedContentStorage.history != undefined) {dataToSend.push(updatedContentStorage.history); sendOrNot++;}
+        if(userDataBase[i].publicService == "true" && updatedContentStorage.publicService != undefined) {dataToSend.push(updatedContentStorage.publicService); sendOrNot++;}
+        if(userDataBase[i].civilEnvPlanEng == "true" && updatedContentStorage.civilEnvPlanEng != undefined) {dataToSend.push(updatedContentStorage.civilEnvPlanEng); sendOrNot++;}
+        if(userDataBase[i].urbanEngineering == "true" && updatedContentStorage.urbanEngineering != undefined) {dataToSend.push(updatedContentStorage.urbanEngineering); sendOrNot++;}
+        if(userDataBase[i].architecture == "true" && updatedContentStorage.architecture != undefined) {dataToSend.push(updatedContentStorage.architecture); sendOrNot++;}
+        if(userDataBase[i].appliedStat == "true" && updatedContentStorage.appliedStat != undefined) {dataToSend.push(updatedContentStorage.appliedStat); sendOrNot++;}
+        if(userDataBase[i].med == "true" && updatedContentStorage.med != undefined) {dataToSend.push(updatedContentStorage.med); sendOrNot++;}
+        if(userDataBase[i].pharm == "true" && updatedContentStorage.pharm != undefined) {dataToSend.push(updatedContentStorage.pharm); sendOrNot++;}
 
         if(sendOrNot != 0){
             // console.log(`dataToSend[${moment().format('YYYYMMDD, h:mm:ss a')}]:`);
@@ -594,6 +644,114 @@ export async function refresh(nextIdNum){
             if (err) { console.log(err); } else { console.log("socialWelfare updated successfully"); }
         });
     }
+    if (storeDifferences.russian.length != 0) {
+        let russianObject = {
+            url: new_russian.url,
+            title: new_russian.title
+        };
+        fs.writeFile(path.join(__dirname, 'compare_list', 'russian.json'), JSON.stringify(russianObject, null, 4), (err) => {
+            if (err) { console.log(err); } else { console.log("russian updated successfully"); }
+        });
+    }
+    if (storeDifferences.french.length != 0) {
+        let frenchObject = {
+            url: new_french.url,
+            title: new_french.title
+        };
+        fs.writeFile(path.join(__dirname, 'compare_list', 'french.json'), JSON.stringify(frenchObject, null, 4), (err) => {
+            if (err) { console.log(err); } else { console.log("french updated successfully"); }
+        });
+    }
+    if (storeDifferences.german.length != 0) {
+        let germanObject = {
+            url: new_german.url,
+            title: new_german.title
+        };
+        fs.writeFile(path.join(__dirname, 'compare_list', 'german.json'), JSON.stringify(germanObject, null, 4), (err) => {
+            if (err) { console.log(err); } else { console.log("german updated successfully"); }
+        });
+    }
+    if (storeDifferences.philosophy.length != 0) {
+        let philosophyObject = {
+            url: new_philosophy.url,
+            title: new_philosophy.title
+        };
+        fs.writeFile(path.join(__dirname, 'compare_list', 'philosophy.json'), JSON.stringify(philosophyObject, null, 4), (err) => {
+            if (err) { console.log(err); } else { console.log("philosophy updated successfully"); }
+        });
+    }
+    if (storeDifferences.history.length != 0) {
+        let historyObject = {
+            url: new_history.url,
+            title: new_history.title
+        };
+        fs.writeFile(path.join(__dirname, 'compare_list', 'history.json'), JSON.stringify(historyObject, null, 4), (err) => {
+            if (err) { console.log(err); } else { console.log("history updated successfully"); }
+        });
+    }
+    if (storeDifferences.publicService.length != 0) {
+        let publicServiceObject = {
+            url: new_publicService.url,
+            title: new_publicService.title
+        };
+        fs.writeFile(path.join(__dirname, 'compare_list', 'publicService.json'), JSON.stringify(publicServiceObject, null, 4), (err) => {
+            if (err) { console.log(err); } else { console.log("publicService updated successfully"); }
+        });
+    }
+    if (storeDifferences.civilEnvPlanEng.length != 0) {
+        let civilEnvPlanEngObject = {
+            url: new_civilEnvPlanEng.url,
+            title: new_civilEnvPlanEng.title
+        };
+        fs.writeFile(path.join(__dirname, 'compare_list', 'civilEnvPlanEng.json'), JSON.stringify(civilEnvPlanEngObject, null, 4), (err) => {
+            if (err) { console.log(err); } else { console.log("civilEnvPlanEng updated successfully"); }
+        });
+    }
+    if (storeDifferences.urbanEngineering.length != 0) {
+        let urbanEngineeringObject = {
+            url: new_urbanEngineering.url,
+            title: new_urbanEngineering.title
+        };
+        fs.writeFile(path.join(__dirname, 'compare_list', 'urbanEngineering.json'), JSON.stringify(urbanEngineeringObject, null, 4), (err) => {
+            if (err) { console.log(err); } else { console.log("urbanEngineering updated successfully"); }
+        });
+    }
+    if (storeDifferences.architecture.length != 0) {
+        let architectureObject = {
+            url: new_architecture.url,
+            title: new_architecture.title
+        };
+        fs.writeFile(path.join(__dirname, 'compare_list', 'architecture.json'), JSON.stringify(architectureObject, null, 4), (err) => {
+            if (err) { console.log(err); } else { console.log("architecture updated successfully"); }
+        });
+    }
+    if (storeDifferences.appliedStat.length != 0) {
+        let appliedStatObject = {
+            url: new_appliedStat.url,
+            title: new_appliedStat.title
+        };
+        fs.writeFile(path.join(__dirname, 'compare_list', 'appliedStat.json'), JSON.stringify(appliedStatObject, null, 4), (err) => {
+            if (err) { console.log(err); } else { console.log("appliedStat updated successfully"); }
+        });
+    }
+    if (storeDifferences.med.length != 0) {
+        let medObject = {
+            url: new_med.url,
+            title: new_med.title
+        };
+        fs.writeFile(path.join(__dirname, 'compare_list', 'med.json'), JSON.stringify(medObject, null, 4), (err) => {
+            if (err) { console.log(err); } else { console.log("med updated successfully"); }
+        });
+    }
+    if (storeDifferences.pharm.length != 0) {
+        let pharmObject = {
+            url: new_pharm.url,
+            title: new_pharm.title
+        };
+        fs.writeFile(path.join(__dirname, 'compare_list', 'pharm.json'), JSON.stringify(pharmObject, null, 4), (err) => {
+            if (err) { console.log(err); } else { console.log("pharm updated successfully"); }
+        });
+    }
 }
 if(ON == "true") refresh(1);
 
@@ -782,6 +940,66 @@ export async function updateFiles(){
     fs.writeFile("./compare_list/socialWelfare.json", JSON.stringify(new_socialWelfare, null, 4), "utf8", (err) => {
         if (err) console.log(err);
         else console.log("socialWelfare.json written successfully");
+    });
+    const new_russian = await waitWithTimeout(crawlRussian("url"),1*60*1000);
+    fs.writeFile("./compare_list/russian.json", JSON.stringify(new_russian, null, 4), "utf8", (err) => {
+        if (err) console.log(err);
+        else console.log("russian.json written successfully");
+    });
+    const new_french = await waitWithTimeout(crawlFrench("url"),1*60*1000);
+    fs.writeFile("./compare_list/french.json", JSON.stringify(new_french, null, 4), "utf8", (err) => {
+        if (err) console.log(err);
+        else console.log("french.json written successfully");
+    });
+    const new_german = await waitWithTimeout(crawlGerman("url"),1*60*1000);
+    fs.writeFile("./compare_list/german.json", JSON.stringify(new_german, null, 4), "utf8", (err) => {
+        if (err) console.log(err);
+        else console.log("german.json written successfully");
+    });
+    const new_philosophy = await waitWithTimeout(crawlPhilosophy("url"),1*60*1000);
+    fs.writeFile("./compare_list/philosophy.json", JSON.stringify(new_philosophy, null, 4), "utf8", (err) => {
+        if (err) console.log(err);
+        else console.log("philosophy.json written successfully");
+    });
+    const new_history = await waitWithTimeout(crawlHistory("url"),1*60*1000);
+    fs.writeFile("./compare_list/history.json", JSON.stringify(new_history, null, 4), "utf8", (err) => {
+        if (err) console.log(err);
+        else console.log("history.json written successfully");
+    });
+    const new_publicService = await waitWithTimeout(crawlPublicService("url"),1*60*1000);
+    fs.writeFile("./compare_list/publicService.json", JSON.stringify(new_publicService, null, 4), "utf8", (err) => {
+        if (err) console.log(err);
+        else console.log("publicService.json written successfully");
+    });
+    const new_civilEnvPlanEng = await waitWithTimeout(crawlCivilEnvPlanEng("url"),1*60*1000);
+    fs.writeFile("./compare_list/civilEnvPlanEng.json", JSON.stringify(new_civilEnvPlanEng, null, 4), "utf8", (err) => {
+        if (err) console.log(err);
+        else console.log("civilEnvPlanEng.json written successfully");
+    });
+    const new_urbanEngineering = await waitWithTimeout(crawlUrbanEngineering("url"),1*60*1000);
+    fs.writeFile("./compare_list/urbanEngineering.json", JSON.stringify(new_urbanEngineering, null, 4), "utf8", (err) => {
+        if (err) console.log(err);
+        else console.log("urbanEngineering.json written successfully");
+    });
+    const new_architecture = await waitWithTimeout(crawlArchitecture("url"),1*60*1000);
+    fs.writeFile("./compare_list/architecture.json", JSON.stringify(new_architecture, null, 4), "utf8", (err) => {
+        if (err) console.log(err);
+        else console.log("architecture.json written successfully");
+    });
+    const new_appliedStat = await waitWithTimeout(crawlAppliedStat("url"),1*60*1000);
+    fs.writeFile("./compare_list/appliedStat.json", JSON.stringify(new_appliedStat, null, 4), "utf8", (err) => {
+        if (err) console.log(err);
+        else console.log("appliedStat.json written successfully");
+    });
+    const new_med = await waitWithTimeout(crawlMed("url"),1*60*1000);
+    fs.writeFile("./compare_list/med.json", JSON.stringify(new_med, null, 4), "utf8", (err) => {
+        if (err) console.log(err);
+        else console.log("med.json written successfully");
+    });
+    const new_pharm = await waitWithTimeout(crawlPharm("url"),1*60*1000);
+    fs.writeFile("./compare_list/pharm.json", JSON.stringify(new_pharm, null, 4), "utf8", (err) => {
+        if (err) console.log(err);
+        else console.log("pharm.json written successfully");
     });
 }
 // updateFiles();
