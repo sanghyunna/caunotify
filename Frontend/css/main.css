@@ -2792,13 +2792,15 @@ html[data-useragent*='MSIE 10.0'] .scrolldown,
   /* display:table; */
   width:100%;
   margin: auto;
+  vertical-align: top;
 }
 .mobile{
   /* flex: 1; */
-  /* display: inline-block;
-  clear: both; */
+  display: inline-block;
+  /* clear: both; */
   min-width: 210px;
   max-width: 33%;
+  padding: 0 10px;
   vertical-align: top;
   /* display: table-cell; */
   /* padding: 0,10px,0,10px; */
@@ -2810,7 +2812,7 @@ html[data-useragent*='MSIE 10.0'] .scrolldown,
   margin-right: -20px;
 }
 #list-two{
-  margin-left: -20px;
+ /* margin-left: -20px;*/
 }
 /* ------------------------------------------------------------------- 
  * responsive:
@@ -2834,12 +2836,12 @@ html[data-useragent*='MSIE 10.0'] .scrolldown,
     /* max-width: 480px; */
   }
 }
-@media only screen and (max-width: 413px) {
+@media only screen and (max-width: 435px) {
   .listMajors .row .form-field{
-    font-size: 3.88vw;
+    font-size: 3vw;
   }
   .listMajors .row .form-field h3{
-    font-size: 4.5vw;
+    font-size: 4vw;
   }
   .mobile{
     min-width: 180px;
