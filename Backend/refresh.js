@@ -350,7 +350,8 @@ export async function refresh(nextIdNum){
         if(sendOrNot != 0){
             // console.log(`dataToSend[${moment().format('YYYYMMDD, h:mm:ss a')}]:`);
             // console.log(dataToSend);
-            mailHandler(userDataBase[i].name, userDataBase[i].email, dataToSend, i);
+            mailHandler(userDataBase[i].name, userDataBase[i].email, dataToSend, i, "false");
+            // recipientName, recipientEmail, data, id, IsItSubMail
             sendOrNot = 0;
             dataToSend = [];
         }
