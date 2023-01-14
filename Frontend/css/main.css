@@ -50,7 +50,7 @@ html {
 }
 @media only screen and (max-width: 768px) {
   html {
-    font-size: 10px;
+    font-size: 9.375px;
   }
 }
 @media only screen and (max-width: 400px) {
@@ -65,7 +65,7 @@ html, body {
 
 body {
   background: #111111;
-  font-family: "librebaskerville-regular", serif;
+  font-family: 'Noto Sans KR', sans-serif;
   font-size: 1.6rem;
   line-height: 3rem;
   color: #353535;
@@ -157,7 +157,7 @@ p img {
 }
 
 p.lead {
-  font-family: "montserrat-regular", sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
   font-size: 2rem;
   line-height: 1.8;
   color: #4f4f4f;
@@ -177,11 +177,11 @@ em, i, strong, b {
 }
 
 em, i {
-  font-family: "librebaskerville-italic", serif;
+  font-family:'Noto Sans KR', sans-serif;
 }
 
 strong, b {
-  font-family: "librebaskerville-bold", serif;
+  font-family:'Noto Sans KR', sans-serif;
 }
 
 small {
@@ -201,14 +201,14 @@ blockquote:before {
   line-height: 0px;
   margin: 0;
   color: rgba(0, 0, 0, 0.3);
-  font-family: arial, sans-serif;
+  font-family:'Noto Sans KR', sans-serif;
   position: absolute;
   top: 3.6rem;
   left: 0;
 }
 
 blockquote p {
-  font-family: "librebaskerville-italic", georgia, serif;
+  font-family:'Noto Sans KR', sans-serif;
   font-style: italic;
   padding: 0;
   font-size: 1.9rem;
@@ -233,7 +233,7 @@ blockquote cite a:visited {
 }
 
 abbr {
-  font-family: "librebaskerville-bold", serif;
+  font-family:'Noto Sans KR', sans-serif;
   font-variant: small-caps;
   text-transform: lowercase;
   letter-spacing: .05rem;
@@ -241,7 +241,7 @@ abbr {
 }
 
 var, kbd, samp, code, pre {
-  font-family: Consolas, "Andale Mono", Courier, "Courier New", monospace;
+  font-family:'Noto Sans KR', sans-serif;
 }
 
 pre {
@@ -406,7 +406,7 @@ img.pull-left {
 }
 @media only screen and (max-width: 600px) {
   .bgrid {
-    padding: 0 10px;
+    padding: 0;
   }
 }
 @media only screen and (max-width: 400px) {
@@ -422,7 +422,7 @@ table {
   border-width: 0;
   width: 100%;
   max-width: 100%;
-  font-family: "librebaskerville-regular", sans-serif;
+  font-family:'Noto Sans KR', sans-serif;
 }
 
 th,
@@ -1135,7 +1135,7 @@ input::-moz-focus-inner {
   margin-bottom: 1.5rem;
 }
 .section-intro h1 {
-  font-family: "librebaskerville-bold", serif;
+  font-family:'Noto Sans KR', sans-serif;
   font-size: 4.8rem;
   line-height: 1.375;
   color: #151515;
@@ -1467,7 +1467,7 @@ header .header-logo a {
   transform: rotate(45deg);
 }
 #menu-nav-wrap .sponsor-text {
-  font-family: "librebaskerville-regular", serif;
+  font-family:'Noto Sans KR', sans-serif;
   font-size: 1.4rem;
   line-height: 3rem;
 }
@@ -1807,7 +1807,7 @@ html[data-useragent*='MSIE 10.0'] .scrolldown,
   margin: 0 auto 2.4rem;
 }
 #about .lead {
-  font-family: "librebaskerville-bold", serif;
+  font-family:'Noto Sans KR', sans-serif;
   font-size: 4rem;
   line-height: 1.8;
   color: #2e383f;
@@ -2294,14 +2294,14 @@ html[data-useragent*='MSIE 10.0'] .scrolldown,
   padding-bottom: 3rem;
 }
 #testimonial-slider p {
-  font-family: "librebaskerville-bold", serif;
+  font-family:'Noto Sans KR', sans-serif;
   font-size: 3rem;
   line-height: 1.8;
   color: #151515;
 }
 #testimonial-slider p::before, #testimonial-slider p::after {
   display: inline-block;
-  font-family: "librebaskerville-bold", serif;
+  font-family:'Noto Sans KR', sans-serif;
   font-size: 3.6rem;
   line-height: 1;
 }
@@ -2326,7 +2326,7 @@ html[data-useragent*='MSIE 10.0'] .scrolldown,
   display: inline-block;
   vertical-align: middle;
   text-align: center;
-  font-family: "librebaskerville-bold", sans-serif;
+  font-family:'Noto Sans KR', sans-serif;
   font-size: 2rem;
   margin-top: .9rem;
   margin-bottom: 3rem;
@@ -2405,7 +2405,7 @@ html[data-useragent*='MSIE 10.0'] .scrolldown,
 }
 @media only screen and (max-width: 600px) {
   #testimonials .flex-container {
-    width: 90%;
+    width: 0%;
   }
 
   #testimonial-slider p {
@@ -2510,7 +2510,7 @@ html[data-useragent*='MSIE 10.0'] .scrolldown,
 #subscribe {
   background-color: #111111;
   background-image: url(../images/subscribe-bg.jpg);
-  background-repeat: no-repeat;
+  background-repeat: repeat-y;
   background-position: center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -2539,6 +2539,8 @@ html[data-useragent*='MSIE 10.0'] .scrolldown,
 
 .subscribe-content {
   max-width: 1024px;
+  /* max-width: max-content; */
+  /* edit : max-width: 1024px; */
   margin-top: 3rem;
   color: #FFFFFF;
   z-index: 600;
@@ -2566,7 +2568,7 @@ html[data-useragent*='MSIE 10.0'] .scrolldown,
 }
 #subscribe form .row{
   font-size: 16px;
-  line-height: 0.2em;
+  line-height: 0.1em;
   display: inline-block;
 }
 
@@ -2772,41 +2774,54 @@ html[data-useragent*='MSIE 10.0'] .scrolldown,
   }
 }
 
-.mobile{
-  clear: both;
-  padding-left: 30px;
-  padding-right: 30px;
-  display: inline-block;
-}
-.listMajors{
-  clear: both;
-  padding-left: -40px;
-  padding-right: -40px;
-}
 /* .mobile input{
   background-color: #2e383f;
   display: inline-block;
 } */
 
+/* .listMajors .row .form-field{
+  font-size: small;
+}
+.listMajors .row .form-field h3{
+  font-size: medium;
+  letter-spacing: -1px;
+} */
 
 
+.listMajors{
+  /* display:table; */
+  width:100%;
+  margin: auto;
+}
+.mobile{
+  /* flex: 1; */
+  /* display: inline-block;
+  clear: both; */
+  min-width: 210px;
+  max-width: 33%;
+  vertical-align: top;
+  /* display: table-cell; */
+  /* padding: 0,10px,0,10px; */
+}
+.subscribe-content{
+  text-align: center;
+}
+#list-one{
+  margin-right: -20px;
+}
+#list-two{
+  margin-left: -20px;
+}
 /* ------------------------------------------------------------------- 
  * responsive:
  * subscribe 
  * ------------------------------------------------------------------- */
-@media only screen and (max-width: 900px) {
+ @media only screen and (max-width: 900px) {
+
+}
+@media only screen and (max-width: 768px) {
   .subscribe-content {
-    max-width: fit-content;
-    margin: auto;
-    width: 100%;
-    text-align: center;
-    font-size: 1vw;
-  }
-  .listMajors .row .form-field{
-    font-size: small;
-  }
-  .listMajors .row .form-field h3{
-    font-size: medium;
+    /* max-width: 600px; */
   }
 
   .subscribe-info {
@@ -2816,20 +2831,41 @@ html[data-useragent*='MSIE 10.0'] .scrolldown,
 }
 @media only screen and (max-width: 600px) {
   .subscribe-content {
-    max-width: 480px;
+    /* max-width: 480px; */
   }
-  .listMajors{
-    width: auto;
-    margin: auto;
-  }
+}
+@media only screen and (max-width: 413px) {
   .listMajors .row .form-field{
-    font-size: 2vw;
+    font-size: 3.88vw;
   }
   .listMajors .row .form-field h3{
-    font-size: 3vw;
+    font-size: 4.5vw;
   }
   .mobile{
-    width: 50%;
+    min-width: 180px;
+    max-width: 50%;
+    vertical-align: top;
+    /* display: table-cell; */
+    /* padding: 0,10px,0,10px; */
+  }
+}
+/*  */
+ /* @media only screen and (max-width: 900px) {
+  .subscribe-content {
+    max-width: fit-content;
+    margin: auto;
+    width: 100%;
+    text-align: center;
+    font-size: 1vw;
+  }
+  .subscribe-info {
+    width: 100%;
+    margin-top: 3.6rem;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .subscribe-content {
+    max-width: 480px;
   }
 }
 @media only screen and (max-width: 400px) {
@@ -2837,8 +2873,6 @@ html[data-useragent*='MSIE 10.0'] .scrolldown,
     width: 100% !important;
     float: none !important;
     clear: both !important;
-    margin-left: 0;
-    margin-right: 0;
     margin-top: 3.6rem;
     padding: 0;
   }
@@ -2847,19 +2881,9 @@ html[data-useragent*='MSIE 10.0'] .scrolldown,
   }
   .listMajors .row .form-field h3{
     font-size: 3vw;
+    letter-spacing: -1px;
   }
-  #list-one{
-    padding-left: -10px;
-  }
-  #list-two{
-    padding-right: -10px;
-  }
-  .mobile{
-    width: 50%;
-    min-width: 10rem;
-  }
-  
-}
+} */
 
 
 /* ===================================================================

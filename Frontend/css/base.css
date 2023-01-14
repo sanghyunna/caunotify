@@ -17,7 +17,7 @@
  *
  * ------------------------------------------------------------------- */
 html {
-  font-family: sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
@@ -133,7 +133,7 @@ code,
 kbd,
 pre,
 samp {
-  font-family: monospace, monospace;
+  font-family: 'Noto Sans KR', sans-serif;
   font-size: 1em;
 }
 
@@ -487,21 +487,21 @@ textarea {
  * large mobile devices - (_grid.scss)
  * ------------------------------------------------------------------- */
 @media screen and (max-width: 600px) {
-  .row {
+  /* .row {
     padding-left: 25px;
     padding-right: 25px;
-  }
+  } */
   .mobile {
     width: auto;
   }
 
-  .row .row {
+  /* .row .row {
     margin-left: -10px;
     margin-right: -10px;
-  }
+  } */
 
   [class*="col-"] {
-    padding: 0 10px;
+    padding: 0 0px;
   }
 
   .mob-1-4 {
