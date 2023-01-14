@@ -281,11 +281,11 @@ server.listen(PORT, function(){
 });
 
 setInterval(() => {
-    refresh(nextIdNum);
-    // if(DayOrNight == "Day"){
-    //     refresh(nextIdNum);
-    //     console.log("*** interval reached");
-    // }
-    // else console.log("* interval skipped - Night");
+    // refresh(nextIdNum);
+    if(DayOrNight == "Day"){
+        refresh(nextIdNum);
+        console.log("*** interval reached");
+    }
+    else console.log("* interval skipped - Night");
 }, refreshTimeInMinutes*60*1000);
 // console.log("refreshed") 가 아니라, refresh() 를 실행시켜야 함.
