@@ -69,7 +69,7 @@ export function sendTemplateEmail(recipientEmail,recipientName,id){
     return AWS_SES.sendTemplatedEmail(params).promise();
 };
 // console.log(SES_CONFIG);
-sendTemplateEmail("na_sanghyun@naver.com","나나상현",99);
+// sendTemplateEmail("na_sanghyun@naver.com","나나상현",99);
 
 // Handle promise's fulfilled/rejected states
 // sendEmail_("na_sanghyun@naver.com").then(
