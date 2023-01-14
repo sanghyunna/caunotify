@@ -12,7 +12,7 @@ import bodyParser from "body-parser";
 import fs from "fs"
 import path from 'path';
 import { fileURLToPath } from 'url';
-import moment from 'moment';
+import moment from 'moment-timezone';
 
 // Personal Code
 import { refresh } from "./refresh.js"
@@ -60,7 +60,7 @@ const __dirname = path.dirname(__filename);
 const PORT = 80;
 const app = express();
 const server = http.createServer(app);
-const refreshTimeInMinutes = 30; // 30분에 한번씩 refresh() 실행
+const refreshTimeInMinutes = 10; // 30분에 한번씩 refresh() 실행
 
 
 // 유저별 구독 정보 저장
