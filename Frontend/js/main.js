@@ -300,8 +300,11 @@
 
   /* subscribe Form
    * ------------------------------------------------------ */
-  document.getElementById('instaClicked').onclick = function () {
-    alert("아직 인스타그램 계정이 없습니다?");
+document.getElementById('instaClicked').onclick = function () {
+    alert("아직 인스타그램 계정이 없습니다😥");
+};  
+document.getElementById('instaClicked2').onclick = function () {
+    alert("아직 인스타그램 계정이 없습니다😥");
 };  
  
   var sssubscribeForm = function() {   	
