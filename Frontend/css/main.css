@@ -2823,7 +2823,7 @@ html[data-useragent*='MSIE 10.0'] .scrolldown,
 }
 @media only screen and (max-width: 768px) {
   .subscribe-content {
-    /* max-width: 600px; */
+    max-width: 600px;
   }
 
   .subscribe-info {
@@ -2833,7 +2833,7 @@ html[data-useragent*='MSIE 10.0'] .scrolldown,
 }
 @media only screen and (max-width: 600px) {
   .subscribe-content {
-    /* max-width: 480px; */
+    max-width: 480px;
   }
 }
 @media only screen and (max-width: 435px) {
