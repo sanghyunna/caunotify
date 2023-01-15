@@ -1021,6 +1021,7 @@ export async function updateFiles(){
         if (err) console.log(err);
         else console.log("pharm.json written successfully");
     });
+    const new_ADPR = await waitWithTimeout(crawlADPR("url"),1*60*1000);
     fs.writeFile("./compare_list/ADPR.json", JSON.stringify(new_ADPR, null, 4), "utf8", (err) => {
         if (err) console.log(err);
         else console.log("ADPR.json written successfully");
