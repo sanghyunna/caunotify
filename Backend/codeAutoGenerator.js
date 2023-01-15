@@ -1,6 +1,38 @@
 // AUTO GENERATOR
 const Major = [];
 const major = [
+    "industSec",
+    "software",
+    "CAUnotice",
+    "integEngineering",
+    "korean",
+    "mechEngineering",
+    "psychology",
+    "business",
+    "elecEngineering",
+    "english",
+    "enerEngineering",
+    "urbanPlanRealEstate",
+    "nursing",
+    "politics",
+    "physicalEd",
+    "education",
+    "earlyChildhoodEd",
+    "englishEd",
+    "chem",
+    "lifeScience",
+    "japanese",
+    "chinese",
+    "math",
+    "ai",
+    "chemEngineering",
+    "logistics",
+    "econ",
+    "physics",
+    "libInfoScience",
+    "mediaComm",
+    "sociology",
+    "socialWelfare",
     "russian",
     "french",
     "german",
@@ -12,7 +44,8 @@ const major = [
     "architecture",
     "appliedStat",
     "med",
-    "pharm"
+    "pharm",
+    "ADPR"
 ];
 const len = major.length;
 for(let i=0;i<len;i++){
