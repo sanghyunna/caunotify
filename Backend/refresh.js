@@ -294,6 +294,7 @@ export async function refresh(nextIdNum, silentMode){
         console.log("*** No Updates!");
         return; // 바뀐 내용이 없으면 조기 리턴하여 연산량을 줄임
     }
+    else console.log("*** Updates on the way!");
 
 
     // ********************************************************************
