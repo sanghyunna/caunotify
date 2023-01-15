@@ -95,6 +95,9 @@ app.use('/public', express.static(path.join(__dirname, '..', 'Frontend', 'public
 app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname, '..', 'Frontend', 'index.html'));
 });
+app.get('/css/main2.css', function(req, res) {
+    res.sendFile(path.join(__dirname, '..', 'Frontend', 'css', 'main2.css'));
+});
 
 app.get('/unsubscribe', function(req, res) { // 구독해지 요청
     const idNum = decryptStringToInt(req.query.id);
