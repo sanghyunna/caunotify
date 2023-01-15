@@ -46,6 +46,7 @@
         "appliedStat": "true",
         "med": "true",
         "pharm": "true",
+        "ADPR": "true",
         "id": 0,
         "subStatus": "true"
     },
@@ -96,6 +97,7 @@
         "appliedStat": "false",
         "med": "false",
         "pharm": "false",
+        "ADPR": "false",
         "id": 1,
         "subStatus": "true"
     },
@@ -146,6 +148,7 @@
         "appliedStat": "false",
         "med": "false",
         "pharm": "false",
+        "ADPR": "false",
         "id": 2,
         "subStatus": "true"
     }
