@@ -229,6 +229,7 @@ app.post('/delLastUser', (req, res) => {
     console.log("** Deleted last user");
     nextIdNum--;
     console.log(`nextIdNum : ${nextIdNum}`);
+    fs.writeFileSync(path.join(__dirname, 'userDB_log', 'nextIdNum.txt'), nextIdNum.toString(), "utf8");
     userDataBase.pop();
     updateUserDB("delLastUser");
     return res.end(JSON.stringify(userDataBase,null,4));
