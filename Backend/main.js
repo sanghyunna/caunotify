@@ -60,7 +60,7 @@ const __dirname = path.dirname(__filename);
 const PORT = 80;
 const app = express();
 const server = http.createServer(app);
-const refreshTimeInMinutes = 30; // 30분에 한번씩 refresh() 실행
+const refreshTimeInMinutes = 10; // 30분에 한번씩 refresh() 실행
 
 
 // 유저별 구독 정보 저장
@@ -284,11 +284,11 @@ server.listen(PORT, function(){
 });
 
 setInterval(() => {
-    // refresh(nextIdNum,1);
-    if(DayOrNight == "Day"){
-        refresh(nextIdNum,1);
-        console.log("*** interval reached");
-    }
-    else console.log("* interval skipped - Night");
+    refresh(nextIdNum,1);
+    // if(DayOrNight == "Day"){
+    //     refresh(nextIdNum,1);
+    //     console.log("*** interval reached");
+    // }
+    // else console.log("* interval skipped - Night");
 }, refreshTimeInMinutes*60*1000);
 // console.log("refreshed") 가 아니라, refresh() 를 실행시켜야 함.
