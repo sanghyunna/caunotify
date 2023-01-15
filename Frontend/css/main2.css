@@ -2810,9 +2810,9 @@ html[data-useragent*='MSIE 10.0'] .scrolldown,
 /* #list-one{
   margin-right: -20px;
 } */
-#list-two{
- /* margin-left: -20px;*/
-}
+/* #list-two{
+ margin-left: -20px;
+} */
 /* ------------------------------------------------------------------- 
  * responsive:
  * subscribe 
@@ -2847,7 +2847,7 @@ html[data-useragent*='MSIE 10.0'] .scrolldown,
     max-width: 50%;
     vertical-align: top;
     /* display: table-cell; */
-    padding: 0,10px;
+    /* padding: 0,10px; */
   }
 }
 /*  */
