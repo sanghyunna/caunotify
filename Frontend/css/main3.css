@@ -2835,7 +2835,7 @@ html[data-useragent*='MSIE 10.0'] .scrolldown,
     max-width: 480px;
   }
 }
-@media only screen and (max-width: 435px) {
+@media only screen and (max-width: 473px) {
   .listMajors .row .form-field{
     font-size: 3vw;
   }
