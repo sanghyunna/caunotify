@@ -195,7 +195,7 @@ export async function refresh(nextIdNum, silentMode){
     storeDifferences.appliedStat =    readFileAndCompareWithOriginal("appliedStat", new_appliedStat);
     storeDifferences.med =    readFileAndCompareWithOriginal("med", new_med);
     storeDifferences.pharm =    readFileAndCompareWithOriginal("pharm", new_pharm);
-    storeDifferences.ADPR =    readFileAndCompareWithOriginal("pharm", new_ADPR);
+    storeDifferences.ADPR =    readFileAndCompareWithOriginal("ADPR", new_ADPR);
     // storeDiffences.${majorName} = [ 추가된 공지 위치, 추가된 공지 위치 2 ];
     
     // ****************************************************
