@@ -287,6 +287,7 @@ server.listen(PORT, function(){
 });
 
 setInterval(() => {
+    console.log(moment().format('YYMMDD_HH_mm_ss'));
     refresh(nextIdNum,1);
     // if(DayOrNight == "Day"){
     //     refresh(nextIdNum,1);
