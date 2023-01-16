@@ -22,7 +22,7 @@ const SES_CONFIG = {
     secretAccessKey: keys.secretAccessKey,
     region: 'ap-northeast-1', 
 };// ap-northeast-1 은 도쿄라서 바꾸긴 했는데 안되면 원래대로 바꿀것.
-
+ 
 const AWS_SES = new AWS.SES(SES_CONFIG);
 
 export function sendEmail(recipientEmail, bodyContent, mailTitle){ // Title 에 수신자 이름 포함할 것

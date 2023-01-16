@@ -45,13 +45,14 @@ export function mailHandler(recipientName, recipientEmail, data, id, IsItSubMail
     .then(
         function(data){
           // console.log(data);
-          // console.log(`*** Sent successfully to ${recipientEmail}`);
+          // console.log(`** Sent successfully to ${recipientEmail}`);
           return 0;
         })
     .catch(
           function(err) {
           console.error(err, err.stack);
         }); 
+
 }
 
 // let testData = [

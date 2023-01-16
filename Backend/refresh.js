@@ -379,7 +379,7 @@ export async function refresh(nextIdNum, silentMode){
             title: new_industSec.title
         };
         fs.writeFile(path.join(__dirname, 'compare_list', 'industSec.json'), JSON.stringify(industSecObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("industSec updated successfully"); }
+            if (err) { console.log(err); } else { console.log("industSec updated"); }
         });
     }
     if (storeDifferences.software.length != 0) {
@@ -388,7 +388,7 @@ export async function refresh(nextIdNum, silentMode){
             title: new_software.title
         };
         fs.writeFile(path.join(__dirname, 'compare_list', 'software.json'), JSON.stringify(softwareObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("software updated successfully"); }
+            if (err) { console.log(err); } else { console.log("software updated"); }
         });
     }
     if (storeDifferences.CAUnotice.length != 0) {
@@ -397,7 +397,7 @@ export async function refresh(nextIdNum, silentMode){
             title: new_CAUnotice.title
         };
         fs.writeFile(path.join(__dirname, 'compare_list', 'CAUnotice.json'), JSON.stringify(CAUnoticeObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("CAUnotice updated successfully"); }
+            if (err) { console.log(err); } else { console.log("CAUnotice updated"); }
         });
     }
     if (storeDifferences.integEngineering.length != 0) {
@@ -406,7 +406,7 @@ export async function refresh(nextIdNum, silentMode){
             title: new_integEngineering.title
         };
         fs.writeFile(path.join(__dirname, 'compare_list', 'integEngineering.json'), JSON.stringify(integEngineeringObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("integEngineering updated successfully"); }
+            if (err) { console.log(err); } else { console.log("integEngineering updated"); }
         });
     }
     if (storeDifferences.korean.length != 0) {
@@ -415,7 +415,7 @@ export async function refresh(nextIdNum, silentMode){
             title: new_korean.title
         };
         fs.writeFile(path.join(__dirname, 'compare_list', 'korean.json'), JSON.stringify(koreanObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("korean updated successfully"); }
+            if (err) { console.log(err); } else { console.log("korean updated"); }
         });
     }
     if (storeDifferences.mechEngineering.length != 0) {
@@ -424,7 +424,7 @@ export async function refresh(nextIdNum, silentMode){
             title: new_mechEngineering.title
         };
         fs.writeFile(path.join(__dirname, 'compare_list', 'mechEngineering.json'), JSON.stringify(mechEngineeringObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("mechEngineering updated successfully"); }
+            if (err) { console.log(err); } else { console.log("mechEngineering updated"); }
         });
     }
     if (storeDifferences.psychology.length != 0) {
@@ -433,7 +433,7 @@ export async function refresh(nextIdNum, silentMode){
             title: new_psychology.title
         };
         fs.writeFile(path.join(__dirname, 'compare_list', 'psychology.json'), JSON.stringify(psychologyObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("psychology updated successfully"); }
+            if (err) { console.log(err); } else { console.log("psychology updated"); }
         });
     }
     if (storeDifferences.business.length != 0) {
@@ -442,7 +442,7 @@ export async function refresh(nextIdNum, silentMode){
             title: new_business.title
         };
         fs.writeFile(path.join(__dirname, 'compare_list', 'business.json'), JSON.stringify(businessObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("business updated successfully"); }
+            if (err) { console.log(err); } else { console.log("business updated"); }
         });
     }
     if (storeDifferences.elecEngineering.length != 0) {
@@ -451,7 +451,7 @@ export async function refresh(nextIdNum, silentMode){
             title: new_elecEngineering.title
         };
         fs.writeFile(path.join(__dirname, 'compare_list', 'elecEngineering.json'), JSON.stringify(elecEngineeringObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("elecEngineering updated successfully"); }
+            if (err) { console.log(err); } else { console.log("elecEngineering updated"); }
         });
     }
     if (storeDifferences.english.length != 0) {
@@ -460,7 +460,7 @@ export async function refresh(nextIdNum, silentMode){
             title: new_english.title
         };
         fs.writeFile(path.join(__dirname, 'compare_list', 'english.json'), JSON.stringify(englishObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("english updated successfully"); }
+            if (err) { console.log(err); } else { console.log("english updated"); }
         });
     }
     if (storeDifferences.enerEngineering.length != 0) {
@@ -469,7 +469,7 @@ export async function refresh(nextIdNum, silentMode){
             title: new_enerEngineering.title
         };
         fs.writeFile(path.join(__dirname, 'compare_list', 'enerEngineering.json'), JSON.stringify(enerEngineeringObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("enerEngineering updated successfully"); }
+            if (err) { console.log(err); } else { console.log("enerEngineering updated"); }
         });
     }
     if (storeDifferences.urbanPlanRealEstate.length != 0) {
@@ -478,7 +478,7 @@ export async function refresh(nextIdNum, silentMode){
             title: new_urbanPlanRealEstate.title
         };
         fs.writeFile(path.join(__dirname, 'compare_list', 'urbanPlanRealEstate.json'), JSON.stringify(urbanPlanRealEstateObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("urbanPlanRealEstate updated successfully"); }
+            if (err) { console.log(err); } else { console.log("urbanPlanRealEstate updated"); }
         });
     }
     if (storeDifferences.nursing.length != 0) {
@@ -487,7 +487,7 @@ export async function refresh(nextIdNum, silentMode){
             title: new_nursing.title
         };
         fs.writeFile(path.join(__dirname, 'compare_list', 'nursing.json'), JSON.stringify(nursingObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("nursing updated successfully"); }
+            if (err) { console.log(err); } else { console.log("nursing updated"); }
         });
     }
     if (storeDifferences.politics.length != 0) {
@@ -496,7 +496,7 @@ export async function refresh(nextIdNum, silentMode){
             title: new_politics.title
         };
         fs.writeFile(path.join(__dirname, 'compare_list', 'politics.json'), JSON.stringify(politicsObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("politics updated successfully"); }
+            if (err) { console.log(err); } else { console.log("politics updated"); }
         });
     }
     if (storeDifferences.physicalEd.length != 0) {
@@ -505,7 +505,7 @@ export async function refresh(nextIdNum, silentMode){
             title: new_physicalEd.title
         };
         fs.writeFile(path.join(__dirname, 'compare_list', 'physicalEd.json'), JSON.stringify(physicalEdObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("physicalEd updated successfully"); }
+            if (err) { console.log(err); } else { console.log("physicalEd updated"); }
         });
     }
     if (storeDifferences.education.length != 0) {
@@ -514,7 +514,7 @@ export async function refresh(nextIdNum, silentMode){
             title: new_education.title
         };
         fs.writeFile(path.join(__dirname, 'compare_list', 'education.json'), JSON.stringify(educationObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("education updated successfully"); }
+            if (err) { console.log(err); } else { console.log("education updated"); }
         });
     }
     if (storeDifferences.earlyChildhoodEd.length != 0) {
@@ -523,7 +523,7 @@ export async function refresh(nextIdNum, silentMode){
             title: new_earlyChildhoodEd.title
         };
         fs.writeFile(path.join(__dirname, 'compare_list', 'earlyChildhoodEd.json'), JSON.stringify(earlyChildhoodEdObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("earlyChildhoodEd updated successfully"); }
+            if (err) { console.log(err); } else { console.log("earlyChildhoodEd updated"); }
         });
     }
     if (storeDifferences.englishEd.length != 0) {
@@ -532,7 +532,7 @@ export async function refresh(nextIdNum, silentMode){
             title: new_englishEd.title
         };
         fs.writeFile(path.join(__dirname, 'compare_list', 'englishEd.json'), JSON.stringify(englishEdObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("englishEd updated successfully"); }
+            if (err) { console.log(err); } else { console.log("englishEd updated"); }
         });
     }
     if (storeDifferences.chem.length != 0) {
@@ -541,7 +541,7 @@ export async function refresh(nextIdNum, silentMode){
             title: new_chem.title
         };
         fs.writeFile(path.join(__dirname, 'compare_list', 'chem.json'), JSON.stringify(chemObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("chem updated successfully"); }
+            if (err) { console.log(err); } else { console.log("chem updated"); }
         });
     }
     if (storeDifferences.lifeScience.length != 0) {
@@ -550,7 +550,7 @@ export async function refresh(nextIdNum, silentMode){
             title: new_lifeScience.title
         };
         fs.writeFile(path.join(__dirname, 'compare_list', 'lifeScience.json'), JSON.stringify(lifeScienceObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("lifeScience updated successfully"); }
+            if (err) { console.log(err); } else { console.log("lifeScience updated"); }
         });
     }
     if (storeDifferences.japanese.length != 0) {
@@ -559,7 +559,7 @@ export async function refresh(nextIdNum, silentMode){
             title: new_japanese.title
         };
         fs.writeFile(path.join(__dirname, 'compare_list', 'japanese.json'), JSON.stringify(japaneseObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("japanese updated successfully"); }
+            if (err) { console.log(err); } else { console.log("japanese updated"); }
         });
     }
     if (storeDifferences.chinese.length != 0) {
@@ -568,7 +568,7 @@ export async function refresh(nextIdNum, silentMode){
             title: new_chinese.title
         };
         fs.writeFile(path.join(__dirname, 'compare_list', 'chinese.json'), JSON.stringify(chineseObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("chinese updated successfully"); }
+            if (err) { console.log(err); } else { console.log("chinese updated"); }
         });
     }
     if (storeDifferences.math.length != 0) {
@@ -577,7 +577,7 @@ export async function refresh(nextIdNum, silentMode){
             title: new_math.title
         };
         fs.writeFile(path.join(__dirname, 'compare_list', 'math.json'), JSON.stringify(mathObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("math updated successfully"); }
+            if (err) { console.log(err); } else { console.log("math updated"); }
         });
     }
     if (storeDifferences.ai.length != 0) {
@@ -586,7 +586,7 @@ export async function refresh(nextIdNum, silentMode){
             title: new_ai.title
         };
         fs.writeFile(path.join(__dirname, 'compare_list', 'ai.json'), JSON.stringify(aiObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("ai updated successfully"); }
+            if (err) { console.log(err); } else { console.log("ai updated"); }
         });
     }
     if (storeDifferences.chemEngineering.length != 0) {
@@ -595,7 +595,7 @@ export async function refresh(nextIdNum, silentMode){
             title: new_chemEngineering.title
         };
         fs.writeFile(path.join(__dirname, 'compare_list', 'chemEngineering.json'), JSON.stringify(chemEngineeringObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("chemEngineering updated successfully"); }
+            if (err) { console.log(err); } else { console.log("chemEngineering updated"); }
         });
     }
     if (storeDifferences.logistics.length != 0) {
@@ -604,7 +604,7 @@ export async function refresh(nextIdNum, silentMode){
             title: new_logistics.title
         };
         fs.writeFile(path.join(__dirname, 'compare_list', 'logistics.json'), JSON.stringify(logisticsObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("logistics updated successfully"); }
+            if (err) { console.log(err); } else { console.log("logistics updated"); }
         });
     }
     if (storeDifferences.econ.length != 0) {
@@ -613,7 +613,7 @@ export async function refresh(nextIdNum, silentMode){
             title: new_econ.title
         };
         fs.writeFile(path.join(__dirname, 'compare_list', 'econ.json'), JSON.stringify(econObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("econ updated successfully"); }
+            if (err) { console.log(err); } else { console.log("econ updated"); }
         });
     }
     if (storeDifferences.physics.length != 0) {
@@ -622,7 +622,7 @@ export async function refresh(nextIdNum, silentMode){
             title: new_physics.title
         };
         fs.writeFile(path.join(__dirname, 'compare_list', 'physics.json'), JSON.stringify(physicsObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("physics updated successfully"); }
+            if (err) { console.log(err); } else { console.log("physics updated"); }
         });
     }
     if (storeDifferences.libInfoScience.length != 0) {
@@ -631,7 +631,7 @@ export async function refresh(nextIdNum, silentMode){
             title: new_libInfoScience.title
         };
         fs.writeFile(path.join(__dirname, 'compare_list', 'libInfoScience.json'), JSON.stringify(libInfoScienceObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("libInfoScience updated successfully"); }
+            if (err) { console.log(err); } else { console.log("libInfoScience updated"); }
         });
     }
     if (storeDifferences.mediaComm.length != 0) {
@@ -640,7 +640,7 @@ export async function refresh(nextIdNum, silentMode){
             title: new_mediaComm.title
         };
         fs.writeFile(path.join(__dirname, 'compare_list', 'mediaComm.json'), JSON.stringify(mediaCommObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("mediaComm updated successfully"); }
+            if (err) { console.log(err); } else { console.log("mediaComm updated"); }
         });
     }
     if (storeDifferences.sociology.length != 0) {
@@ -649,7 +649,7 @@ export async function refresh(nextIdNum, silentMode){
             title: new_sociology.title
         };
         fs.writeFile(path.join(__dirname, 'compare_list', 'sociology.json'), JSON.stringify(sociologyObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("sociology updated successfully"); }
+            if (err) { console.log(err); } else { console.log("sociology updated"); }
         });
     }
     if (storeDifferences.socialWelfare.length != 0) {
@@ -658,7 +658,7 @@ export async function refresh(nextIdNum, silentMode){
             title: new_socialWelfare.title
         };
         fs.writeFile(path.join(__dirname, 'compare_list', 'socialWelfare.json'), JSON.stringify(socialWelfareObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("socialWelfare updated successfully"); }
+            if (err) { console.log(err); } else { console.log("socialWelfare updated"); }
         });
     }
     if (storeDifferences.russian.length != 0) {
@@ -667,7 +667,7 @@ export async function refresh(nextIdNum, silentMode){
             title: new_russian.title
         };
         fs.writeFile(path.join(__dirname, 'compare_list', 'russian.json'), JSON.stringify(russianObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("russian updated successfully"); }
+            if (err) { console.log(err); } else { console.log("russian updated"); }
         });
     }
     if (storeDifferences.french.length != 0) {
@@ -676,7 +676,7 @@ export async function refresh(nextIdNum, silentMode){
             title: new_french.title
         };
         fs.writeFile(path.join(__dirname, 'compare_list', 'french.json'), JSON.stringify(frenchObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("french updated successfully"); }
+            if (err) { console.log(err); } else { console.log("french updated"); }
         });
     }
     if (storeDifferences.german.length != 0) {
@@ -685,7 +685,7 @@ export async function refresh(nextIdNum, silentMode){
             title: new_german.title
         };
         fs.writeFile(path.join(__dirname, 'compare_list', 'german.json'), JSON.stringify(germanObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("german updated successfully"); }
+            if (err) { console.log(err); } else { console.log("german updated"); }
         });
     }
     if (storeDifferences.philosophy.length != 0) {
@@ -694,7 +694,7 @@ export async function refresh(nextIdNum, silentMode){
             title: new_philosophy.title
         };
         fs.writeFile(path.join(__dirname, 'compare_list', 'philosophy.json'), JSON.stringify(philosophyObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("philosophy updated successfully"); }
+            if (err) { console.log(err); } else { console.log("philosophy updated"); }
         });
     }
     if (storeDifferences.history.length != 0) {
@@ -703,7 +703,7 @@ export async function refresh(nextIdNum, silentMode){
             title: new_history.title
         };
         fs.writeFile(path.join(__dirname, 'compare_list', 'history.json'), JSON.stringify(historyObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("history updated successfully"); }
+            if (err) { console.log(err); } else { console.log("history updated"); }
         });
     }
     if (storeDifferences.publicService.length != 0) {
@@ -712,7 +712,7 @@ export async function refresh(nextIdNum, silentMode){
             title: new_publicService.title
         };
         fs.writeFile(path.join(__dirname, 'compare_list', 'publicService.json'), JSON.stringify(publicServiceObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("publicService updated successfully"); }
+            if (err) { console.log(err); } else { console.log("publicService updated"); }
         });
     }
     if (storeDifferences.civilEnvPlanEng.length != 0) {
@@ -721,7 +721,7 @@ export async function refresh(nextIdNum, silentMode){
             title: new_civilEnvPlanEng.title
         };
         fs.writeFile(path.join(__dirname, 'compare_list', 'civilEnvPlanEng.json'), JSON.stringify(civilEnvPlanEngObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("civilEnvPlanEng updated successfully"); }
+            if (err) { console.log(err); } else { console.log("civilEnvPlanEng updated"); }
         });
     }
     if (storeDifferences.urbanEngineering.length != 0) {
@@ -730,7 +730,7 @@ export async function refresh(nextIdNum, silentMode){
             title: new_urbanEngineering.title
         };
         fs.writeFile(path.join(__dirname, 'compare_list', 'urbanEngineering.json'), JSON.stringify(urbanEngineeringObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("urbanEngineering updated successfully"); }
+            if (err) { console.log(err); } else { console.log("urbanEngineering updated"); }
         });
     }
     if (storeDifferences.architecture.length != 0) {
@@ -739,7 +739,7 @@ export async function refresh(nextIdNum, silentMode){
             title: new_architecture.title
         };
         fs.writeFile(path.join(__dirname, 'compare_list', 'architecture.json'), JSON.stringify(architectureObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("architecture updated successfully"); }
+            if (err) { console.log(err); } else { console.log("architecture updated"); }
         });
     }
     if (storeDifferences.appliedStat.length != 0) {
@@ -748,7 +748,7 @@ export async function refresh(nextIdNum, silentMode){
             title: new_appliedStat.title
         };
         fs.writeFile(path.join(__dirname, 'compare_list', 'appliedStat.json'), JSON.stringify(appliedStatObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("appliedStat updated successfully"); }
+            if (err) { console.log(err); } else { console.log("appliedStat updated"); }
         });
     }
     if (storeDifferences.med.length != 0) {
@@ -757,7 +757,7 @@ export async function refresh(nextIdNum, silentMode){
             title: new_med.title
         };
         fs.writeFile(path.join(__dirname, 'compare_list', 'med.json'), JSON.stringify(medObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("med updated successfully"); }
+            if (err) { console.log(err); } else { console.log("med updated"); }
         });
     }
     if (storeDifferences.pharm.length != 0) {
@@ -766,7 +766,7 @@ export async function refresh(nextIdNum, silentMode){
             title: new_pharm.title
         };
         fs.writeFile(path.join(__dirname, 'compare_list', 'pharm.json'), JSON.stringify(pharmObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("pharm updated successfully"); }
+            if (err) { console.log(err); } else { console.log("pharm updated"); }
         });
     }
     if (storeDifferences.ADPR.length != 0) {
@@ -775,7 +775,7 @@ export async function refresh(nextIdNum, silentMode){
             title: new_ADPR.title
         };
         fs.writeFile(path.join(__dirname, 'compare_list', 'ADPR.json'), JSON.stringify(ADPRObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("ADPR updated successfully"); }
+            if (err) { console.log(err); } else { console.log("ADPR updated"); }
         });
     }
     
