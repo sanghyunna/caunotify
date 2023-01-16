@@ -305,6 +305,7 @@ export async function refresh(nextIdNum, silentMode){
 
     // 메일에서 받는 게시판의 순서를 바꾸려면 여기서 바꾸면 됨
     let dataToSend = [];
+    let listOfSuccessfulRecipients = [];
     let sendOrNot = 0;
     const userDataBase = JSON.parse(fs.readFileSync("./userDB_log/userDB.json","utf8"),"utf8");
     for(let i=0;i<nextIdNum;i++){
@@ -359,12 +360,15 @@ export async function refresh(nextIdNum, silentMode){
         if(sendOrNot != 0){
             // console.log(`dataToSend[${moment().format('YYYYMMDD, h:mm:ss a')}]:`);
             // console.log(dataToSend);
-            mailHandler(userDataBase[i].name, userDataBase[i].email, dataToSend, i, "false");
+            let rcvd = mailHandler(userDataBase[i].name, userDataBase[i].email, dataToSend, i, "false");
+            if(rcvd == 0) listOfSuccessfulRecipients.push(userDataBase[i].email);
             // recipientName, recipientEmail, data, id, IsItSubMail
             sendOrNot = 0;
             dataToSend = [];
         }
     }
+    console.log("Successfully sent to:");
+    console.log(listOfSuccessfulRecipients);
     
     // ********************************************
     // *** 5. 변경 사항이 있었던 게시판들은 초기화 ***
