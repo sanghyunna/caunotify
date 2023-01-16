@@ -24,7 +24,7 @@ import { simpleUserInfo } from "./simpleUserInfo.js";
 
 function updateUserDB(src){
     fs.writeFileSync(path.join(__dirname, 'userDB_log', 'userDB.json'), JSON.stringify(userDataBase,null,4), { encoding: "utf8", flag: "w" });
-    fs.writeFileSync(`${__dirname}/userDB_log/log_${moment().format('YYMMDD_HH_mm_ss')}.json`, JSON.stringify(userDataBase,null,4), { encoding: "utf8", flag: "a" });
+    fs.writeFileSync(`${__dirname}/userDB_log/log_${console.log(moment().tz("Asia/Seoul").format('YYMMDD_HH_mm_ss'))}.json`, JSON.stringify(userDataBase,null,4), { encoding: "utf8", flag: "a" });
     console.log(`***UserDB updated by ${src}`);
 }
 function updateBounceDB(){
@@ -288,7 +288,7 @@ server.listen(PORT, function(){
 });
 
 setInterval(() => {
-    console.log(moment().format('YYMMDD_HH_mm_ss'));
+    console.log(console.log(moment().tz("Asia/Seoul").format('YYMMDD_HH_mm_ss')));
     refresh(nextIdNum,1);
     // if(DayOrNight == "Day"){
     //     refresh(nextIdNum,1);
