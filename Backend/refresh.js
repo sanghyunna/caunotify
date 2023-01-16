@@ -367,8 +367,8 @@ export async function refresh(nextIdNum, silentMode){
             dataToSend = [];
         }
     }
-    console.log("Successfully sent to:");
-    console.log(listOfSuccessfulRecipients);
+    // console.log("Successfully sent to:");
+    // console.log(listOfSuccessfulRecipients);
     
     // ********************************************
     // *** 5. 변경 사항이 있었던 게시판들은 초기화 ***
