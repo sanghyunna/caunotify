@@ -58,7 +58,7 @@ const __dirname = path.dirname(__filename);
 
 
 // 서버 기본 세팅
-const PORT = 80;
+const PORT = 3000;
 const app = express();
 const server = http.createServer(app);
 const refreshTimeInMinutes = 30; // 30분에 한번씩 refresh() 실행
