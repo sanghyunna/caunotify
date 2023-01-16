@@ -51,6 +51,12 @@ function findUserByEmail(mailAddress,includeUnsubbedUsers){ // includeUnsubbedUs
     }
     return -1;
 }
+function findUserByName(username){
+    for(let i=0;i<nextIdNum;i++){
+        if(userDataBase[i].name == username) return i;
+    }
+    return -1;
+}
 
 // __dirname 생성
 const __filename = fileURLToPath(import.meta.url);
@@ -214,16 +220,27 @@ app.post('/findUserByEmail', (req, res) => {
     const mailAddress = req.body.email;
     const includeUnsubbedUsers = req.body.includeUnsubbedUsers;
     const idNum = findUserByEmail(mailAddress,includeUnsubbedUsers);
+    if(idNum == -1) return res.end("Not Found");
+    console.log(`** Data of User[${idNum}](${userDataBase[idNum].name}) Sent`);
+    return res.end(JSON.stringify(userDataBase[idNum],null,4));
+});
+app.post('/findUserByName', (req, res) => {
+    const username = req.body.name;
+    if (userDataBase[idNum].name == undefined) return res.end("Not Found");
+    const idNum = findUserByName(username);
+    if(idNum == -1) return res.end("Not Found");
     console.log(`** Data of User[${idNum}](${userDataBase[idNum].name}) Sent`);
     return res.end(JSON.stringify(userDataBase[idNum],null,4));
 });
 app.post('/findUserById', (req, res) => {
     const idNum = req.body.id;
+    if (userDataBase[idNum].name == undefined) return res.end("Not Found");
     console.log(`** Data of User[${idNum}](${userDataBase[idNum].name}) Sent`);
     return res.end(JSON.stringify(userDataBase[idNum],null,4));
 });
 app.post('/delUserById', (req, res) => {
     const idNum = req.body.id;
+    if (userDataBase[idNum].name == undefined) return res.end("Not Found");
     userDataBase[idNum].subStatus = "false";
     console.log(`** Data of User[${idNum}](${userDataBase[idNum].name}) unsubscribed`);
     return res.end(`User[${idNum}](${userDataBase[idNum].name}) unsubbed`);
