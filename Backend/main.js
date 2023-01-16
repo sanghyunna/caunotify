@@ -222,20 +222,20 @@ app.post('/findUserByEmail', (req, res) => {
     const idNum = findUserByEmail(mailAddress,includeUnsubbedUsers);
     if(idNum == -1) return res.end("Not Found");
     console.log(`** Data of User[${idNum}](${userDataBase[idNum].name}) Sent`);
-    return res.end(JSON.stringify(userDataBase[idNum],null,4));
+    return res.end(simpleUserInfo(userDataBase[idNum]));
 });
 app.post('/findUserByName', (req, res) => {
     const username = req.body.name;
     const idNum = findUserByName(username);
     if(idNum == -1) return res.end("Not Found");
     console.log(`** Data of User[${idNum}](${userDataBase[idNum].name}) Sent`);
-    return res.end(JSON.stringify(userDataBase[idNum],null,4));
+    return res.end(simpleUserInfo(userDataBase[idNum]));
 });
 app.post('/findUserById', (req, res) => {
     const idNum = req.body.id;
     if (userDataBase[idNum].name == undefined) return res.end("Not Found");
     console.log(`** Data of User[${idNum}](${userDataBase[idNum].name}) Sent`);
-    return res.end(JSON.stringify(userDataBase[idNum],null,4));
+    return res.end(simpleUserInfo(userDataBase[idNum]));
 });
 app.post('/delUserById', (req, res) => {
     const idNum = req.body.id;

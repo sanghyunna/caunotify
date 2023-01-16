@@ -1,7 +1,7 @@
 import KRname from "./name_en2kr.js"
 
 export function simpleUserInfo(user){
-    let res = `${user.name}, ${user.email}, ${user.id}`;
+    let res = `${user.name}, ${user.email}, id:${user.id}, subStatus:${user.subStatus}`;
     if(user.industSec == "true") res = res.concat(', ',KRname("industSec"));
     if(user.software == "true") res = res.concat(', ',KRname("software"));
     if(user.CAUnotice == "true") res = res.concat(', ',KRname("CAUnotice"));
