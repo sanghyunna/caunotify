@@ -1,5 +1,6 @@
 {
     "url": [
+        "http://civil.cau.ac.kr/?version=135&spkey=5b3a3e4874f80210e3b655253439c7e702c29894&module=true&PageAccess=main/board&brcode=notice01&page=1&group_code=&mode=VV&wrno=200000124",
         "http://civil.cau.ac.kr/?version=135&spkey=5b3a3e4874f80210e3b655253439c7e702c29894&module=true&PageAccess=main/board&brcode=notice01&page=1&group_code=&mode=VV&wrno=200000122",
         "http://civil.cau.ac.kr/?version=135&spkey=5b3a3e4874f80210e3b655253439c7e702c29894&module=true&PageAccess=main/board&brcode=notice01&page=1&group_code=&mode=VV&wrno=200000121",
         "http://civil.cau.ac.kr/?version=135&spkey=5b3a3e4874f80210e3b655253439c7e702c29894&module=true&PageAccess=main/board&brcode=notice01&page=1&group_code=&mode=VV&wrno=200000120",
@@ -18,10 +19,10 @@
         "http://civil.cau.ac.kr/?version=135&spkey=5b3a3e4874f80210e3b655253439c7e702c29894&module=true&PageAccess=main/board&brcode=notice01&page=1&group_code=&mode=VV&wrno=200000105",
         "http://civil.cau.ac.kr/?version=135&spkey=5b3a3e4874f80210e3b655253439c7e702c29894&module=true&PageAccess=main/board&brcode=notice01&page=1&group_code=&mode=VV&wrno=200000104",
         "http://civil.cau.ac.kr/?version=135&spkey=5b3a3e4874f80210e3b655253439c7e702c29894&module=true&PageAccess=main/board&brcode=notice01&page=1&group_code=&mode=VV&wrno=200000103",
-        "http://civil.cau.ac.kr/?version=135&spkey=5b3a3e4874f80210e3b655253439c7e702c29894&module=true&PageAccess=main/board&brcode=notice01&page=1&group_code=&mode=VV&wrno=200000102",
-        "http://civil.cau.ac.kr/?version=135&spkey=5b3a3e4874f80210e3b655253439c7e702c29894&module=true&PageAccess=main/board&brcode=notice01&page=1&group_code=&mode=VV&wrno=200000101"
+        "http://civil.cau.ac.kr/?version=135&spkey=5b3a3e4874f80210e3b655253439c7e702c29894&module=true&PageAccess=main/board&brcode=notice01&page=1&group_code=&mode=VV&wrno=200000102"
     ],
     "title": [
+        "서울특별시 강동구 일반임기제공무원 채용 공고...",
         "캡스톤디자인 교과목 이수현황 조사",
         "2022학년도 동계방학 단축근무 (사회기반시스템공학부 사무실)...",
         "2023학년도 1학기 수강신청(학부) 일정 안내 ...",
@@ -40,7 +41,6 @@
         "공학인증이수(예정자)확인서 출력 안내...",
         "22년 동계방학 포스코 스틸브릿지(대학생 현장실습)  (~11/10 오전 11시까지)...",
         "2022년 제 10회 졸업논문 발표회 및 제 21회 토목시설물 모형 콘테스트 일정 ...",
-        "<2022-2학기 중간시험 안내>",
-        "2022학년도 PRE 프로그램 시행 안내"
+        "<2022-2학기 중간시험 안내>"
     ]
 }
