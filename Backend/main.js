@@ -226,7 +226,6 @@ app.post('/findUserByEmail', (req, res) => {
 });
 app.post('/findUserByName', (req, res) => {
     const username = req.body.name;
-    if (userDataBase[idNum].name == undefined) return res.end("Not Found");
     const idNum = findUserByName(username);
     if(idNum == -1) return res.end("Not Found");
     console.log(`** Data of User[${idNum}](${userDataBase[idNum].name}) Sent`);
