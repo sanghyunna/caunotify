@@ -318,7 +318,7 @@ document.getElementById('instaClicked2').onclick = function () {
 
 				$.ajax({   	
 			      type: "POST",
-			      url: "http://caunotify.me/newuser",
+			      url: "https://caunotify.me/newuser",
 			      data: $(form).serializeObject(),
 
 			      beforeSend: function() { 
