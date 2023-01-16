@@ -1,2 +1,2 @@
-let silentMode = 1;
-if(!silentMode) console.log("A");
+import moment from 'moment-timezone';
+console.log(moment().tz("America/Toronto").format('YYMMDD_HH_mm_ss'));
