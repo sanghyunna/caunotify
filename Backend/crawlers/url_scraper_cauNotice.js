@@ -63,7 +63,7 @@ const crawlCAUnotice = async({ url }) =>{
     return {
         url: url_list,
         title: title_list
-    }
+    } 
 };
 
 // crawlCAUnotice({

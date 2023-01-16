@@ -52,7 +52,7 @@ import crawlPharm from "./crawlers/url_scraper_pharm.js";
 import crawlADPR from "./crawlers/url_scraper_ADPR.js";
 
 let ON = "false";
-// ON = "true";
+// ON = "true"; 
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -150,6 +150,7 @@ export async function refresh(nextIdNum, silentMode){
         // console.log(oldContent);
         return compareTwoArrays(dataObject.url, oldContent.url);
     }
+
     storeDifferences.industSec =        readFileAndCompareWithOriginal("industSec",new_industSec);
     storeDifferences.software =         readFileAndCompareWithOriginal("software",new_software);
     storeDifferences.CAUnotice =        readFileAndCompareWithOriginal("CAUnotice",new_CAUnotice);
@@ -289,8 +290,9 @@ export async function refresh(nextIdNum, silentMode){
     addURLsAndTitlesToStorage("pharm", new_pharm, storeDifferences.pharm);
     addURLsAndTitlesToStorage("ADPR", new_ADPR, storeDifferences.ADPR);
     
-    
-    if(updatedContentStorage.length == 0){
+    // console.log(updatedContentStorage.length);
+
+    if(Object.keys(updatedContentStorage).length == 0){
         console.log("*** No Updates!");
         return; // 바뀐 내용이 없으면 조기 리턴하여 연산량을 줄임
     }
@@ -772,6 +774,7 @@ export async function refresh(nextIdNum, silentMode){
             if (err) { console.log(err); } else { console.log("ADPR updated successfully"); }
         });
     }
+    
 }
 if(ON == "true") refresh(1);
 
