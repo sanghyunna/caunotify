@@ -49,7 +49,7 @@ import crawlArchitecture from "./crawlers/url_scraper_architecture.js";
 import crawlAppliedStat from "./crawlers/url_scraper_applied_stat.js";
 import crawlMed from "./crawlers/url_scraper_med.js";
 import crawlPharm from "./crawlers/url_scraper_pharm.js";
-import crawlADPR from "./crawlers/url_scraper_ADPR.js";
+import crawladpr from "./crawlers/url_scraper_adpr.js";
 
 let ON = "false";
 // ON = "true"; 
@@ -133,7 +133,7 @@ export async function refresh(nextIdNum, silentMode){
     const new_appliedStat = await waitWithTimeout(crawlAppliedStat("url"),1*60*1000);           if(!silentMode) console.log("appliedStat loaded");
     const new_med = await waitWithTimeout(crawlMed("url"),1*60*1000);                           if(!silentMode) console.log("med loaded");
     const new_pharm = await waitWithTimeout(crawlPharm("url"),1*60*1000);                       if(!silentMode) console.log("pharm loaded");
-    const new_ADPR = await waitWithTimeout(crawlADPR("url"),1*60*1000);                         if(!silentMode) console.log("ADPR loaded");
+    const new_adpr = await waitWithTimeout(crawladpr("url"),1*60*1000);                         if(!silentMode) console.log("adpr loaded");
 
  
     console.timeEnd("** fully loaded in ");
@@ -183,19 +183,19 @@ export async function refresh(nextIdNum, silentMode){
     storeDifferences.mediaComm =        readFileAndCompareWithOriginal("mediaComm", new_mediaComm);
     storeDifferences.sociology =        readFileAndCompareWithOriginal("sociology", new_sociology);
     storeDifferences.socialWelfare =    readFileAndCompareWithOriginal("socialWelfare", new_socialWelfare);
-    storeDifferences.russian =    readFileAndCompareWithOriginal("russian", new_russian);
-    storeDifferences.french =    readFileAndCompareWithOriginal("french", new_french);
-    storeDifferences.german =    readFileAndCompareWithOriginal("german", new_german);
-    storeDifferences.philosophy =    readFileAndCompareWithOriginal("philosophy", new_philosophy);
-    storeDifferences.history =    readFileAndCompareWithOriginal("history", new_history);
+    storeDifferences.russian =          readFileAndCompareWithOriginal("russian", new_russian);
+    storeDifferences.french =           readFileAndCompareWithOriginal("french", new_french);
+    storeDifferences.german =           readFileAndCompareWithOriginal("german", new_german);
+    storeDifferences.philosophy =       readFileAndCompareWithOriginal("philosophy", new_philosophy);
+    storeDifferences.history =          readFileAndCompareWithOriginal("history", new_history);
     storeDifferences.publicService =    readFileAndCompareWithOriginal("publicService", new_publicService);
-    storeDifferences.civilEnvPlanEng =    readFileAndCompareWithOriginal("civilEnvPlanEng", new_civilEnvPlanEng);
-    storeDifferences.urbanEngineering =    readFileAndCompareWithOriginal("urbanEngineering", new_urbanEngineering);
-    storeDifferences.architecture =    readFileAndCompareWithOriginal("architecture", new_architecture);
-    storeDifferences.appliedStat =    readFileAndCompareWithOriginal("appliedStat", new_appliedStat);
-    storeDifferences.med =    readFileAndCompareWithOriginal("med", new_med);
-    storeDifferences.pharm =    readFileAndCompareWithOriginal("pharm", new_pharm);
-    storeDifferences.ADPR =    readFileAndCompareWithOriginal("ADPR", new_ADPR);
+    storeDifferences.civilEnvPlanEng =  readFileAndCompareWithOriginal("civilEnvPlanEng", new_civilEnvPlanEng);
+    storeDifferences.urbanEngineering = readFileAndCompareWithOriginal("urbanEngineering", new_urbanEngineering);
+    storeDifferences.architecture =     readFileAndCompareWithOriginal("architecture", new_architecture);
+    storeDifferences.appliedStat =      readFileAndCompareWithOriginal("appliedStat", new_appliedStat);
+    storeDifferences.med =              readFileAndCompareWithOriginal("med", new_med);
+    storeDifferences.pharm =            readFileAndCompareWithOriginal("pharm", new_pharm);
+    storeDifferences.adpr =             readFileAndCompareWithOriginal("adpr", new_adpr);
     // storeDiffences.${majorName} = [ 추가된 공지 위치, 추가된 공지 위치 2 ];
     
     // ****************************************************
@@ -288,7 +288,7 @@ export async function refresh(nextIdNum, silentMode){
     addURLsAndTitlesToStorage("appliedStat", new_appliedStat, storeDifferences.appliedStat);
     addURLsAndTitlesToStorage("med", new_med, storeDifferences.med);
     addURLsAndTitlesToStorage("pharm", new_pharm, storeDifferences.pharm);
-    addURLsAndTitlesToStorage("ADPR", new_ADPR, storeDifferences.ADPR);
+    addURLsAndTitlesToStorage("adpr", new_adpr, storeDifferences.adpr);
     
     // console.log(updatedContentStorage.length);
 
@@ -355,7 +355,7 @@ export async function refresh(nextIdNum, silentMode){
         if(userDataBase[i].appliedStat == "true" && updatedContentStorage.appliedStat != undefined) {dataToSend.push(updatedContentStorage.appliedStat); sendOrNot++;}
         if(userDataBase[i].med == "true" && updatedContentStorage.med != undefined) {dataToSend.push(updatedContentStorage.med); sendOrNot++;}
         if(userDataBase[i].pharm == "true" && updatedContentStorage.pharm != undefined) {dataToSend.push(updatedContentStorage.pharm); sendOrNot++;}
-        if(userDataBase[i].ADPR == "true" && updatedContentStorage.ADPR != undefined) {dataToSend.push(updatedContentStorage.ADPR); sendOrNot++;}
+        if(userDataBase[i].adpr == "true" && updatedContentStorage.adpr != undefined) {dataToSend.push(updatedContentStorage.adpr); sendOrNot++;}
 
         if(sendOrNot != 0){
             // console.log(`dataToSend[${moment().format('YYYYMMDD, h:mm:ss a')}]:`);
@@ -367,8 +367,8 @@ export async function refresh(nextIdNum, silentMode){
             dataToSend = [];
         }
     }
-    // console.log("Successfully sent to:");
-    // console.log(listOfSuccessfulRecipients);
+    console.log("Successfully sent to:");
+    console.log(listOfSuccessfulRecipients);
     
     // ********************************************
     // *** 5. 변경 사항이 있었던 게시판들은 초기화 ***
@@ -769,13 +769,13 @@ export async function refresh(nextIdNum, silentMode){
             if (err) { console.log(err); } else { console.log("pharm updated"); }
         });
     }
-    if (storeDifferences.ADPR.length != 0) {
-        let ADPRObject = {
-            url: new_ADPR.url,
-            title: new_ADPR.title
+    if (storeDifferences.adpr.length != 0) {
+        let adprObject = {
+            url: new_adpr.url,
+            title: new_adpr.title
         };
-        fs.writeFile(path.join(__dirname, 'compare_list', 'ADPR.json'), JSON.stringify(ADPRObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("ADPR updated"); }
+        fs.writeFile(path.join(__dirname, 'compare_list', 'adpr.json'), JSON.stringify(adprObject, null, 4), (err) => {
+            if (err) { console.log(err); } else { console.log("adpr updated"); }
         });
     }
     
@@ -1028,10 +1028,10 @@ export async function updateFiles(){
         if (err) console.log(err);
         else console.log("pharm.json written successfully");
     });
-    const new_ADPR = await waitWithTimeout(crawlADPR("url"),1*60*1000);
-    fs.writeFile("./compare_list/ADPR.json", JSON.stringify(new_ADPR, null, 4), "utf8", (err) => {
+    const new_adpr = await waitWithTimeout(crawladpr("url"),1*60*1000);
+    fs.writeFile("./compare_list/adpr.json", JSON.stringify(new_adpr, null, 4), "utf8", (err) => {
         if (err) console.log(err);
-        else console.log("ADPR.json written successfully");
+        else console.log("adpr.json written successfully");
     });
 }
 // updateFiles();
