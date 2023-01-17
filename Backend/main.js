@@ -209,7 +209,7 @@ app.post('/posttest', (req, res) => { // 정상작동 확인함
 app.post('/refresh', (req, res) => {
     console.log("refresh requested");
     refresh(nextIdNum,0);
-    return res.end("Refreshed")
+    return res.send("Refreshed")
 });
 app.post('/currentuserDB', (req, res) => {
     console.log("** Current UserDB Sent")
@@ -218,36 +218,36 @@ app.post('/currentuserDB', (req, res) => {
     for(let i=0;i<nextIdNum;i++){
         simpleInfoStorage.push(simpleUserInfo(userDataBase[i]));
     }
-    return res.end(JSON.stringify(simpleInfoStorage));
+    return res.send(simpleInfoStorage);
 });
 app.post('/findUserByEmail', (req, res) => {
     const mailAddress = req.body.email;
     const includeUnsubbedUsers = req.body.includeUnsubbedUsers;
     const idNum = findUserByEmail(mailAddress,includeUnsubbedUsers);
-    if(idNum == -1) return res.end("Not Found");
+    if(idNum == -1) return res.send("Not Found");
     console.log(`** Data of User[${idNum}](${userDataBase[idNum].name}) Sent`);
-    return res.end(simpleUserInfo(userDataBase[idNum]));
+    return res.send(simpleUserInfo(userDataBase[idNum]));
 });
 app.post('/findUserByName', (req, res) => {
     const username = req.body.name;
     const idNum = findUserByName(username);
-    if(idNum == -1) return res.end("Not Found");
+    if(idNum == -1) return res.send("Not Found");
     console.log(`** Data of User[${idNum}](${userDataBase[idNum].name}) Sent`);
-    return res.end(simpleUserInfo(userDataBase[idNum]));
+    return res.send(simpleUserInfo(userDataBase[idNum]));
 });
 app.post('/findUserById', (req, res) => {
     const idNum = req.body.id;
-    if (userDataBase[idNum].name == undefined) return res.end("Not Found");
+    if (userDataBase[idNum].name == undefined) return res.send("Not Found");
     console.log(`** Data of User[${idNum}](${userDataBase[idNum].name}) Sent`);
-    return res.end(simpleUserInfo(userDataBase[idNum]));
+    return res.send(simpleUserInfo(userDataBase[idNum]));
 });
 app.post('/delUserById', (req, res) => {
     const idNum = req.body.id;
-    if (userDataBase[idNum].name == undefined) return res.end("Not Found");
+    if (userDataBase[idNum].name == undefined) return res.send("Not Found");
     userDataBase[idNum].subStatus = "false";
     updateUserDB("delUserById");
     console.log(`** Data of User[${idNum}](${userDataBase[idNum].name}) unsubscribed`);
-    return res.end(`User[${idNum}](${userDataBase[idNum].name}) unsubbed`);
+    return res.send(`User[${idNum}](${userDataBase[idNum].name}) unsubbed`);
 });
 app.post('/delLastUser', (req, res) => {
     console.log("** Deleted last user");
@@ -256,7 +256,7 @@ app.post('/delLastUser', (req, res) => {
     fs.writeFileSync(path.join(__dirname, 'userDB_log', 'nextIdNum.txt'), nextIdNum.toString(), "utf8");
     userDataBase.pop();
     updateUserDB("delLastUser");
-    return res.end(JSON.stringify(userDataBase,null,4));
+    return res.send(JSON.stringify(userDataBase,null,4));
 });
 // ======================================================================
 
