@@ -115,7 +115,7 @@ app.get('/unsubscribe', function(req, res) { // 구독해지 요청
         else{
             userDataBase[idNum].subStatus = "false";
             updateUserDB("unsubscribe request already false");
-            return res.send(`${userDataBase[idNum].name}님의 구독이 성공적으로 해지되었습니다. 이용해주셔서 감사합니다.`);
+            return res.send(`<script>alert(${userDataBase[idNum].name}님의 구독이 성공적으로 해지되었습니다. 이용해주셔서 감사합니다.);</script>`);
         }
     }
     else{
@@ -214,7 +214,11 @@ app.post('/refresh', (req, res) => {
 app.post('/currentuserDB', (req, res) => {
     console.log("** Current UserDB Sent")
     console.log(`nextIdNum : ${nextIdNum}`);
-    return res.end(JSON.stringify(userDataBase,null,4));
+    let simpleInfoStorage = [];
+    for(let i=0;i<nextIdNum;i++){
+        simpleInfoStorage.push(simpleUserInfo(userDataBase[i]));
+    }
+    return res.end(simpleInfoStorage);
 });
 app.post('/findUserByEmail', (req, res) => {
     const mailAddress = req.body.email;
@@ -241,6 +245,7 @@ app.post('/delUserById', (req, res) => {
     const idNum = req.body.id;
     if (userDataBase[idNum].name == undefined) return res.end("Not Found");
     userDataBase[idNum].subStatus = "false";
+    updateUserDB("delUserById");
     console.log(`** Data of User[${idNum}](${userDataBase[idNum].name}) unsubscribed`);
     return res.end(`User[${idNum}](${userDataBase[idNum].name}) unsubbed`);
 });
@@ -270,6 +275,7 @@ app.post('/complainthandling', (req, res) => {
         if(userIdNum == -1) return res.status(404).send("Not Found"); // complaint notification이 왔는데 우리 DB에서는 못찾은 상황. 발생 가능성 매우 드묾.
         else{
             userDataBase[userIdNum].subStatus = "false";
+            updateUserDB("complaint");
             console.log(`user[${userIdNum}] - ${userDataBase[userIdNum].name}, ${userDataBase[userIdNum].email} unsubscribed`);
             return res.status(200).send("OK");
         }
@@ -289,6 +295,7 @@ app.post('/bouncehandling', (req, res) => {
         if(userIdNum == -1) return res.status(404).send("Not Found"); // bounce notification이 왔는데 우리 DB에서는 못찾은 상황. 발생 가능성 매우 드묾.
         else{
             userDataBase[userIdNum].subStatus = "false";
+            updateUserDB("bounce");
             console.log(`user[${userIdNum}] - ${userDataBase[userIdNum].name}, ${userDataBase[userIdNum].email} unsubscribed`);
             return res.status(200).send("OK");
         }
