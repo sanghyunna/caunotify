@@ -4,13 +4,14 @@ export function simpleUserInfo(user){
     let res = `${user.name}, ${user.email}, id:${user.id}, subStatus:${user.subStatus}`;
     // 전체 공지
     if(user.CAUnotice == "true") res = res.concat(', ',KRname("CAUnotice"));
+    if(user.dorm == "true") res = res.concat(', ',KRname("dorm"));
     // 경경대
     if(user.business == "true") res = res.concat(', ',KRname("business"));
     if(user.logistics == "true") res = res.concat(', ',KRname("logistics"));
     if(user.econ == "true") res = res.concat(', ',KRname("econ"));
     if(user.industSec == "true") res = res.concat(', ',KRname("industSec"));
     if(user.appliedStat == "true") res = res.concat(', ',KRname("appliedStat"));
-    if(user.ADPR == "true") res = res.concat(', ',KRname("ADPR"));
+    if(user.adpr == "true") res = res.concat(', ',KRname("ADPR"));
     // 인문대
     if(user.korean == "true") res = res.concat(', ',KRname("korean"));
     if(user.english == "true") res = res.concat(', ',KRname("english"));
@@ -59,6 +60,9 @@ export function simpleUserInfo(user){
     if(user.pharm == "true") res = res.concat(', ',KRname("pharm"));
     // 간
     if(user.nursing == "true") res = res.concat(', ',KRname("nursing"));
+
+    // 특수
+    if(user.upreJob == "true") res = res.concat(', ',KRname("upreJob"));
 
     return res;
 }
