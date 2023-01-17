@@ -42,17 +42,17 @@ const crawlupreJob = async({ url }) =>{
         }
         // console.log(element.attribs);
     });
-    console.log(url_list);
-    console.log(title_list);
+    // console.log(url_list);
+    // console.log(title_list);
     return {
         url: url_list,
         title: title_list
     }
 };
 
-crawlupreJob({ 
-    url: "http://security.cau.ac.kr/board.htm?bbsid=notice",
-}); // 테스트용
+// crawlupreJob({ 
+//     url: "http://security.cau.ac.kr/board.htm?bbsid=notice",
+// }); // 테스트용
 
 export default crawlupreJob
 
