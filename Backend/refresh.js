@@ -50,6 +50,8 @@ import crawlAppliedStat from "./crawlers/url_scraper_applied_stat.js";
 import crawlMed from "./crawlers/url_scraper_med.js";
 import crawlPharm from "./crawlers/url_scraper_pharm.js";
 import crawladpr from "./crawlers/url_scraper_adprr.js";
+import crawlDorm from "./crawlers/url_scraper_dorm.js";
+import crawlupreJob from "./crawlers/url_scraper_upre_job.js";
 
 let ON = "false";
 // ON = "true"; 
@@ -134,6 +136,8 @@ export async function refresh(nextIdNum, silentMode){
     const new_med = await waitWithTimeout(crawlMed("url"),1*60*1000);                           if(!silentMode) console.log("med loaded");
     const new_pharm = await waitWithTimeout(crawlPharm("url"),1*60*1000);                       if(!silentMode) console.log("pharm loaded");
     const new_adpr = await waitWithTimeout(crawladpr("url"),1*60*1000);                         if(!silentMode) console.log("adpr loaded");
+    const new_dorm = await waitWithTimeout(crawladpr("url"),1*60*1000);                         if(!silentMode) console.log("dorm loaded");
+    const new_upreJob = await waitWithTimeout(crawladpr("url"),1*60*1000);                      if(!silentMode) console.log("upreJob loaded");
 
  
     console.timeEnd("** fully loaded in ");
@@ -196,6 +200,8 @@ export async function refresh(nextIdNum, silentMode){
     storeDifferences.med =              readFileAndCompareWithOriginal("med", new_med);
     storeDifferences.pharm =            readFileAndCompareWithOriginal("pharm", new_pharm);
     storeDifferences.adpr =             readFileAndCompareWithOriginal("adpr", new_adpr);
+    storeDifferences.dorm =             readFileAndCompareWithOriginal("dorm", new_dorm);
+    storeDifferences.upreJob =          readFileAndCompareWithOriginal("adpr", new_upreJob);
     // storeDiffences.${majorName} = [ 추가된 공지 위치, 추가된 공지 위치 2 ];
     
     // ****************************************************
@@ -289,6 +295,8 @@ export async function refresh(nextIdNum, silentMode){
     addURLsAndTitlesToStorage("med", new_med, storeDifferences.med);
     addURLsAndTitlesToStorage("pharm", new_pharm, storeDifferences.pharm);
     addURLsAndTitlesToStorage("adpr", new_adpr, storeDifferences.adpr);
+    addURLsAndTitlesToStorage("dorm", new_dorm, storeDifferences.dorm);
+    addURLsAndTitlesToStorage("upreJob", new_upreJob, storeDifferences.upreJob);
     
     // console.log(updatedContentStorage.length);
 
@@ -356,6 +364,8 @@ export async function refresh(nextIdNum, silentMode){
         if(userDataBase[i].med == "true" && updatedContentStorage.med != undefined) {dataToSend.push(updatedContentStorage.med); sendOrNot++;}
         if(userDataBase[i].pharm == "true" && updatedContentStorage.pharm != undefined) {dataToSend.push(updatedContentStorage.pharm); sendOrNot++;}
         if(userDataBase[i].adpr == "true" && updatedContentStorage.adpr != undefined) {dataToSend.push(updatedContentStorage.adpr); sendOrNot++;}
+        if(userDataBase[i].dorm == "true" && updatedContentStorage.dorm != undefined) {dataToSend.push(updatedContentStorage.dorm); sendOrNot++;}
+        if(userDataBase[i].upreJob == "true" && updatedContentStorage.upreJob != undefined) {dataToSend.push(updatedContentStorage.upreJob); sendOrNot++;}
 
         if(sendOrNot != 0){
             // console.log(`dataToSend[${moment().format('YYYYMMDD, h:mm:ss a')}]:`);
@@ -778,6 +788,24 @@ export async function refresh(nextIdNum, silentMode){
             if (err) { console.log(err); } else { console.log("adpr updated"); }
         });
     }
+    if (storeDifferences.dorm.length != 0) {
+        let dormObject = {
+            url: new_dorm.url,
+            title: new_dorm.title
+        };
+        fs.writeFile(path.join(__dirname, 'compare_list', 'dorm.json'), JSON.stringify(dormObject, null, 4), (err) => {
+            if (err) { console.log(err); } else { console.log("dorm updated"); }
+        });
+    }
+    if (storeDifferences.upreJob.length != 0) {
+        let upreJobObject = {
+            url: new_upreJob.url,
+            title: new_upreJob.title
+        };
+        fs.writeFile(path.join(__dirname, 'compare_list', 'upreJob.json'), JSON.stringify(upreJobObject, null, 4), (err) => {
+            if (err) { console.log(err); } else { console.log("upreJob updated"); }
+        });
+    }
     
 }
 if(ON == "true") refresh(1);
@@ -1032,6 +1060,16 @@ export async function updateFiles(){
     fs.writeFile("./compare_list/adpr.json", JSON.stringify(new_adpr, null, 4), "utf8", (err) => {
         if (err) console.log(err);
         else console.log("adpr.json written successfully");
+    });
+    const new_dorm = await waitWithTimeout(crawldorm("url"),1*60*1000);
+    fs.writeFile("./compare_list/dorm.json", JSON.stringify(new_dorm, null, 4), "utf8", (err) => {
+        if (err) console.log(err);
+        else console.log("dorm.json written successfully");
+    });
+    const new_upreJob = await waitWithTimeout(crawlupreJob("url"),1*60*1000);
+    fs.writeFile("./compare_list/upreJob.json", JSON.stringify(new_upreJob, null, 4), "utf8", (err) => {
+        if (err) console.log(err);
+        else console.log("upreJob.json written successfully");
     });
 }
 // updateFiles();
