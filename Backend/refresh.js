@@ -791,57 +791,57 @@ export async function updateFiles(){
     const new_industSec = await waitWithTimeout(crawlIndustSec("url"),1*60*1000); // 이 반환값에 .title 또는 .url을 이용해 값에 접근할 수 있음
     fs.writeFile("./compare_list/industSec.json", JSON.stringify(new_industSec, null, 4), "utf8", (err) => {
         if (err) console.log(err);
-        else console.log("industSec.json written successfully\n");
+        else console.log("industSec.json written successfully");
     });
     const new_software = await waitWithTimeout(crawlSoftware("url"),1*60*1000);
     fs.writeFile("./compare_list/software.json", JSON.stringify(new_software, null, 4), "utf8", (err) => {
         if (err) console.log(err);
-        else console.log("software.json written successfully\n");
+        else console.log("software.json written successfully");
     });
     const new_CAUnotice = await waitWithTimeout(crawlCAUnotice("url"),1*60*1000);
     fs.writeFile("./compare_list/CAUnotice.json", JSON.stringify(new_CAUnotice, null, 4), "utf8", (err) => {
         if (err) console.log(err);
-        else console.log("CAUnotice.json written successfully\n");
+        else console.log("CAUnotice.json written successfully");
     });
     const new_integEngineering = await waitWithTimeout(crawlIntegEngineering("url"),1*60*1000);
     fs.writeFile("./compare_list/integEngineering.json", JSON.stringify(new_integEngineering, null, 4), "utf8", (err) => {
         if (err) console.log(err);
-        else console.log("integEngineering.json written successfully\n");
+        else console.log("integEngineering.json written successfully");
     });
     const new_korean = await waitWithTimeout(crawlKorean("url"),1*60*1000);
     fs.writeFile("./compare_list/korean.json", JSON.stringify(new_korean, null, 4), "utf8", (err) => {
         if (err) console.log(err);
-        else console.log("korean.json written successfully\n");
+        else console.log("korean.json written successfully");
     });
     const new_mechEngineering = await waitWithTimeout(crawlMechEngineering("url"),1*60*1000);
     fs.writeFile("./compare_list/mechEngineering.json", JSON.stringify(new_mechEngineering, null, 4), "utf8", (err) => {
         if (err) console.log(err);
-        else console.log("mechEngineering.json written successfully\n");
+        else console.log("mechEngineering.json written successfully");
     });
     const new_psychology = await waitWithTimeout(crawlPsychology("url"),1*60*1000);
     fs.writeFile("./compare_list/psychology.json", JSON.stringify(new_psychology, null, 4), "utf8", (err) => {
         if (err) console.log(err);
-        else console.log("psychology.json written successfully\n");
+        else console.log("psychology.json written successfully");
     });
     const new_business = await waitWithTimeout(crawlBusiness("url"),1*60*1000);
     fs.writeFile("./compare_list/business.json", JSON.stringify(new_business, null, 4), "utf8", (err) => {
         if (err) console.log(err);
-        else console.log("business.json written successfully\n");
+        else console.log("business.json written successfully");
     });
     const new_elecEngineering = await waitWithTimeout(crawlElecEngineering("url"),1*60*1000);
     fs.writeFile("./compare_list/elecEngineering.json", JSON.stringify(new_elecEngineering, null, 4), "utf8", (err) => {
         if (err) console.log(err);
-        else console.log("elecEngineering.json written successfully\n");
+        else console.log("elecEngineering.json written successfully");
     });
     const new_english = await waitWithTimeout(crawlEnglish("url"),1*60*1000);
     fs.writeFile("./compare_list/english.json", JSON.stringify(new_english, null, 4), "utf8", (err) => {
         if (err) console.log(err);
-        else console.log("english.json written successfully\n");
+        else console.log("english.json written successfully");
     });
     const new_enerEngineering = await waitWithTimeout(crawlEnerEngineering("url"),1*60*1000);
     fs.writeFile("./compare_list/enerEngineering.json", JSON.stringify(new_enerEngineering, null, 4), "utf8", (err) => {
         if (err) console.log(err);
-        else console.log("enerEngineering.json written successfully\n");
+        else console.log("enerEngineering.json written successfully");
     });
     const new_urbanPlanRealEstate = await waitWithTimeout(crawlUrbanPlanRealEstate("url"),1*60*1000);
     fs.writeFile("./compare_list/urbanPlanRealEstate.json", JSON.stringify(new_urbanPlanRealEstate, null, 4), "utf8", (err) => {
