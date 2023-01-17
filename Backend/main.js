@@ -304,12 +304,13 @@ server.listen(PORT, function(){
 });
 
 setInterval(() => {
-    console.log(console.log(moment().tz("Asia/Seoul").format('YYMMDD_HH_mm_ss')));
-    refresh(nextIdNum,1);
-    // if(DayOrNight == "Day"){
-    //     refresh(nextIdNum,1);
-    //     console.log("*** interval reached");
-    // }
-    // else console.log("* interval skipped - Night");
+    // console.log(`\n${moment().tz("Asia/Seoul").format('YYMMDD_HH_mm_ss')}`);
+    // refresh(nextIdNum,1);
+    if(DayOrNight == "Day"){
+        console.log(`\n${moment().tz("Asia/Seoul").format('YYMMDD_HH_mm_ss')}`);
+        refresh(nextIdNum,1);
+        console.log("*** interval reached");
+    }
+    else console.log("* interval skipped - Night");
 }, refreshTimeInMinutes*60*1000);
 // console.log("refreshed") 가 아니라, refresh() 를 실행시켜야 함.
