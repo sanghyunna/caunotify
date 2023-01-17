@@ -171,7 +171,9 @@ app.post('/newuser', (req, res) => { // 정상작동 확인함
         if(requestBody.appliedStat != "true")       requestBody.appliedStat = "false";
         if(requestBody.med != "true")               requestBody.med = "false";
         if(requestBody.pharm != "true")             requestBody.pharm = "false";
-        if(requestBody.ADPR != "true")              requestBody.ADPR = "false";
+        if(requestBody.adpr != "true")              requestBody.adpr = "false";
+        if(requestBody.dorm != "true")              requestBody.dorm = "false";
+        if(requestBody.upreJob != "true")           requestBody.upreJob = "false";
         // console.log(`<Received>\n\tName:${requestBody.name}\n\tindustSec:${requestBody.industSec}\n\tsoftware:${requestBody.software}\n\tCAUnotice:${requestBody.CAUnotice}`);
         requestBody.id = parseInt(nextIdNum); // key값 추가
         requestBody.subStatus = "true"; 
