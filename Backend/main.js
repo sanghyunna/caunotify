@@ -218,7 +218,7 @@ app.post('/currentuserDB', (req, res) => {
     for(let i=0;i<nextIdNum;i++){
         simpleInfoStorage.push(simpleUserInfo(userDataBase[i]));
     }
-    return res.end(simpleInfoStorage);
+    return res.end(JSON.stringify(simpleInfoStorage));
 });
 app.post('/findUserByEmail', (req, res) => {
     const mailAddress = req.body.email;
