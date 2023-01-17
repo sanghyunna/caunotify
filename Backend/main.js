@@ -21,6 +21,7 @@ import { DayOrNight } from "./dayOrNight.js";
 import { sendTemplateEmail } from "./sendEmail.js";
 import { mailHandler } from "./mailHandler.js";
 import { simpleUserInfo } from "./simpleUserInfo.js";
+import { isItAuthed } from "./commandAuth.js";
 
 function updateUserDB(src){
     fs.writeFileSync(path.join(__dirname, 'userDB_log', 'userDB.json'), JSON.stringify(userDataBase,null,4), { encoding: "utf8", flag: "w" });
@@ -209,11 +210,13 @@ app.post('/posttest', (req, res) => { // 정상작동 확인함
 // refresh, currentuserDB, delLastUser 이렇게 3가지는 보안 위협이 될 수 있으므로 배포 단계에서 제거할 코드
 // ======================================================================
 app.post('/refresh', (req, res) => {
+    if(isItAuthed(req.body.auth) != 0) return res.send("Not authorized");
     console.log("refresh requested");
     refresh(nextIdNum,0);
-    return res.send("Refreshed")
+    return res.send("Refreshed");
 });
 app.post('/currentuserDB', (req, res) => {
+    if(isItAuthed(req.body.auth) != 0) return res.send("Not authorized");
     console.log("** Current UserDB Sent")
     console.log(`nextIdNum : ${nextIdNum}`);
     let simpleInfoStorage = [];
@@ -223,6 +226,7 @@ app.post('/currentuserDB', (req, res) => {
     return res.send(simpleInfoStorage);
 });
 app.post('/findUserByEmail', (req, res) => {
+    if(isItAuthed(req.body.auth) != 0) return res.send("Not authorized");
     const mailAddress = req.body.email;
     const includeUnsubbedUsers = req.body.includeUnsubbedUsers;
     const idNum = findUserByEmail(mailAddress,includeUnsubbedUsers);
@@ -231,6 +235,7 @@ app.post('/findUserByEmail', (req, res) => {
     return res.send(simpleUserInfo(userDataBase[idNum]));
 });
 app.post('/findUserByName', (req, res) => {
+    if(isItAuthed(req.body.auth) != 0) return res.send("Not authorized");
     const username = req.body.name;
     const idNum = findUserByName(username);
     if(idNum == -1) return res.send("Not Found");
@@ -238,12 +243,14 @@ app.post('/findUserByName', (req, res) => {
     return res.send(simpleUserInfo(userDataBase[idNum]));
 });
 app.post('/findUserById', (req, res) => {
+    if(isItAuthed(req.body.auth) != 0) return res.send("Not authorized");
     const idNum = req.body.id;
     if (userDataBase[idNum].name == undefined) return res.send("Not Found");
     console.log(`** Data of User[${idNum}](${userDataBase[idNum].name}) Sent`);
     return res.send(simpleUserInfo(userDataBase[idNum]));
 });
 app.post('/delUserById', (req, res) => {
+    if(isItAuthed(req.body.auth) != 0) return res.send("Not authorized");
     const idNum = req.body.id;
     if (userDataBase[idNum].name == undefined) return res.send("Not Found");
     userDataBase[idNum].subStatus = "false";
@@ -252,6 +259,7 @@ app.post('/delUserById', (req, res) => {
     return res.send(`User[${idNum}](${userDataBase[idNum].name}) unsubbed`);
 });
 app.post('/delLastUser', (req, res) => {
+    if(isItAuthed(req.body.auth) != 0) return res.send("Not authorized");
     console.log("** Deleted last user");
     nextIdNum--;
     console.log(`nextIdNum : ${nextIdNum}`);
