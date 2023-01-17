@@ -84,7 +84,7 @@ export async function refresh(nextIdNum, silentMode){
 
     // if문은 0만 아니면 실행한다. 즉, 0 은 false고, 0을 제외한 모든 값은 true이다.
     // 즉 silentMode의 값이 1이라면,
-    // if(!silentMode) console.log 는 silentMode일 때만 실행된다
+    // if(!silentMode) console.log 는 silentMode일 때 실행 X
 
 
     console.time("** fully loaded in "); // 로딩시간 기록
