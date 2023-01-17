@@ -49,7 +49,7 @@ import crawlArchitecture from "./crawlers/url_scraper_architecture.js";
 import crawlAppliedStat from "./crawlers/url_scraper_applied_stat.js";
 import crawlMed from "./crawlers/url_scraper_med.js";
 import crawlPharm from "./crawlers/url_scraper_pharm.js";
-import crawladpr from "./crawlers/url_scraper_adpr.js";
+import crawladpr from "./crawlers/url_scraper_adprr.js";
 
 let ON = "false";
 // ON = "true"; 
