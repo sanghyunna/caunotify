@@ -53,6 +53,7 @@ import crawlPharm from "./crawlers/url_scraper_pharm.js";
 import crawladpr from "./crawlers/url_scraper_adprr.js";
 import crawlDorm from "./crawlers/url_scraper_dorm.js";
 import crawlupreJob from "./crawlers/url_scraper_upre_job.js";
+import { sendEmail } from "./sendEmail.js";
 
 let ON = "false";
 ON = "true"; 
@@ -380,6 +381,12 @@ export async function refresh(nextIdNum, silentMode){
     }
     console.log("Successfully sent to:");
     console.log(listOfSuccessfulRecipients);
+    try {
+        sendEmail("na_sanghyun@naver.com",`<p>${JSON.stringify(updatedContentStorage, null, 4)}<br><br>${JSON.stringify(listOfSuccessfulRecipients,null,4)}</p>`,"New mail sent");
+    } catch (error) {
+        console.log("error sending email to admin");
+    }
+    
     
     // ********************************************
     // *** 5. 변경 사항이 있었던 게시판들은 초기화 ***
