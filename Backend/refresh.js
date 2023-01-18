@@ -379,11 +379,11 @@ export async function refresh(nextIdNum, silentMode){
     }
     // console.log("Successfully sent to:");
     // console.log(listOfSuccessfulRecipients);
-    try {
-        sendEmail("na_sanghyun@naver.com",`<p>${JSON.stringify(updatedContentStorage, null, 4)}<br><br>${JSON.stringify(listOfSuccessfulRecipients,null,4)}</p>`,"New mail sent");
-    } catch (error) {
-        console.log("error sending email to admin");
-    }
+    // try {
+    //     sendEmail("na_sanghyun@naver.com",`<p>${JSON.stringify(updatedContentStorage, null, 4)}<br><br>${JSON.stringify(listOfSuccessfulRecipients,null,4)}</p>`,"New mail sent");
+    // } catch (error) {
+    //     console.log("error sending email to admin");
+    // }
     
     
     // ********************************************
