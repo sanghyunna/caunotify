@@ -26,7 +26,7 @@ import { isItAuthed } from "./commandAuth.js";
 function updateUserDB(src){
     fs.writeFileSync(path.join(__dirname, 'userDB_log', 'userDB.json'), JSON.stringify(userDataBase,null,4), { encoding: "utf8", flag: "w" });
     fs.writeFileSync(`${__dirname}/userDB_log/log_${moment().tz("Asia/Seoul").format('YYMMDD_HH_mm_ss')}.json`, JSON.stringify(userDataBase,null,4), { encoding: "utf8", flag: "a" });
-    console.log(`***UserDB updated by ${src}`);
+    console.log(`***UserDB updated by ${src}\n`);
 }
 function updateBounceDB(){
     fs.writeFileSync(path.join(__dirname, 'mailDB') + '/bounceDB.json', JSON.stringify(bounceDB,null,4), { encoding: "utf8", flag: "w" });
@@ -211,14 +211,14 @@ app.post('/posttest', (req, res) => { // 정상작동 확인함
 // ======================================================================
 app.post('/refresh', (req, res) => {
     if(isItAuthed(req.body.auth) != 0) return res.send("Not authorized");
-    console.log("refresh requested");
+    console.log("refresh requested\n");
     refresh(nextIdNum,0);
     return res.send("Refreshed");
 });
 app.post('/currentuserDB', (req, res) => {
     if(isItAuthed(req.body.auth) != 0) return res.send("Not authorized");
     console.log("** Current UserDB Sent")
-    console.log(`nextIdNum : ${nextIdNum}`);
+    console.log(`nextIdNum : ${nextIdNum}\n`);
     let simpleInfoStorage = [];
     for(let i=0;i<nextIdNum;i++){
         simpleInfoStorage.push(simpleUserInfo(userDataBase[i]));
@@ -231,7 +231,7 @@ app.post('/findUserByEmail', (req, res) => {
     const includeUnsubbedUsers = req.body.includeUnsubbedUsers;
     const idNum = findUserByEmail(mailAddress,includeUnsubbedUsers);
     if(idNum == -1) return res.send("Not Found");
-    console.log(`** Data of User[${idNum}](${userDataBase[idNum].name}) Sent`);
+    console.log(`** Data of User[${idNum}](${userDataBase[idNum].name}) Sent\n`);
     return res.send(simpleUserInfo(userDataBase[idNum]));
 });
 app.post('/findUserByName', (req, res) => {
@@ -239,14 +239,14 @@ app.post('/findUserByName', (req, res) => {
     const username = req.body.name;
     const idNum = findUserByName(username);
     if(idNum == -1) return res.send("Not Found");
-    console.log(`** Data of User[${idNum}](${userDataBase[idNum].name}) Sent`);
+    console.log(`** Data of User[${idNum}](${userDataBase[idNum].name}) Sent\n`);
     return res.send(simpleUserInfo(userDataBase[idNum]));
 });
 app.post('/findUserById', (req, res) => {
     if(isItAuthed(req.body.auth) != 0) return res.send("Not authorized");
     const idNum = req.body.id;
     if (userDataBase[idNum].name == undefined) return res.send("Not Found");
-    console.log(`** Data of User[${idNum}](${userDataBase[idNum].name}) Sent`);
+    console.log(`** Data of User[${idNum}](${userDataBase[idNum].name}) Sent\n`);
     return res.send(simpleUserInfo(userDataBase[idNum]));
 });
 app.post('/delUserById', (req, res) => {
@@ -254,8 +254,8 @@ app.post('/delUserById', (req, res) => {
     const idNum = req.body.id;
     if (userDataBase[idNum].name == undefined) return res.send("Not Found");
     userDataBase[idNum].subStatus = "false";
-    updateUserDB("delUserById");
     console.log(`** Data of User[${idNum}](${userDataBase[idNum].name}) unsubscribed`);
+    updateUserDB("delUserById");
     return res.send(`User[${idNum}](${userDataBase[idNum].name}) unsubbed`);
 });
 app.post('/delLastUser', (req, res) => {
