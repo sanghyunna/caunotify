@@ -138,7 +138,7 @@ export async function refresh(nextIdNum, silentMode){
     const new_pharm = await waitWithTimeout(crawlPharm("url"),1*60*1000);                       if(!silentMode) console.log("pharm loaded");
     const new_adpr = await waitWithTimeout(crawladpr("url"),1*60*1000);                         if(!silentMode) console.log("adpr loaded");
     const new_dorm = await waitWithTimeout(crawlDorm("url"),1*60*1000);                         if(!silentMode) console.log("dorm loaded");
-    const new_upreJob = await waitWithTimeout(crawlupreJob("url"),1*60*1000);                      if(!silentMode) console.log("upreJob loaded");
+    const new_upreJob = await waitWithTimeout(crawlupreJob("url"),1*60*1000);                   if(!silentMode) console.log("upreJob loaded");
 
  
     console.timeEnd("** fully loaded in ");
@@ -202,7 +202,7 @@ export async function refresh(nextIdNum, silentMode){
     storeDifferences.pharm =            readFileAndCompareWithOriginal("pharm", new_pharm);
     storeDifferences.adpr =             readFileAndCompareWithOriginal("adpr", new_adpr);
     storeDifferences.dorm =             readFileAndCompareWithOriginal("dorm", new_dorm);
-    storeDifferences.upreJob =          readFileAndCompareWithOriginal("adpr", new_upreJob);
+    storeDifferences.upreJob =          readFileAndCompareWithOriginal("upreJob", new_upreJob);
     // storeDiffences.${majorName} = [ 추가된 공지 위치, 추가된 공지 위치 2 ];
     
     // ****************************************************
