@@ -315,7 +315,7 @@ export async function refresh(nextIdNum, silentMode){
 
     // 메일에서 받는 게시판의 순서를 바꾸려면 여기서 바꾸면 됨
     let dataToSend = [];
-    // let listOfSuccessfulRecipients = [];
+    let listOfSuccessfulRecipients = [];
     let sendOrNot = 0;
     const userDataBase = JSON.parse(fs.readFileSync("./userDB_log/userDB.json","utf8"),"utf8");
     for(let i=0;i<nextIdNum;i++){
@@ -371,14 +371,16 @@ export async function refresh(nextIdNum, silentMode){
 
         if(sendOrNot != 0){
             mailHandler(userDataBase[i].name, userDataBase[i].email, dataToSend, i, "false");
-            // console.log(dataToSend);
             // recipientName, recipientEmail, data, id, IsItSubMail
+
+            // console.log(dataToSend);
+            listOfSuccessfulRecipients.push(JSON.stringify(userDataBase[i].email));
             sendOrNot = 0;
             dataToSend = [];
         }
     }
-    // console.log("Successfully sent to:");
-    // console.log(listOfSuccessfulRecipients);
+    console.log("Successfully sent to:");
+    console.log(listOfSuccessfulRecipients);
     // try {
     //     sendEmail("na_sanghyun@naver.com",`<p>${JSON.stringify(updatedContentStorage, null, 4)}<br><br>${JSON.stringify(listOfSuccessfulRecipients,null,4)}</p>`,"New mail sent");
     // } catch (error) {
