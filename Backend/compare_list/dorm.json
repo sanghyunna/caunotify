@@ -1,5 +1,7 @@
 {
     "url": [
+        "https://dormitory.cau.ac.kr/community.php?mid=m05_01_01&cmid=m05_01&skeyword=&pact=&sHeader=&act=view&uid=22810&page=1",
+        "https://dormitory.cau.ac.kr/community.php?mid=m05_01_01&cmid=m05_01&skeyword=&pact=&sHeader=&act=view&uid=22810&page=1",
         "https://dormitory.cau.ac.kr/community.php?mid=m05_01_01&cmid=m05_01&skeyword=&pact=&sHeader=&act=view&uid=22671&page=1",
         "https://dormitory.cau.ac.kr/community.php?mid=m05_01_01&cmid=m05_01&skeyword=&pact=&sHeader=&act=view&uid=22671&page=1",
         "https://dormitory.cau.ac.kr/community.php?mid=m05_01_01&cmid=m05_01&skeyword=&pact=&sHeader=&act=view&uid=22670&page=1",
@@ -15,11 +17,11 @@
         "https://dormitory.cau.ac.kr/community.php?mid=m05_01_01&cmid=m05_01&skeyword=&pact=&sHeader=&act=view&uid=22193&page=1",
         "https://dormitory.cau.ac.kr/community.php?mid=m05_01_01&cmid=m05_01&skeyword=&pact=&sHeader=&act=view&uid=22193&page=1",
         "https://dormitory.cau.ac.kr/community.php?mid=m05_01_01&cmid=m05_01&skeyword=&pact=&sHeader=&act=view&uid=22659&page=1",
-        "https://dormitory.cau.ac.kr/community.php?mid=m05_01_01&cmid=m05_01&skeyword=&pact=&sHeader=&act=view&uid=22570&page=1",
-        "https://dormitory.cau.ac.kr/community.php?mid=m05_01_01&cmid=m05_01&skeyword=&pact=&sHeader=&act=view&uid=22568&page=1",
-        "https://dormitory.cau.ac.kr/community.php?mid=m05_01_01&cmid=m05_01&skeyword=&pact=&sHeader=&act=view&uid=22568&page=1"
+        "https://dormitory.cau.ac.kr/community.php?mid=m05_01_01&cmid=m05_01&skeyword=&pact=&sHeader=&act=view&uid=22570&page=1"
     ],
     "title": [
+        "2023학년도 1학기 룸메이트 신청 안내",
+        "Application for 2023-1st Roommate Assignment",
         "2023학년도 1학기 생활관 합격자 발표 안내 (재학생/수시/재외국민)",
         "2023-1st Semester Dormitory Acceptance (Enrolled/Early admission)",
         "설 연휴기간 생활관 편의시설 일정 안내",
@@ -35,8 +37,6 @@
         "2022학년도 동계방학 생활관 업무시간 변경 안내",
         "2022-Winter Vacation Dormitory Buisiness Hours",
         "2022년 동계방학 4주 - 1차 퇴관 도우미 모집 마감 안내",
-        "2022년 동계방학 4주 - 1차 퇴관 도우미 모집 안내",
-        "2022학년도 동계방학 4주-1차 퇴관 예약 신청(309관)",
-        "2022-Winter 4-1st Moving out Reservation(309Bldg.)"
+        "2022년 동계방학 4주 - 1차 퇴관 도우미 모집 안내"
     ]
 }
