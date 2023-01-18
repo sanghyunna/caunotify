@@ -46,6 +46,8 @@ const KRname = function func(input){
     if(input == "adpr") return "광고홍보학과";
     if(input == "dorm") return "서울캠퍼스 기숙사";
     if(input == "upreJob") return "도시계획부동산학과 취업";
+    if(input == "davinci") return "다빈치교양대학";
+    if(input == "polaris") return "차세대반도체학과";
 }
 
 export default KRname;
