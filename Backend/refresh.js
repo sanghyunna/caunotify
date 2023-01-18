@@ -300,7 +300,7 @@ export async function refresh(nextIdNum, silentMode){
     addURLsAndTitlesToStorage("dorm", new_dorm, storeDifferences.dorm);
     addURLsAndTitlesToStorage("upreJob", new_upreJob, storeDifferences.upreJob);
     
-    // console.log(updatedContentStorage.length);
+    console.log(updatedContentStorage);
 
     if(Object.keys(updatedContentStorage).length == 0){
         console.log("*** No Updates!");
@@ -315,7 +315,7 @@ export async function refresh(nextIdNum, silentMode){
 
     // 메일에서 받는 게시판의 순서를 바꾸려면 여기서 바꾸면 됨
     let dataToSend = [];
-    let listOfSuccessfulRecipients = [];
+    // let listOfSuccessfulRecipients = [];
     let sendOrNot = 0;
     const userDataBase = JSON.parse(fs.readFileSync("./userDB_log/userDB.json","utf8"),"utf8");
     for(let i=0;i<nextIdNum;i++){
@@ -371,7 +371,7 @@ export async function refresh(nextIdNum, silentMode){
 
         if(sendOrNot != 0){
             mailHandler(userDataBase[i].name, userDataBase[i].email, dataToSend, i, "false");
-            console.log(dataToSend);
+            // console.log(dataToSend);
             // recipientName, recipientEmail, data, id, IsItSubMail
             sendOrNot = 0;
             dataToSend = [];
