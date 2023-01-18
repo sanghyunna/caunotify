@@ -5,6 +5,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import KRname from "./name_en2kr.js"
 
+
 import crawlIndustSec from "./crawlers/url_scraper_indust_sec.js";
 import crawlSoftware from "./crawlers/url_scraper_software.js";
 import crawlCAUnotice from "./crawlers/url_scraper_cauNotice.js";
@@ -136,8 +137,8 @@ export async function refresh(nextIdNum, silentMode){
     const new_med = await waitWithTimeout(crawlMed("url"),1*60*1000);                           if(!silentMode) console.log("med loaded");
     const new_pharm = await waitWithTimeout(crawlPharm("url"),1*60*1000);                       if(!silentMode) console.log("pharm loaded");
     const new_adpr = await waitWithTimeout(crawladpr("url"),1*60*1000);                         if(!silentMode) console.log("adpr loaded");
-    const new_dorm = await waitWithTimeout(crawladpr("url"),1*60*1000);                         if(!silentMode) console.log("dorm loaded");
-    const new_upreJob = await waitWithTimeout(crawladpr("url"),1*60*1000);                      if(!silentMode) console.log("upreJob loaded");
+    const new_dorm = await waitWithTimeout(crawlDorm("url"),1*60*1000);                         if(!silentMode) console.log("dorm loaded");
+    const new_upreJob = await waitWithTimeout(crawlupreJob("url"),1*60*1000);                      if(!silentMode) console.log("upreJob loaded");
 
  
     console.timeEnd("** fully loaded in ");
@@ -369,7 +370,7 @@ export async function refresh(nextIdNum, silentMode){
 
         if(sendOrNot != 0){
             // console.log(`dataToSend[${moment().format('YYYYMMDD, h:mm:ss a')}]:`);
-            // console.log(dataToSend);
+            // console.log(dataToSend); 
             let rcvd = mailHandler(userDataBase[i].name, userDataBase[i].email, dataToSend, i, "false");
             if(rcvd == 0) listOfSuccessfulRecipients.push(userDataBase[i].email);
             // recipientName, recipientEmail, data, id, IsItSubMail
