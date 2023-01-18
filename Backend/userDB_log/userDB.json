@@ -46,7 +46,9 @@
         "appliedStat": "true",
         "med": "true",
         "pharm": "true",
-        "ADPR": "true",
+        "adpr": "true",
+        "davinci": "true",
+        "polaris": "true",
         "id": 0,
         "subStatus": "true"
     },
@@ -97,7 +99,9 @@
         "appliedStat": "false",
         "med": "false",
         "pharm": "false",
-        "ADPR": "false",
+        "adpr": "false",
+        "davinci": "false",
+        "polaris": "false",
         "id": 1,
         "subStatus": "true"
     },
@@ -148,7 +152,9 @@
         "appliedStat": "false",
         "med": "false",
         "pharm": "false",
-        "ADPR": "false",
+        "adpr": "false",
+        "davinci": "false",
+        "polaris": "false",
         "id": 2,
         "subStatus": "true"
     },
@@ -199,7 +205,9 @@
         "appliedStat": "false",
         "med": "false",
         "pharm": "false",
-        "ADPR": "false",
+        "adpr": "false",
+        "davinci": "false",
+        "polaris": "false",
         "id": 3,
         "subStatus": "true"
     },
@@ -250,7 +258,9 @@
         "appliedStat": "false",
         "med": "false",
         "pharm": "false",
-        "ADPR": "false",
+        "adpr": "false",
+        "davinci": "false",
+        "polaris": "false",
         "id": 4,
         "subStatus": "true"
     },
@@ -301,7 +311,9 @@
         "appliedStat": "false",
         "med": "false",
         "pharm": "false",
-        "ADPR": "false",
+        "adpr": "false",
+        "davinci": "false",
+        "polaris": "false",
         "id": 5,
         "subStatus": "true"
     },
@@ -352,7 +364,9 @@
         "appliedStat": "false",
         "med": "false",
         "pharm": "false",
-        "ADPR": "false",
+        "adpr": "false",
+        "davinci": "false",
+        "polaris": "false",
         "id": 6,
         "subStatus": "true"
     },
@@ -406,6 +420,8 @@
         "adpr": "false",
         "dorm": "false",
         "upreJob": "false",
+        "davinci": "false",
+        "polaris": "false",
         "id": 7,
         "subStatus": "true"
     },
@@ -459,6 +475,8 @@
         "pharm": "false",
         "adpr": "false",
         "dorm": "false",
+        "davinci": "false",
+        "polaris": "false",
         "id": 8,
         "subStatus": "true"
     },
@@ -512,6 +530,8 @@
         "adpr": "false",
         "dorm": "false",
         "upreJob": "false",
+        "davinci": "false",
+        "polaris": "false",
         "id": 9,
         "subStatus": "true"
     },
@@ -565,6 +585,8 @@
         "adpr": "false",
         "dorm": "false",
         "upreJob": "false",
+        "davinci": "false",
+        "polaris": "false",
         "id": 10,
         "subStatus": "true"
     }
