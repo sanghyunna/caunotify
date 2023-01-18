@@ -55,7 +55,7 @@ import crawlDorm from "./crawlers/url_scraper_dorm.js";
 import crawlupreJob from "./crawlers/url_scraper_upre_job.js";
 
 let ON = "false";
-// ON = "true"; 
+ON = "true"; 
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -389,7 +389,7 @@ export async function refresh(nextIdNum, silentMode){
             url: new_industSec.url,
             title: new_industSec.title
         };
-        fs.writeFile(path.join(__dirname, 'compare_list', 'industSec.json'), JSON.stringify(industSecObject, null, 4), (err) => {
+        fs.writeFile("./compare_list/industSec.json", JSON.stringify(industSecObject, null, 4), (err) => {
             if (err) { console.log(err); } else { console.log("industSec updated"); }
         });
     }
@@ -398,7 +398,7 @@ export async function refresh(nextIdNum, silentMode){
             url: new_software.url,
             title: new_software.title
         };
-        fs.writeFile(path.join(__dirname, 'compare_list', 'software.json'), JSON.stringify(softwareObject, null, 4), (err) => {
+        fs.writeFile("./compare_list/software.json", JSON.stringify(softwareObject, null, 4), (err) => {
             if (err) { console.log(err); } else { console.log("software updated"); }
         });
     }
@@ -407,7 +407,7 @@ export async function refresh(nextIdNum, silentMode){
             url: new_CAUnotice.url,
             title: new_CAUnotice.title
         };
-        fs.writeFile(path.join(__dirname, 'compare_list', 'CAUnotice.json'), JSON.stringify(CAUnoticeObject, null, 4), (err) => {
+        fs.writeFile("./compare_list/CAUnotice.json", JSON.stringify(CAUnoticeObject, null, 4), (err) => {
             if (err) { console.log(err); } else { console.log("CAUnotice updated"); }
         });
     }
@@ -416,7 +416,7 @@ export async function refresh(nextIdNum, silentMode){
             url: new_integEngineering.url,
             title: new_integEngineering.title
         };
-        fs.writeFile(path.join(__dirname, 'compare_list', 'integEngineering.json'), JSON.stringify(integEngineeringObject, null, 4), (err) => {
+        fs.writeFile("./compare_list/integEngineering.json", JSON.stringify(integEngineeringObject, null, 4), (err) => {
             if (err) { console.log(err); } else { console.log("integEngineering updated"); }
         });
     }
@@ -425,7 +425,7 @@ export async function refresh(nextIdNum, silentMode){
             url: new_korean.url,
             title: new_korean.title
         };
-        fs.writeFile(path.join(__dirname, 'compare_list', 'korean.json'), JSON.stringify(koreanObject, null, 4), (err) => {
+        fs.writeFile("./compare_list/korean.json", JSON.stringify(koreanObject, null, 4), (err) => {
             if (err) { console.log(err); } else { console.log("korean updated"); }
         });
     }
@@ -434,7 +434,7 @@ export async function refresh(nextIdNum, silentMode){
             url: new_mechEngineering.url,
             title: new_mechEngineering.title
         };
-        fs.writeFile(path.join(__dirname, 'compare_list', 'mechEngineering.json'), JSON.stringify(mechEngineeringObject, null, 4), (err) => {
+        fs.writeFile("./compare_list/mechEngineering.json", JSON.stringify(mechEngineeringObject, null, 4), (err) => {
             if (err) { console.log(err); } else { console.log("mechEngineering updated"); }
         });
     }
@@ -443,7 +443,7 @@ export async function refresh(nextIdNum, silentMode){
             url: new_psychology.url,
             title: new_psychology.title
         };
-        fs.writeFile(path.join(__dirname, 'compare_list', 'psychology.json'), JSON.stringify(psychologyObject, null, 4), (err) => {
+        fs.writeFile("./compare_list/psychology.json", JSON.stringify(psychologyObject, null, 4), (err) => {
             if (err) { console.log(err); } else { console.log("psychology updated"); }
         });
     }
@@ -452,7 +452,7 @@ export async function refresh(nextIdNum, silentMode){
             url: new_business.url,
             title: new_business.title
         };
-        fs.writeFile(path.join(__dirname, 'compare_list', 'business.json'), JSON.stringify(businessObject, null, 4), (err) => {
+        fs.writeFile("./compare_list/business.json", JSON.stringify(businessObject, null, 4), (err) => {
             if (err) { console.log(err); } else { console.log("business updated"); }
         });
     }
@@ -461,7 +461,7 @@ export async function refresh(nextIdNum, silentMode){
             url: new_elecEngineering.url,
             title: new_elecEngineering.title
         };
-        fs.writeFile(path.join(__dirname, 'compare_list', 'elecEngineering.json'), JSON.stringify(elecEngineeringObject, null, 4), (err) => {
+        fs.writeFile("./compare_list/elecEngineering.json", JSON.stringify(elecEngineeringObject, null, 4), (err) => {
             if (err) { console.log(err); } else { console.log("elecEngineering updated"); }
         });
     }
@@ -470,7 +470,7 @@ export async function refresh(nextIdNum, silentMode){
             url: new_english.url,
             title: new_english.title
         };
-        fs.writeFile(path.join(__dirname, 'compare_list', 'english.json'), JSON.stringify(englishObject, null, 4), (err) => {
+        fs.writeFile("./compare_list/english.json", JSON.stringify(englishObject, null, 4), (err) => {
             if (err) { console.log(err); } else { console.log("english updated"); }
         });
     }
@@ -479,7 +479,7 @@ export async function refresh(nextIdNum, silentMode){
             url: new_enerEngineering.url,
             title: new_enerEngineering.title
         };
-        fs.writeFile(path.join(__dirname, 'compare_list', 'enerEngineering.json'), JSON.stringify(enerEngineeringObject, null, 4), (err) => {
+        fs.writeFile("./compare_list/enerEngineering.json", JSON.stringify(enerEngineeringObject, null, 4), (err) => {
             if (err) { console.log(err); } else { console.log("enerEngineering updated"); }
         });
     }
@@ -488,7 +488,7 @@ export async function refresh(nextIdNum, silentMode){
             url: new_urbanPlanRealEstate.url,
             title: new_urbanPlanRealEstate.title
         };
-        fs.writeFile(path.join(__dirname, 'compare_list', 'urbanPlanRealEstate.json'), JSON.stringify(urbanPlanRealEstateObject, null, 4), (err) => {
+        fs.writeFile("./compare_list/urbanPlanRealEstate.json", JSON.stringify(urbanPlanRealEstateObject, null, 4), (err) => {
             if (err) { console.log(err); } else { console.log("urbanPlanRealEstate updated"); }
         });
     }
@@ -497,7 +497,7 @@ export async function refresh(nextIdNum, silentMode){
             url: new_nursing.url,
             title: new_nursing.title
         };
-        fs.writeFile(path.join(__dirname, 'compare_list', 'nursing.json'), JSON.stringify(nursingObject, null, 4), (err) => {
+        fs.writeFile("./compare_list/nursing.json", JSON.stringify(nursingObject, null, 4), (err) => {
             if (err) { console.log(err); } else { console.log("nursing updated"); }
         });
     }
@@ -506,7 +506,7 @@ export async function refresh(nextIdNum, silentMode){
             url: new_politics.url,
             title: new_politics.title
         };
-        fs.writeFile(path.join(__dirname, 'compare_list', 'politics.json'), JSON.stringify(politicsObject, null, 4), (err) => {
+        fs.writeFile("./compare_list/politics.json", JSON.stringify(politicsObject, null, 4), (err) => {
             if (err) { console.log(err); } else { console.log("politics updated"); }
         });
     }
@@ -515,7 +515,7 @@ export async function refresh(nextIdNum, silentMode){
             url: new_physicalEd.url,
             title: new_physicalEd.title
         };
-        fs.writeFile(path.join(__dirname, 'compare_list', 'physicalEd.json'), JSON.stringify(physicalEdObject, null, 4), (err) => {
+        fs.writeFile("./compare_list/physicalEd.json", JSON.stringify(physicalEdObject, null, 4), (err) => {
             if (err) { console.log(err); } else { console.log("physicalEd updated"); }
         });
     }
@@ -524,7 +524,7 @@ export async function refresh(nextIdNum, silentMode){
             url: new_education.url,
             title: new_education.title
         };
-        fs.writeFile(path.join(__dirname, 'compare_list', 'education.json'), JSON.stringify(educationObject, null, 4), (err) => {
+        fs.writeFile("./compare_list/education.json", JSON.stringify(educationObject, null, 4), (err) => {
             if (err) { console.log(err); } else { console.log("education updated"); }
         });
     }
@@ -533,7 +533,7 @@ export async function refresh(nextIdNum, silentMode){
             url: new_earlyChildhoodEd.url,
             title: new_earlyChildhoodEd.title
         };
-        fs.writeFile(path.join(__dirname, 'compare_list', 'earlyChildhoodEd.json'), JSON.stringify(earlyChildhoodEdObject, null, 4), (err) => {
+        fs.writeFile("./compare_list/earlyChildhoodEd.json", JSON.stringify(earlyChildhoodEdObject, null, 4), (err) => {
             if (err) { console.log(err); } else { console.log("earlyChildhoodEd updated"); }
         });
     }
@@ -542,7 +542,7 @@ export async function refresh(nextIdNum, silentMode){
             url: new_englishEd.url,
             title: new_englishEd.title
         };
-        fs.writeFile(path.join(__dirname, 'compare_list', 'englishEd.json'), JSON.stringify(englishEdObject, null, 4), (err) => {
+        fs.writeFile("./compare_list/englishEd.json", JSON.stringify(englishEdObject, null, 4), (err) => {
             if (err) { console.log(err); } else { console.log("englishEd updated"); }
         });
     }
@@ -551,7 +551,7 @@ export async function refresh(nextIdNum, silentMode){
             url: new_chem.url,
             title: new_chem.title
         };
-        fs.writeFile(path.join(__dirname, 'compare_list', 'chem.json'), JSON.stringify(chemObject, null, 4), (err) => {
+        fs.writeFile("./compare_list/chem.json", JSON.stringify(chemObject, null, 4), (err) => {
             if (err) { console.log(err); } else { console.log("chem updated"); }
         });
     }
@@ -560,7 +560,7 @@ export async function refresh(nextIdNum, silentMode){
             url: new_lifeScience.url,
             title: new_lifeScience.title
         };
-        fs.writeFile(path.join(__dirname, 'compare_list', 'lifeScience.json'), JSON.stringify(lifeScienceObject, null, 4), (err) => {
+        fs.writeFile("./compare_list/lifeScience.json", JSON.stringify(lifeScienceObject, null, 4), (err) => {
             if (err) { console.log(err); } else { console.log("lifeScience updated"); }
         });
     }
@@ -569,7 +569,7 @@ export async function refresh(nextIdNum, silentMode){
             url: new_japanese.url,
             title: new_japanese.title
         };
-        fs.writeFile(path.join(__dirname, 'compare_list', 'japanese.json'), JSON.stringify(japaneseObject, null, 4), (err) => {
+        fs.writeFile("./compare_list/japanese.json", JSON.stringify(japaneseObject, null, 4), (err) => {
             if (err) { console.log(err); } else { console.log("japanese updated"); }
         });
     }
@@ -578,7 +578,7 @@ export async function refresh(nextIdNum, silentMode){
             url: new_chinese.url,
             title: new_chinese.title
         };
-        fs.writeFile(path.join(__dirname, 'compare_list', 'chinese.json'), JSON.stringify(chineseObject, null, 4), (err) => {
+        fs.writeFile("./compare_list/chinese.json", JSON.stringify(chineseObject, null, 4), (err) => {
             if (err) { console.log(err); } else { console.log("chinese updated"); }
         });
     }
@@ -587,7 +587,7 @@ export async function refresh(nextIdNum, silentMode){
             url: new_math.url,
             title: new_math.title
         };
-        fs.writeFile(path.join(__dirname, 'compare_list', 'math.json'), JSON.stringify(mathObject, null, 4), (err) => {
+        fs.writeFile("./compare_list/math.json", JSON.stringify(mathObject, null, 4), (err) => {
             if (err) { console.log(err); } else { console.log("math updated"); }
         });
     }
@@ -596,7 +596,7 @@ export async function refresh(nextIdNum, silentMode){
             url: new_ai.url,
             title: new_ai.title
         };
-        fs.writeFile(path.join(__dirname, 'compare_list', 'ai.json'), JSON.stringify(aiObject, null, 4), (err) => {
+        fs.writeFile("./compare_list/ai.json", JSON.stringify(aiObject, null, 4), (err) => {
             if (err) { console.log(err); } else { console.log("ai updated"); }
         });
     }
@@ -605,7 +605,7 @@ export async function refresh(nextIdNum, silentMode){
             url: new_chemEngineering.url,
             title: new_chemEngineering.title
         };
-        fs.writeFile(path.join(__dirname, 'compare_list', 'chemEngineering.json'), JSON.stringify(chemEngineeringObject, null, 4), (err) => {
+        fs.writeFile("./compare_list/chemEngineering.json", JSON.stringify(chemEngineeringObject, null, 4), (err) => {
             if (err) { console.log(err); } else { console.log("chemEngineering updated"); }
         });
     }
@@ -614,7 +614,7 @@ export async function refresh(nextIdNum, silentMode){
             url: new_logistics.url,
             title: new_logistics.title
         };
-        fs.writeFile(path.join(__dirname, 'compare_list', 'logistics.json'), JSON.stringify(logisticsObject, null, 4), (err) => {
+        fs.writeFile("./compare_list/logistics.json", JSON.stringify(logisticsObject, null, 4), (err) => {
             if (err) { console.log(err); } else { console.log("logistics updated"); }
         });
     }
@@ -623,7 +623,7 @@ export async function refresh(nextIdNum, silentMode){
             url: new_econ.url,
             title: new_econ.title
         };
-        fs.writeFile(path.join(__dirname, 'compare_list', 'econ.json'), JSON.stringify(econObject, null, 4), (err) => {
+        fs.writeFile("./compare_list/econ.json", JSON.stringify(econObject, null, 4), (err) => {
             if (err) { console.log(err); } else { console.log("econ updated"); }
         });
     }
@@ -632,7 +632,7 @@ export async function refresh(nextIdNum, silentMode){
             url: new_physics.url,
             title: new_physics.title
         };
-        fs.writeFile(path.join(__dirname, 'compare_list', 'physics.json'), JSON.stringify(physicsObject, null, 4), (err) => {
+        fs.writeFile("./compare_list/physics.json", JSON.stringify(physicsObject, null, 4), (err) => {
             if (err) { console.log(err); } else { console.log("physics updated"); }
         });
     }
@@ -641,7 +641,7 @@ export async function refresh(nextIdNum, silentMode){
             url: new_libInfoScience.url,
             title: new_libInfoScience.title
         };
-        fs.writeFile(path.join(__dirname, 'compare_list', 'libInfoScience.json'), JSON.stringify(libInfoScienceObject, null, 4), (err) => {
+        fs.writeFile("./compare_list/libInfoScience.json", JSON.stringify(libInfoScienceObject, null, 4), (err) => {
             if (err) { console.log(err); } else { console.log("libInfoScience updated"); }
         });
     }
@@ -650,7 +650,7 @@ export async function refresh(nextIdNum, silentMode){
             url: new_mediaComm.url,
             title: new_mediaComm.title
         };
-        fs.writeFile(path.join(__dirname, 'compare_list', 'mediaComm.json'), JSON.stringify(mediaCommObject, null, 4), (err) => {
+        fs.writeFile("./compare_list/mediaComm.json", JSON.stringify(mediaCommObject, null, 4), (err) => {
             if (err) { console.log(err); } else { console.log("mediaComm updated"); }
         });
     }
@@ -659,7 +659,7 @@ export async function refresh(nextIdNum, silentMode){
             url: new_sociology.url,
             title: new_sociology.title
         };
-        fs.writeFile(path.join(__dirname, 'compare_list', 'sociology.json'), JSON.stringify(sociologyObject, null, 4), (err) => {
+        fs.writeFile("./compare_list/sociology.json", JSON.stringify(sociologyObject, null, 4), (err) => {
             if (err) { console.log(err); } else { console.log("sociology updated"); }
         });
     }
@@ -668,7 +668,7 @@ export async function refresh(nextIdNum, silentMode){
             url: new_socialWelfare.url,
             title: new_socialWelfare.title
         };
-        fs.writeFile(path.join(__dirname, 'compare_list', 'socialWelfare.json'), JSON.stringify(socialWelfareObject, null, 4), (err) => {
+        fs.writeFile("./compare_list/socialWelfare.json", JSON.stringify(socialWelfareObject, null, 4), (err) => {
             if (err) { console.log(err); } else { console.log("socialWelfare updated"); }
         });
     }
@@ -677,7 +677,7 @@ export async function refresh(nextIdNum, silentMode){
             url: new_russian.url,
             title: new_russian.title
         };
-        fs.writeFile(path.join(__dirname, 'compare_list', 'russian.json'), JSON.stringify(russianObject, null, 4), (err) => {
+        fs.writeFile("./compare_list/russian.json", JSON.stringify(russianObject, null, 4), (err) => {
             if (err) { console.log(err); } else { console.log("russian updated"); }
         });
     }
@@ -686,7 +686,7 @@ export async function refresh(nextIdNum, silentMode){
             url: new_french.url,
             title: new_french.title
         };
-        fs.writeFile(path.join(__dirname, 'compare_list', 'french.json'), JSON.stringify(frenchObject, null, 4), (err) => {
+        fs.writeFile("./compare_list/french.json", JSON.stringify(frenchObject, null, 4), (err) => {
             if (err) { console.log(err); } else { console.log("french updated"); }
         });
     }
@@ -695,7 +695,7 @@ export async function refresh(nextIdNum, silentMode){
             url: new_german.url,
             title: new_german.title
         };
-        fs.writeFile(path.join(__dirname, 'compare_list', 'german.json'), JSON.stringify(germanObject, null, 4), (err) => {
+        fs.writeFile("./compare_list/german.json", JSON.stringify(germanObject, null, 4), (err) => {
             if (err) { console.log(err); } else { console.log("german updated"); }
         });
     }
@@ -704,7 +704,7 @@ export async function refresh(nextIdNum, silentMode){
             url: new_philosophy.url,
             title: new_philosophy.title
         };
-        fs.writeFile(path.join(__dirname, 'compare_list', 'philosophy.json'), JSON.stringify(philosophyObject, null, 4), (err) => {
+        fs.writeFile("./compare_list/philosophy.json", JSON.stringify(philosophyObject, null, 4), (err) => {
             if (err) { console.log(err); } else { console.log("philosophy updated"); }
         });
     }
@@ -713,7 +713,7 @@ export async function refresh(nextIdNum, silentMode){
             url: new_history.url,
             title: new_history.title
         };
-        fs.writeFile(path.join(__dirname, 'compare_list', 'history.json'), JSON.stringify(historyObject, null, 4), (err) => {
+        fs.writeFile("./compare_list/history.json", JSON.stringify(historyObject, null, 4), (err) => {
             if (err) { console.log(err); } else { console.log("history updated"); }
         });
     }
@@ -722,7 +722,7 @@ export async function refresh(nextIdNum, silentMode){
             url: new_publicService.url,
             title: new_publicService.title
         };
-        fs.writeFile(path.join(__dirname, 'compare_list', 'publicService.json'), JSON.stringify(publicServiceObject, null, 4), (err) => {
+        fs.writeFile("./compare_list/publicService.json", JSON.stringify(publicServiceObject, null, 4), (err) => {
             if (err) { console.log(err); } else { console.log("publicService updated"); }
         });
     }
@@ -731,7 +731,7 @@ export async function refresh(nextIdNum, silentMode){
             url: new_civilEnvPlanEng.url,
             title: new_civilEnvPlanEng.title
         };
-        fs.writeFile(path.join(__dirname, 'compare_list', 'civilEnvPlanEng.json'), JSON.stringify(civilEnvPlanEngObject, null, 4), (err) => {
+        fs.writeFile("./compare_list/civilEnvPlanEng.json", JSON.stringify(civilEnvPlanEngObject, null, 4), (err) => {
             if (err) { console.log(err); } else { console.log("civilEnvPlanEng updated"); }
         });
     }
@@ -740,7 +740,7 @@ export async function refresh(nextIdNum, silentMode){
             url: new_urbanEngineering.url,
             title: new_urbanEngineering.title
         };
-        fs.writeFile(path.join(__dirname, 'compare_list', 'urbanEngineering.json'), JSON.stringify(urbanEngineeringObject, null, 4), (err) => {
+        fs.writeFile("./compare_list/urbanEngineering.json", JSON.stringify(urbanEngineeringObject, null, 4), (err) => {
             if (err) { console.log(err); } else { console.log("urbanEngineering updated"); }
         });
     }
@@ -749,7 +749,7 @@ export async function refresh(nextIdNum, silentMode){
             url: new_architecture.url,
             title: new_architecture.title
         };
-        fs.writeFile(path.join(__dirname, 'compare_list', 'architecture.json'), JSON.stringify(architectureObject, null, 4), (err) => {
+        fs.writeFile("./compare_list/architecture.json", JSON.stringify(architectureObject, null, 4), (err) => {
             if (err) { console.log(err); } else { console.log("architecture updated"); }
         });
     }
@@ -758,7 +758,7 @@ export async function refresh(nextIdNum, silentMode){
             url: new_appliedStat.url,
             title: new_appliedStat.title
         };
-        fs.writeFile(path.join(__dirname, 'compare_list', 'appliedStat.json'), JSON.stringify(appliedStatObject, null, 4), (err) => {
+        fs.writeFile("./compare_list/appliedStat.json", JSON.stringify(appliedStatObject, null, 4), (err) => {
             if (err) { console.log(err); } else { console.log("appliedStat updated"); }
         });
     }
@@ -767,7 +767,7 @@ export async function refresh(nextIdNum, silentMode){
             url: new_med.url,
             title: new_med.title
         };
-        fs.writeFile(path.join(__dirname, 'compare_list', 'med.json'), JSON.stringify(medObject, null, 4), (err) => {
+        fs.writeFile("./compare_list/med.json", JSON.stringify(medObject, null, 4), (err) => {
             if (err) { console.log(err); } else { console.log("med updated"); }
         });
     }
@@ -776,7 +776,7 @@ export async function refresh(nextIdNum, silentMode){
             url: new_pharm.url,
             title: new_pharm.title
         };
-        fs.writeFile(path.join(__dirname, 'compare_list', 'pharm.json'), JSON.stringify(pharmObject, null, 4), (err) => {
+        fs.writeFile("./compare_list/pharm.json", JSON.stringify(pharmObject, null, 4), (err) => {
             if (err) { console.log(err); } else { console.log("pharm updated"); }
         });
     }
@@ -785,7 +785,7 @@ export async function refresh(nextIdNum, silentMode){
             url: new_adpr.url,
             title: new_adpr.title
         };
-        fs.writeFile(path.join(__dirname, 'compare_list', 'adpr.json'), JSON.stringify(adprObject, null, 4), (err) => {
+        fs.writeFile("./compare_list/adpr.json", JSON.stringify(adprObject, null, 4), (err) => {
             if (err) { console.log(err); } else { console.log("adpr updated"); }
         });
     }
@@ -794,7 +794,7 @@ export async function refresh(nextIdNum, silentMode){
             url: new_dorm.url,
             title: new_dorm.title
         };
-        fs.writeFile(path.join(__dirname, 'compare_list', 'dorm.json'), JSON.stringify(dormObject, null, 4), (err) => {
+        fs.writeFile("./compare_list/dorm.json", JSON.stringify(dormObject, null, 4), (err) => {
             if (err) { console.log(err); } else { console.log("dorm updated"); }
         });
     }
@@ -803,7 +803,7 @@ export async function refresh(nextIdNum, silentMode){
             url: new_upreJob.url,
             title: new_upreJob.title
         };
-        fs.writeFile(path.join(__dirname, 'compare_list', 'upreJob.json'), JSON.stringify(upreJobObject, null, 4), (err) => {
+        fs.writeFile("./compare_list/upreJob.json", JSON.stringify(upreJobObject, null, 4), (err) => {
             if (err) { console.log(err); } else { console.log("upreJob updated"); }
         });
     }
