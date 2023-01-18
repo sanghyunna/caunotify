@@ -370,17 +370,15 @@ export async function refresh(nextIdNum, silentMode){
         if(userDataBase[i].upreJob == "true" && updatedContentStorage.upreJob != undefined) {dataToSend.push(updatedContentStorage.upreJob); sendOrNot++;}
 
         if(sendOrNot != 0){
-            // console.log(`dataToSend[${moment().format('YYYYMMDD, h:mm:ss a')}]:`);
-            // console.log(dataToSend); 
-            let rcvd = mailHandler(userDataBase[i].name, userDataBase[i].email, dataToSend, i, "false");
-            if(rcvd == 0) listOfSuccessfulRecipients.push(userDataBase[i].email);
+            mailHandler(userDataBase[i].name, userDataBase[i].email, dataToSend, i, "false");
+            conosole.log(dataToSend);
             // recipientName, recipientEmail, data, id, IsItSubMail
             sendOrNot = 0;
             dataToSend = [];
         }
     }
-    console.log("Successfully sent to:");
-    console.log(listOfSuccessfulRecipients);
+    // console.log("Successfully sent to:");
+    // console.log(listOfSuccessfulRecipients);
     try {
         sendEmail("na_sanghyun@naver.com",`<p>${JSON.stringify(updatedContentStorage, null, 4)}<br><br>${JSON.stringify(listOfSuccessfulRecipients,null,4)}</p>`,"New mail sent");
     } catch (error) {
