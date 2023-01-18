@@ -371,7 +371,7 @@ export async function refresh(nextIdNum, silentMode){
 
         if(sendOrNot != 0){
             mailHandler(userDataBase[i].name, userDataBase[i].email, dataToSend, i, "false");
-            conosole.log(dataToSend);
+            console.log(dataToSend);
             // recipientName, recipientEmail, data, id, IsItSubMail
             sendOrNot = 0;
             dataToSend = [];
