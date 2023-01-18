@@ -56,7 +56,7 @@ import crawlupreJob from "./crawlers/url_scraper_upre_job.js";
 import { sendEmail } from "./sendEmail.js";
 
 let ON = "false";
-ON = "true"; 
+// ON = "true"; 
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
