@@ -591,11 +591,11 @@
         "subStatus": "true"
     },
     {
-        "name": "이강빈",
-        "email": "aoqhdch68@naver.com",
+        "name": "test",
+        "email": "sonicdog99@naver.com",
         "CAUnotice": "true",
+        "dorm": "true",
         "davinci": "true",
-        "elecEngineering": "true",
         "polaris": "true",
         "industSec": "false",
         "software": "false",
@@ -604,6 +604,7 @@
         "mechEngineering": "false",
         "psychology": "false",
         "business": "false",
+        "elecEngineering": "false",
         "english": "false",
         "enerEngineering": "false",
         "urbanPlanRealEstate": "false",
@@ -640,7 +641,6 @@
         "med": "false",
         "pharm": "false",
         "adpr": "false",
-        "dorm": "false",
         "upreJob": "false",
         "id": 11,
         "subStatus": "true"
