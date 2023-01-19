@@ -175,6 +175,8 @@ app.post('/newuser', (req, res) => { // 정상작동 확인함
         if(requestBody.adpr != "true")              requestBody.adpr = "false";
         if(requestBody.dorm != "true")              requestBody.dorm = "false";
         if(requestBody.upreJob != "true")           requestBody.upreJob = "false";
+        if(requestBody.davinci != "true")           requestBody.davinci = "false";
+        if(requestBody.polaris != "true")           requestBody.polaris = "false";
         // console.log(`<Received>\n\tName:${requestBody.name}\n\tindustSec:${requestBody.industSec}\n\tsoftware:${requestBody.software}\n\tCAUnotice:${requestBody.CAUnotice}`);
         requestBody.id = parseInt(nextIdNum); // key값 추가
         requestBody.subStatus = "true"; 
