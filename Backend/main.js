@@ -115,8 +115,8 @@ app.get('/unsubscribe', function(req, res) { // 구독해지 요청
         }
         else{
             userDataBase[idNum].subStatus = "false";
-            updateUserDB("unsubscribe request already false");
-            return res.send(`<script>alert(${userDataBase[idNum].name}님의 구독이 성공적으로 해지되었습니다. 이용해주셔서 감사합니다.);</script>`);
+            updateUserDB("unsubscribe request");
+            return res.send(`성공적으로 해지되었습니다.<script>alert(${userDataBase[idNum].name}님의 구독이 성공적으로 해지되었습니다. 이용해주셔서 감사합니다.);</script>`);
         }
     }
     else{
