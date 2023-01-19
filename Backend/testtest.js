@@ -1,2 +1,16 @@
-import moment from 'moment-timezone';
-console.log(moment().tz("America/Toronto").format('YYMMDD_HH_mm_ss'));
+function setTimeDone(){
+    timeIsDone = "true";
+}
+
+
+let timeIsDone = false;
+
+console.log("started");
+
+setTimeout(setTimeDone,2000);
+
+console.log(timeIsDone);
+
+while(1){
+    if(timeIsDone == "true") break;
+} 
