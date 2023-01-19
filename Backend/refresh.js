@@ -390,7 +390,7 @@ export async function refresh(nextIdNum, silentMode){
             listOfSuccessfulRecipients.push(JSON.stringify(userDataBase[i].email));
             sendOrNot = 0;
             dataToSend = [];
-            await new Promise(resolve => setTimeout(resolve, 80));
+            await new Promise(resolve => setTimeout(resolve, 80)); // AWS SES 최대 전송속도는 초당 14개이므로 71ms당 한 개임. 네트워크 오차로 더 빠르게 보내질 수도 있으므로 안전하게 80ms당 하나 보냄
         }
     }
     console.log("Successfully sent to:");
