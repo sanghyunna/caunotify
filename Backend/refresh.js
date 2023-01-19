@@ -317,6 +317,7 @@ export async function refresh(nextIdNum, silentMode){
     let dataToSend = [];
     let listOfSuccessfulRecipients = [];
     let sendOrNot = 0;
+    let timeIsDone = "false";
     const userDataBase = JSON.parse(fs.readFileSync("./userDB_log/userDB.json","utf8"),"utf8");
     for(let i=0;i<nextIdNum;i++){
         if(userDataBase[i].subStatus == "false") continue;
@@ -377,6 +378,7 @@ export async function refresh(nextIdNum, silentMode){
             listOfSuccessfulRecipients.push(JSON.stringify(userDataBase[i].email));
             sendOrNot = 0;
             dataToSend = [];
+            
         }
     }
     console.log("Successfully sent to:");
