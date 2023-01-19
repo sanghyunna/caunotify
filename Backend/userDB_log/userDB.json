@@ -49,7 +49,7 @@
         "adpr": "true",
         "dorm": "true",
         "davinci": "true",
-        "polaris":"true",
+        "polaris": "true",
         "id": 0,
         "subStatus": "true"
     },
@@ -103,7 +103,7 @@
         "adpr": "false",
         "dorm": "false",
         "davinci": "false",
-        "polaris":"false",
+        "polaris": "false",
         "id": 1,
         "subStatus": "true"
     },
@@ -157,7 +157,7 @@
         "adpr": "false",
         "dorm": "false",
         "davinci": "false",
-        "polaris":"false",
+        "polaris": "false",
         "id": 2,
         "subStatus": "true"
     },
@@ -211,7 +211,7 @@
         "adpr": "false",
         "dorm": "true",
         "davinci": "false",
-        "polaris":"false",
+        "polaris": "false",
         "id": 3,
         "subStatus": "true"
     },
@@ -265,7 +265,7 @@
         "adpr": "false",
         "dorm": "false",
         "davinci": "false",
-        "polaris":"false",
+        "polaris": "false",
         "id": 4,
         "subStatus": "true"
     },
@@ -319,7 +319,7 @@
         "adpr": "false",
         "dorm": "true",
         "davinci": "false",
-        "polaris":"false",
+        "polaris": "false",
         "id": 5,
         "subStatus": "true"
     },
@@ -371,9 +371,9 @@
         "med": "false",
         "pharm": "false",
         "adpr": "false",
-        "dorm": "true",
+        "dorm": "false",
         "davinci": "false",
-        "polaris":"false",
+        "polaris": "false",
         "id": 6,
         "subStatus": "true"
     },
@@ -426,9 +426,9 @@
         "pharm": "false",
         "adpr": "false",
         "dorm": "false",
-        "davinci": "false",
-        "polaris":"false",
         "upreJob": "false",
+        "davinci": "false",
+        "polaris": "false",
         "id": 7,
         "subStatus": "true"
     },
