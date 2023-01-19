@@ -390,7 +390,7 @@ export async function refresh(nextIdNum, silentMode){
             listOfSuccessfulRecipients.push(JSON.stringify(userDataBase[i].email));
             sendOrNot = 0;
             dataToSend = [];
-            
+            await new Promise(resolve => setTimeout(resolve, 80));
         }
     }
     console.log("Successfully sent to:");
