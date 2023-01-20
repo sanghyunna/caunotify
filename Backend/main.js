@@ -193,7 +193,7 @@ app.post('/newuser', (req, res) => { // 정상작동 확인함
         nextIdNum++; // 다음 사용자를 위해 증감
         fs.writeFileSync(path.join(__dirname, 'userDB_log', 'nextIdNum.txt'), nextIdNum.toString(), "utf8");
 
-        console.log(simpleUserInfo(requestBody,"true"));
+        console.log(`*** New User: ${simpleUserInfo(requestBody,"true")}`);
 
         // 가끔 id가 string으로 저장되는 오류가 있어서 코드 추가
 
@@ -340,6 +340,6 @@ setInterval(() => {
         refresh(nextIdNum,1);
         console.log("*** interval reached");
     }
-    else console.log("* interval skipped - Night");
+    else console.log("* interval skipped - Night\n");
 }, refreshTimeInMinutes*60*1000);
 // console.log("refreshed") 가 아니라, refresh() 를 실행시켜야 함.
