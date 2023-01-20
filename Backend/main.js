@@ -16,7 +16,7 @@ import moment from 'moment-timezone';
 
 // Personal Code
 import { refresh } from "./refresh.js"
-import { decryptStringToInt } from "./encrypter.js"
+import { decryptStringToInt, encryptIntToString } from "./encrypter.js"
 import { DayOrNight } from "./dayOrNight.js";
 import { sendTemplateEmail } from "./sendEmail.js";
 import { mailHandler } from "./mailHandler.js";
@@ -37,12 +37,12 @@ function updateComplaintDB(){
     console.log(`***ComplaintDB updated`);
 }
 function findUserByEmail(mailAddress,includeUnsubbedUsers){ // includeUnsubbedUsers는 true 또는 false
-    if(includeUnsubbedUsers == "true"){
+    if(includeUnsubbedUsers == "false"){
         for(let i=0;i<nextIdNum;i++){
             if(userDataBase[i].email == mailAddress) return i;
         }
     }
-    else{ // 비구독자까지 포함한 요청인 경우 배열로 모든 경우를 반환함
+    else if(includeUnsubbedUsers == "true"){ // 비구독자까지 포함한 요청인 경우 배열로 모든 경우를 반환함
         let res = [];
         for(let i=0;i<nextIdNum;i++){
             if(userDataBase[i].email == mailAddress && userDataBase[i].subStatus == "true") res.push(i);
@@ -127,6 +127,15 @@ app.get('/unsubscribe', function(req, res) { // 구독해지 요청
 app.post('/newuser', (req, res) => { // 정상작동 확인함
     let requestBody = req.body;
     if(requestBody.name != undefined){
+        if(findUserByEmail(requestBody.email,"false") != -1){
+            const idNum = findUserByEmail(requestBody.email,"false");
+            const subbedNotices = simpleUserInfo(userDataBase[idNum],"false");
+            const urlHash = encryptIntToString(id);
+            const unsubscribeUrl = `https://caunotify.me/unsubscribe?id=${urlHash}`;
+            const reply = `function next(){confirm("${requestBody.email} 이메일이 존재합니다.(${subbedNotices})\n 새 구독 정보로 대체하시려면 먼저 구독을 해지해주세요. 확인을 누르시면 기존 구독이 해지됩니다.")?(alert("기존 구독이 해지되었습니다. 홈페이지에서 새 구독 정보를 입력해주세요."),location.href="${unsubscribeUrl}"):(alert("기존 구독을 해지하지 않았습니다."),location.href="https://caunotify.me")}next();`;
+            return res.send(`<script>${reply}</script>`);
+        }
+
         // undefined 인 경우도 잡아냄
         if(requestBody.industSec != "true")         requestBody.industSec = "false";
         if(requestBody.software != "true")          requestBody.software = "false";
@@ -183,7 +192,7 @@ app.post('/newuser', (req, res) => { // 정상작동 확인함
         nextIdNum++; // 다음 사용자를 위해 증감
         fs.writeFileSync(path.join(__dirname, 'userDB_log', 'nextIdNum.txt'), nextIdNum.toString(), "utf8");
 
-        console.log(simpleUserInfo(requestBody));
+        console.log(simpleUserInfo(requestBody,"true"));
 
         // 가끔 id가 string으로 저장되는 오류가 있어서 코드 추가
 
@@ -192,9 +201,9 @@ app.post('/newuser', (req, res) => { // 정상작동 확인함
         updateUserDB("newuser");
         mailHandler(requestBody.name, requestBody.email, userDataBase[requestBody.id], requestBody.id, "true"); // 가입메일
         // recipientName, recipientEmail, data, id, IsItSubMail
-        return res.send("<script>alert('성공적으로 구독하였습니다!');location.href='http://caunotify.me';</script>"); 
+        return res.send("<script>alert('성공적으로 구독하였습니다!');location.href='https://caunotify.me';</script>"); 
     } else {
-        return res.send("<script>alert('문제가 발생했습니다. 구독이 완료되지 않았습니다.');location.href='http://caunotify.me';</script>");
+        return res.send("<script>alert('문제가 발생했습니다. 구독이 완료되지 않았습니다.');location.href='https://caunotify.me';</script>");
     }
 
     // res.send(requestBody);
@@ -223,7 +232,7 @@ app.post('/currentuserDB', (req, res) => {
     console.log(`nextIdNum : ${nextIdNum}\n`);
     let simpleInfoStorage = [];
     for(let i=0;i<nextIdNum;i++){
-        simpleInfoStorage.push(simpleUserInfo(userDataBase[i]));
+        simpleInfoStorage.push(simpleUserInfo(userDataBase[i],"true"));
     }
     return res.send(simpleInfoStorage);
 });
@@ -234,7 +243,7 @@ app.post('/findUserByEmail', (req, res) => {
     const idNum = findUserByEmail(mailAddress,includeUnsubbedUsers);
     if(idNum == -1) return res.send("Not Found");
     console.log(`** Data of User[${idNum}](${userDataBase[idNum].name}) Sent\n`);
-    return res.send(simpleUserInfo(userDataBase[idNum]));
+    return res.send(simpleUserInfo(userDataBase[idNum],"true"));
 });
 app.post('/findUserByName', (req, res) => {
     if(isItAuthed(req.body.auth) != 0) return res.send("Not authorized");
@@ -242,14 +251,14 @@ app.post('/findUserByName', (req, res) => {
     const idNum = findUserByName(username);
     if(idNum == -1) return res.send("Not Found");
     console.log(`** Data of User[${idNum}](${userDataBase[idNum].name}) Sent\n`);
-    return res.send(simpleUserInfo(userDataBase[idNum]));
+    return res.send(simpleUserInfo(userDataBase[idNum],"true"));
 });
 app.post('/findUserById', (req, res) => {
     if(isItAuthed(req.body.auth) != 0) return res.send("Not authorized");
     const idNum = req.body.id;
     if (userDataBase[idNum].name == undefined) return res.send("Not Found");
     console.log(`** Data of User[${idNum}](${userDataBase[idNum].name}) Sent\n`);
-    return res.send(simpleUserInfo(userDataBase[idNum]));
+    return res.send(simpleUserInfo(userDataBase[idNum],"true"));
 });
 app.post('/delUserById', (req, res) => {
     if(isItAuthed(req.body.auth) != 0) return res.send("Not authorized");
