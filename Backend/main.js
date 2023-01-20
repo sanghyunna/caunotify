@@ -132,7 +132,7 @@ app.post('/newuser', (req, res) => { // 정상작동 확인함
             const subbedNotices = simpleUserInfo(userDataBase[idNum],"false");
             const urlHash = encryptIntToString(idNum);
             const unsubscribeUrl = `https://caunotify.me/unsubscribe?id=${urlHash}`;
-            const reply = `function next(){confirm("${requestBody.email} 이메일이 존재합니다.(${subbedNotices})\n 새 구독 정보로 대체하시려면 먼저 구독을 해지해주세요. 확인을 누르시면 기존 구독이 해지됩니다.")?(alert("기존 구독이 해지되었습니다. 홈페이지에서 새 구독 정보를 입력해주세요."),location.href="${unsubscribeUrl}"):(alert("기존 구독을 해지하지 않았습니다."),location.href="https://caunotify.me")}next();`;
+            const reply = `confirm("${requestBody.email} 이메일이 존재합니다.(${subbedNotices})\n 새 구독 정보로 대체하시려면 먼저 구독을 해지해주세요. 확인을 누르시면 기존 구독이 해지됩니다.")?(alert("기존 구독이 해지되었습니다. 홈페이지에서 새 구독 정보를 입력해주세요."),location.href="${unsubscribeUrl}"):(alert("기존 구독을 해지하지 않았습니다."),location.href="https://caunotify.me");`;
             return res.send(`<script>${reply}</script>`);
         }
 
