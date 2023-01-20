@@ -317,12 +317,12 @@ export async function refresh(nextIdNum, silentMode){
         console.log("*** Updates on the way!");
         console.log(updatedContentStorage);
     }
-
-
+    
+    
     // ********************************************************************
     // *** 4. 각 유저의 구독정보 확인 후 해당되는 게시글을 추가해 메일 전송 ***
     // ********************************************************************
-
+    
     // 메일에서 받는 게시판의 순서를 바꾸려면 여기서 바꾸면 됨
     let dataToSend = [];
     let listOfSuccessfulRecipients = [];
@@ -332,55 +332,67 @@ export async function refresh(nextIdNum, silentMode){
     for(let i=0;i<nextIdNum;i++){
         if(userDataBase[i].subStatus == "false") continue;
         // console.log(userDataBase[i]);
-        if(userDataBase[i].industSec == "true" && updatedContentStorage.industSec != undefined) {dataToSend.push(updatedContentStorage.industSec); sendOrNot++;}
-        if(userDataBase[i].software == "true" && updatedContentStorage.software != undefined) {dataToSend.push(updatedContentStorage.software); sendOrNot++;}
+        // 전체
         if(userDataBase[i].CAUnotice == "true" && updatedContentStorage.CAUnotice != undefined) {dataToSend.push(updatedContentStorage.CAUnotice); sendOrNot++;}
-        if(userDataBase[i].integEngineering == "true" && updatedContentStorage.integEngineering != undefined) {dataToSend.push(updatedContentStorage.integEngineering); sendOrNot++;}
-        if(userDataBase[i].korean == "true" && updatedContentStorage.korean != undefined) {dataToSend.push(updatedContentStorage.korean); sendOrNot++;}
-        if(userDataBase[i].mechEngineering == "true" && updatedContentStorage.mechEngineering != undefined) {dataToSend.push(updatedContentStorage.mechEngineering); sendOrNot++;}
-        if(userDataBase[i].psychology == "true" && updatedContentStorage.psychology != undefined) {dataToSend.push(updatedContentStorage.psychology); sendOrNot++;}
+        if(userDataBase[i].davinci == "true" && updatedContentStorage.davinci != undefined) {dataToSend.push(updatedContentStorage.davinci); sendOrNot++;}
+        if(userDataBase[i].dorm == "true" && updatedContentStorage.dorm != undefined) {dataToSend.push(updatedContentStorage.dorm); sendOrNot++;}
+        // 경경
         if(userDataBase[i].business == "true" && updatedContentStorage.business != undefined) {dataToSend.push(updatedContentStorage.business); sendOrNot++;}
-        if(userDataBase[i].elecEngineering == "true" && updatedContentStorage.elecEngineering != undefined) {dataToSend.push(updatedContentStorage.elecEngineering); sendOrNot++;}
-        if(userDataBase[i].english == "true" && updatedContentStorage.english != undefined) {dataToSend.push(updatedContentStorage.english); sendOrNot++;}
-        if(userDataBase[i].enerEngineering == "true" && updatedContentStorage.enerEngineering != undefined) {dataToSend.push(updatedContentStorage.enerEngineering); sendOrNot++;}
-        if(userDataBase[i].urbanPlanRealEstate == "true" && updatedContentStorage.urbanPlanRealEstate != undefined) {dataToSend.push(updatedContentStorage.urbanPlanRealEstate); sendOrNot++;}
-        if(userDataBase[i].nursing == "true" && updatedContentStorage.nursing != undefined) {dataToSend.push(updatedContentStorage.nursing); sendOrNot++;}
-        if(userDataBase[i].politics == "true" && updatedContentStorage.politics != undefined) {dataToSend.push(updatedContentStorage.politics); sendOrNot++;}
-        if(userDataBase[i].physicalEd == "true" && updatedContentStorage.physicalEd != undefined) {dataToSend.push(updatedContentStorage.physicalEd); sendOrNot++;}
-        if(userDataBase[i].education == "true" && updatedContentStorage.education != undefined) {dataToSend.push(updatedContentStorage.education); sendOrNot++;}
-        if(userDataBase[i].earlyChildhoodEd == "true" && updatedContentStorage.earlyChildhoodEd != undefined) {dataToSend.push(updatedContentStorage.earlyChildhoodEd); sendOrNot++;}
-        if(userDataBase[i].englishEd == "true" && updatedContentStorage.englishEd != undefined) {dataToSend.push(updatedContentStorage.englishEd); sendOrNot++;}
-        if(userDataBase[i].chem == "true" && updatedContentStorage.chem != undefined) {dataToSend.push(updatedContentStorage.chem); sendOrNot++;}
-        if(userDataBase[i].lifeScience == "true" && updatedContentStorage.lifeScience != undefined) {dataToSend.push(updatedContentStorage.lifeScience); sendOrNot++;}
-        if(userDataBase[i].japanese == "true" && updatedContentStorage.japanese != undefined) {dataToSend.push(updatedContentStorage.japanese); sendOrNot++;}
-        if(userDataBase[i].chinese == "true" && updatedContentStorage.chinese != undefined) {dataToSend.push(updatedContentStorage.chinese); sendOrNot++;}
-        if(userDataBase[i].math == "true" && updatedContentStorage.math != undefined) {dataToSend.push(updatedContentStorage.math); sendOrNot++;}
-        if(userDataBase[i].ai == "true" && updatedContentStorage.ai != undefined) {dataToSend.push(updatedContentStorage.ai); sendOrNot++;}
-        if(userDataBase[i].chemEngineering == "true" && updatedContentStorage.chemEngineering != undefined) {dataToSend.push(updatedContentStorage.chemEngineering); sendOrNot++;}
+        if(userDataBase[i].appliedStat == "true" && updatedContentStorage.appliedStat != undefined) {dataToSend.push(updatedContentStorage.appliedStat); sendOrNot++;}
+        if(userDataBase[i].adpr == "true" && updatedContentStorage.adpr != undefined) {dataToSend.push(updatedContentStorage.adpr); sendOrNot++;}
+        if(userDataBase[i].industSec == "true" && updatedContentStorage.industSec != undefined) {dataToSend.push(updatedContentStorage.industSec); sendOrNot++;}
         if(userDataBase[i].logistics == "true" && updatedContentStorage.logistics != undefined) {dataToSend.push(updatedContentStorage.logistics); sendOrNot++;}
         if(userDataBase[i].econ == "true" && updatedContentStorage.econ != undefined) {dataToSend.push(updatedContentStorage.econ); sendOrNot++;}
-        if(userDataBase[i].physics == "true" && updatedContentStorage.physics != undefined) {dataToSend.push(updatedContentStorage.physics); sendOrNot++;}
-        if(userDataBase[i].libInfoScience == "true" && updatedContentStorage.libInfoScience != undefined) {dataToSend.push(updatedContentStorage.libInfoScience); sendOrNot++;}
+        // 사과
         if(userDataBase[i].mediaComm == "true" && updatedContentStorage.mediaComm != undefined) {dataToSend.push(updatedContentStorage.mediaComm); sendOrNot++;}
-        if(userDataBase[i].sociology == "true" && updatedContentStorage.sociology != undefined) {dataToSend.push(updatedContentStorage.sociology); sendOrNot++;}
+        if(userDataBase[i].psychology == "true" && updatedContentStorage.psychology != undefined) {dataToSend.push(updatedContentStorage.psychology); sendOrNot++;}
+        if(userDataBase[i].libInfoScience == "true" && updatedContentStorage.libInfoScience != undefined) {dataToSend.push(updatedContentStorage.libInfoScience); sendOrNot++;}
         if(userDataBase[i].socialWelfare == "true" && updatedContentStorage.socialWelfare != undefined) {dataToSend.push(updatedContentStorage.socialWelfare); sendOrNot++;}
+        if(userDataBase[i].publicService == "true" && updatedContentStorage.publicService != undefined) {dataToSend.push(updatedContentStorage.publicService); sendOrNot++;}
+        if(userDataBase[i].urbanPlanRealEstate == "true" && updatedContentStorage.urbanPlanRealEstate != undefined) {dataToSend.push(updatedContentStorage.urbanPlanRealEstate); sendOrNot++;}
+        if(userDataBase[i].politics == "true" && updatedContentStorage.politics != undefined) {dataToSend.push(updatedContentStorage.politics); sendOrNot++;}
+        if(userDataBase[i].sociology == "true" && updatedContentStorage.sociology != undefined) {dataToSend.push(updatedContentStorage.sociology); sendOrNot++;}
+        // 인문
+        if(userDataBase[i].english == "true" && updatedContentStorage.english != undefined) {dataToSend.push(updatedContentStorage.english); sendOrNot++;}
+        if(userDataBase[i].korean == "true" && updatedContentStorage.korean != undefined) {dataToSend.push(updatedContentStorage.korean); sendOrNot++;}
+        if(userDataBase[i].japanese == "true" && updatedContentStorage.japanese != undefined) {dataToSend.push(updatedContentStorage.japanese); sendOrNot++;}
+        if(userDataBase[i].chinese == "true" && updatedContentStorage.chinese != undefined) {dataToSend.push(updatedContentStorage.chinese); sendOrNot++;}
         if(userDataBase[i].russian == "true" && updatedContentStorage.russian != undefined) {dataToSend.push(updatedContentStorage.russian); sendOrNot++;}
         if(userDataBase[i].french == "true" && updatedContentStorage.french != undefined) {dataToSend.push(updatedContentStorage.french); sendOrNot++;}
         if(userDataBase[i].german == "true" && updatedContentStorage.german != undefined) {dataToSend.push(updatedContentStorage.german); sendOrNot++;}
         if(userDataBase[i].philosophy == "true" && updatedContentStorage.philosophy != undefined) {dataToSend.push(updatedContentStorage.philosophy); sendOrNot++;}
         if(userDataBase[i].history == "true" && updatedContentStorage.history != undefined) {dataToSend.push(updatedContentStorage.history); sendOrNot++;}
-        if(userDataBase[i].publicService == "true" && updatedContentStorage.publicService != undefined) {dataToSend.push(updatedContentStorage.publicService); sendOrNot++;}
+        // 창아공
+        if(userDataBase[i].elecEngineering == "true" && updatedContentStorage.elecEngineering != undefined) {dataToSend.push(updatedContentStorage.elecEngineering); sendOrNot++;}
+        if(userDataBase[i].integEngineering == "true" && updatedContentStorage.integEngineering != undefined) {dataToSend.push(updatedContentStorage.integEngineering); sendOrNot++;}
+        if(userDataBase[i].polaris == "true" && updatedContentStorage.polaris != undefined) {dataToSend.push(updatedContentStorage.polaris); sendOrNot++;}
+        // 공과
+        if(userDataBase[i].mechEngineering == "true" && updatedContentStorage.mechEngineering != undefined) {dataToSend.push(updatedContentStorage.mechEngineering); sendOrNot++;}
+        if(userDataBase[i].enerEngineering == "true" && updatedContentStorage.enerEngineering != undefined) {dataToSend.push(updatedContentStorage.enerEngineering); sendOrNot++;}
+        if(userDataBase[i].chemEngineering == "true" && updatedContentStorage.chemEngineering != undefined) {dataToSend.push(updatedContentStorage.chemEngineering); sendOrNot++;}
         if(userDataBase[i].civilEnvPlanEng == "true" && updatedContentStorage.civilEnvPlanEng != undefined) {dataToSend.push(updatedContentStorage.civilEnvPlanEng); sendOrNot++;}
         if(userDataBase[i].urbanEngineering == "true" && updatedContentStorage.urbanEngineering != undefined) {dataToSend.push(updatedContentStorage.urbanEngineering); sendOrNot++;}
         if(userDataBase[i].architecture == "true" && updatedContentStorage.architecture != undefined) {dataToSend.push(updatedContentStorage.architecture); sendOrNot++;}
-        if(userDataBase[i].appliedStat == "true" && updatedContentStorage.appliedStat != undefined) {dataToSend.push(updatedContentStorage.appliedStat); sendOrNot++;}
+        // 솦
+        if(userDataBase[i].software == "true" && updatedContentStorage.software != undefined) {dataToSend.push(updatedContentStorage.software); sendOrNot++;}
+        if(userDataBase[i].ai == "true" && updatedContentStorage.ai != undefined) {dataToSend.push(updatedContentStorage.ai); sendOrNot++;}
+        // 자연
+        if(userDataBase[i].math == "true" && updatedContentStorage.math != undefined) {dataToSend.push(updatedContentStorage.math); sendOrNot++;}
+        if(userDataBase[i].physics == "true" && updatedContentStorage.physics != undefined) {dataToSend.push(updatedContentStorage.physics); sendOrNot++;}
+        if(userDataBase[i].chem == "true" && updatedContentStorage.chem != undefined) {dataToSend.push(updatedContentStorage.chem); sendOrNot++;}
+        if(userDataBase[i].lifeScience == "true" && updatedContentStorage.lifeScience != undefined) {dataToSend.push(updatedContentStorage.lifeScience); sendOrNot++;}
+        // 교육
+        if(userDataBase[i].education == "true" && updatedContentStorage.education != undefined) {dataToSend.push(updatedContentStorage.education); sendOrNot++;}
+        if(userDataBase[i].physicalEd == "true" && updatedContentStorage.physicalEd != undefined) {dataToSend.push(updatedContentStorage.physicalEd); sendOrNot++;}
+        if(userDataBase[i].englishEd == "true" && updatedContentStorage.englishEd != undefined) {dataToSend.push(updatedContentStorage.englishEd); sendOrNot++;}
+        if(userDataBase[i].earlyChildhoodEd == "true" && updatedContentStorage.earlyChildhoodEd != undefined) {dataToSend.push(updatedContentStorage.earlyChildhoodEd); sendOrNot++;}
+        // 의약간
         if(userDataBase[i].med == "true" && updatedContentStorage.med != undefined) {dataToSend.push(updatedContentStorage.med); sendOrNot++;}
         if(userDataBase[i].pharm == "true" && updatedContentStorage.pharm != undefined) {dataToSend.push(updatedContentStorage.pharm); sendOrNot++;}
-        if(userDataBase[i].adpr == "true" && updatedContentStorage.adpr != undefined) {dataToSend.push(updatedContentStorage.adpr); sendOrNot++;}
-        if(userDataBase[i].dorm == "true" && updatedContentStorage.dorm != undefined) {dataToSend.push(updatedContentStorage.dorm); sendOrNot++;}
+        if(userDataBase[i].nursing == "true" && updatedContentStorage.nursing != undefined) {dataToSend.push(updatedContentStorage.nursing); sendOrNot++;}
+        
         if(userDataBase[i].upreJob == "true" && updatedContentStorage.upreJob != undefined) {dataToSend.push(updatedContentStorage.upreJob); sendOrNot++;}
-        if(userDataBase[i].davinci == "true" && updatedContentStorage.davinci != undefined) {dataToSend.push(updatedContentStorage.davinci); sendOrNot++;}
-        if(userDataBase[i].polaris == "true" && updatedContentStorage.polaris != undefined) {dataToSend.push(updatedContentStorage.polaris); sendOrNot++;}
+
 
         if(sendOrNot != 0){
             mailHandler(userDataBase[i].name, userDataBase[i].email, dataToSend, i, "false");
