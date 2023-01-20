@@ -79,5 +79,10 @@ export function simpleUserInfo(user,forAdmin){
     // 특수
     if(user.upreJob == "true") res = res.concat(', ',KRname("upreJob"));
 
+    if(res.startsWith(", ")){
+        let len = res.length;
+        res = res.slice(2,len);
+    }
+    
     return res;
 }
