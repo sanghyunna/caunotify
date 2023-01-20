@@ -310,11 +310,11 @@ export async function refresh(nextIdNum, silentMode){
     
 
     if(Object.keys(updatedContentStorage).length == 0){
-        console.log("*** No Updates!");
+        console.log("*** No Updates!\n");
         return; // 바뀐 내용이 없으면 조기 리턴하여 연산량을 줄임
     }
     else{
-        console.log("*** Updates on the way!");
+        console.log("*** Updates on the way!\n");
         console.log(updatedContentStorage);
     }
     
@@ -859,6 +859,11 @@ export async function refresh(nextIdNum, silentMode){
         });
     }
     
+    // 가독성을 위해 line breaking
+    if(Object.keys(updatedContentStorage).length != 0){
+        console.log("\n");
+    }
+
 }
 if(ON == "true") refresh(1);
 
