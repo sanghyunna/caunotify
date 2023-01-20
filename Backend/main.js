@@ -115,6 +115,7 @@ app.get('/unsubscribe', function(req, res) { // 구독해지 요청
         }
         else{
             userDataBase[idNum].subStatus = "false";
+            console.log(`*** unsubbed: ${simpleUserInfo(userDataBase[idNum],"true")}`);
             updateUserDB("unsubscribe request");
             return res.send(`성공적으로 해지되었습니다.<script>alert(${userDataBase[idNum].name}님의 구독이 성공적으로 해지되었습니다. 이용해주셔서 감사합니다.);</script>`);
         }
@@ -133,7 +134,6 @@ app.post('/newuser', (req, res) => { // 정상작동 확인함
             const urlHash = encryptIntToString(idNum);
             const unsubscribeUrl = `https://caunotify.me/unsubscribe?id=${urlHash}`;
             const reply = `function cc(){return confirm("${requestBody.email} 이메일이 존재합니다.${subbedNotices} 새 구독 정보로 대체하시려면 먼저 구독을 해지해주세요. '확인'을 누르시면 기존 구독이 해지됩니다.")}!0==cc()?(alert("기존 구독이 해지되었습니다. 새 구독 정보를 입력해주세요."),location.href="${unsubscribeUrl}"):(alert("기존 구독을 해지하지 않았습니다."),location.href="https://caunotify.me");`;
-            console.log(`<script>${reply}</script>`);
             return res.send(`<script>${reply}</script>`);
         }
 
