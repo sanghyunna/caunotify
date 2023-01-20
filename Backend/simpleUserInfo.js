@@ -1,9 +1,9 @@
 import KRname from "./name_en2kr.js"
 
 export function simpleUserInfo(user,forAdmin){
-    let res = `${user.name}, ${user.email}, `;
-    if(forAdmin == "true") res = res.concat(', ',`id:${user.id}, subStatus:${user.subStatus}`);
-    
+    let res = ``;
+    if(forAdmin == "true") res = res.concat(`${user.name}, ${user.email}, id:${user.id}, subStatus:${user.subStatus}`);
+
     // 전체 공지
     if(user.CAUnotice == "true") res = res.concat(', ',KRname("CAUnotice"));
     if(user.dorm == "true") res = res.concat(', ',KRname("dorm"));
