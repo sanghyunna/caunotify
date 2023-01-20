@@ -39,7 +39,7 @@ function updateComplaintDB(){
 function findUserByEmail(mailAddress,includeUnsubbedUsers){ // includeUnsubbedUsers는 true 또는 false
     if(includeUnsubbedUsers == "false"){
         for(let i=0;i<nextIdNum;i++){
-            if(userDataBase[i].email == mailAddress) return i;
+            if(userDataBase[i].email == mailAddress && userDataBase[i].subStatus == "true") return i;
         }
     }
     else if(includeUnsubbedUsers == "true"){ // 비구독자까지 포함한 요청인 경우 배열로 모든 경우를 반환함
@@ -133,7 +133,7 @@ app.post('/newuser', (req, res) => { // 정상작동 확인함
             const subbedNotices = simpleUserInfo(userDataBase[idNum],"false");
             const urlHash = encryptIntToString(idNum);
             const unsubscribeUrl = `https://caunotify.me/unsubscribe?id=${urlHash}`;
-            const reply = `function cc(){return confirm("${requestBody.email} 이메일이 존재합니다.${subbedNotices} 새 구독 정보로 대체하시려면 먼저 구독을 해지해주세요. '확인'을 누르시면 기존 구독이 해지됩니다.")}!0==cc()?(alert("기존 구독이 해지되었습니다. 새 구독 정보를 입력해주세요."),location.href="${unsubscribeUrl}"):(alert("기존 구독을 해지하지 않았습니다."),location.href="https://caunotify.me");`;
+            const reply = `function cc(){return confirm("${requestBody.email} 이메일이 존재합니다.${subbedNotices} 새로 구독하시려면 먼저 구독을 해지해야 합니다. '확인'을 누르시면 기존 구독이 해지됩니다.")}!0==cc()?(alert("기존 구독이 해지되었습니다. 새 구독 정보를 입력해주세요."),location.href="${unsubscribeUrl}"):(alert("기존 구독을 해지하지 않았습니다."),location.href="https://caunotify.me");`;
             return res.send(`<script>${reply}</script>`);
         }
 
