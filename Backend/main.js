@@ -286,14 +286,15 @@ app.post('/delLastUser', (req, res) => {
 // Mail Error Handling
 app.post('/complainthandling', (req, res) => {
     const requestBody = req.body;
-    if(requestBody.notificationType == "AmazonSnsSubscriptionSucceeded") return res.status(200).send("OK");
-    else if(requestBody.notificationType == "Complaint"){
+    console.log(requestBody);
+    // if(requestBody.notificationType == "AmazonSnsSubscriptionSucceeded") return res.status(200).send("OK");
+    if(requestBody.notificationType == "Complaint"){
         // 여기서 필요한 정보는: Complaint한 사람 주소인데, 로그는 전체를 남겨두자
         const user = requestBody.mail.destination.toString();
         console.log(`complain by ${user}`);
         complaintDB.push(requestBody);
         updateComplaintDB();
-        const userIdNum = findUserByEmail(user,"false");
+        const userIdNum = findUserByEmail(user,"true");
         if(userIdNum == -1) return res.status(404).send("Not Found"); // complaint notification이 왔는데 우리 DB에서는 못찾은 상황. 발생 가능성 매우 드묾.
         else{
             userDataBase[userIdNum].subStatus = "false";
@@ -306,14 +307,15 @@ app.post('/complainthandling', (req, res) => {
 });
 app.post('/bouncehandling', (req, res) => {
     const requestBody = req.body;
-    if(requestBody.notificationType == "AmazonSnsSubscriptionSucceeded") return res.status(200).send("OK");
-    else if(requestBody.notificationType == "Bounce"){
+    console.log(requestBody);
+    // if(requestBody.notificationType == "AmazonSnsSubscriptionSucceeded") return res.status(200).send("OK");
+    if(requestBody.notificationType == "Bounce"){
         // 여기서 필요한 정보는: bounce한 사람 주소인데, 로그는 전체를 남겨두자
         const user = requestBody.mail.destination.toString();
         console.log(`bounce by ${user}`);
         bounceDB.push(requestBody);
         updateBounceDB();
-        const userIdNum = findUserByEmail(user);
+        const userIdNum = findUserByEmail(user,"true");
         if(userIdNum == -1) return res.status(404).send("Not Found"); // bounce notification이 왔는데 우리 DB에서는 못찾은 상황. 발생 가능성 매우 드묾.
         else{
             userDataBase[userIdNum].subStatus = "false";
