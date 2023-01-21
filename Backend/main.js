@@ -240,9 +240,9 @@ app.post('/currentuserDB', (req, res) => {
 app.post('/findUserByEmail', (req, res) => {
     if(isItAuthed(req.body.auth) != 0) return res.send("Not authorized");
     const mailAddress = req.body.email;
-    console.log(`mailaddress = ${mailAddress}`);
+    // console.log(`mailaddress = ${mailAddress}`);
     const includeUnsubbedUsers = req.body.includeUnsubbedUsers;
-    console.log(`include unsubbed : ${includeUnsubbedUsers}`);
+    // console.log(`include unsubbed : ${includeUnsubbedUsers}`);
     const idNum = findUserByEmail(mailAddress,includeUnsubbedUsers);
     if(idNum == -1) return res.send("Not Found");
     console.log(`** Data of User[${idNum}](${userDataBase[idNum].name}) Sent\n`);
