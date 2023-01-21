@@ -297,7 +297,10 @@ app.post('/complainthandling', (req, res) => {
         complaintDB.push(requestBody);
         updateComplaintDB();
         const userIdNum = findUserByEmail(user,"true");
-        if(userIdNum == -1) return res.status(404).send("Not Found"); // complaint notification이 왔는데 우리 DB에서는 못찾은 상황. 발생 가능성 매우 드묾.
+        if(userIdNum == -1)if(userIdNum == -1) {
+            console.log(`** ComplaintHandling : ${user} not found`)
+            return res.status(404).send("Not Found");
+        } // complaint notification이 왔는데 우리 DB에서는 못찾은 상황. 발생 가능성 매우 드묾.
         else{
             userDataBase[userIdNum].subStatus = "false";
             updateUserDB("complaint");
@@ -318,7 +321,10 @@ app.post('/bouncehandling', (req, res) => {
         bounceDB.push(requestBody);
         updateBounceDB();
         const userIdNum = findUserByEmail(user,"true");
-        if(userIdNum == -1) return res.status(404).send("Not Found"); // bounce notification이 왔는데 우리 DB에서는 못찾은 상황. 발생 가능성 매우 드묾.
+        if(userIdNum == -1) {
+            console.log(`** BounceHandling : ${user} not found`)
+            return res.status(404).send("Not Found");
+        } // bounce notification이 왔는데 우리 DB에서는 못찾은 상황. 발생 가능성 매우 드묾.
         else{
             userDataBase[userIdNum].subStatus = "false";
             updateUserDB("bounce");
