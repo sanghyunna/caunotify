@@ -25,15 +25,15 @@ const crawlJapanese = async({ url }) =>{
     items.forEach(element => {
         if (element.attribs.href != undefined && element.attribs.href.startsWith("/notice/?q=YToxOntzOjEyOiJrZXl3b3JkX3R5cGUiO3M6MzoiYWxsIjt9&bmode=view&idx=")){
             // console.log(element.children);
-            url_list.push(`http://caujapanese.kr${element.attribs.href}`);
+            if($(element).text().trim() != "") url_list.push(`http://caujapanese.kr${element.attribs.href}`);
             const title = $(element).text().trim();
-            title_list.push(title);
+            if($(element).text().trim() != "") title_list.push(title);
             // console.log(`${element.attribs}`);
         }
         // console.log(element.attribs);
     });
-     //console.log(url_list);
-     //console.log(title_list);
+    // console.log(url_list);
+    // console.log(title_list);
     
     return {
         url: url_list,
@@ -41,7 +41,7 @@ const crawlJapanese = async({ url }) =>{
     }
 };
 
-//crawlJapanese({
+// crawlJapanese({
 //     url: "http://caujapanese.kr/notice",
 // }); // 테스트용
 
