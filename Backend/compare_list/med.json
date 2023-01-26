@@ -1,5 +1,7 @@
 {
     "url": [
+        "http://med.cau.ac.kr/site/program/board/basicboard/view.do?currentpage=1&menuid=001002001001&pagesize=20&boardtypeid=3&boardid=3722",
+        "http://med.cau.ac.kr/site/program/board/basicboard/view.do?currentpage=1&menuid=001002001001&pagesize=20&boardtypeid=3&boardid=3721",
         "http://med.cau.ac.kr/site/program/board/basicboard/view.do?currentpage=1&menuid=001002001001&pagesize=20&boardtypeid=3&boardid=3719",
         "http://med.cau.ac.kr/site/program/board/basicboard/view.do?currentpage=1&menuid=001002001001&pagesize=20&boardtypeid=3&boardid=3718",
         "http://med.cau.ac.kr/site/program/board/basicboard/view.do?currentpage=1&menuid=001002001001&pagesize=20&boardtypeid=3&boardid=3713",
@@ -17,11 +19,11 @@
         "http://med.cau.ac.kr/site/program/board/basicboard/view.do?currentpage=1&menuid=001002001001&pagesize=20&boardtypeid=3&boardid=3709",
         "http://med.cau.ac.kr/site/program/board/basicboard/view.do?currentpage=1&menuid=001002001001&pagesize=20&boardtypeid=3&boardid=3707",
         "http://med.cau.ac.kr/site/program/board/basicboard/view.do?currentpage=1&menuid=001002001001&pagesize=20&boardtypeid=3&boardid=3698",
-        "http://med.cau.ac.kr/site/program/board/basicboard/view.do?currentpage=1&menuid=001002001001&pagesize=20&boardtypeid=3&boardid=3697",
-        "http://med.cau.ac.kr/site/program/board/basicboard/view.do?currentpage=1&menuid=001002001001&pagesize=20&boardtypeid=3&boardid=3696",
-        "http://med.cau.ac.kr/site/program/board/basicboard/view.do?currentpage=1&menuid=001002001001&pagesize=20&boardtypeid=3&boardid=3695"
+        "http://med.cau.ac.kr/site/program/board/basicboard/view.do?currentpage=1&menuid=001002001001&pagesize=20&boardtypeid=3&boardid=3697"
     ],
     "title": [
+        "[공지] 실내 마스크 착용 의무 조정 1단계 시행(의무→권고)",
+        "[공지] 제47회 학위수여식 및 학위복 대여 안내",
         "[공지] 2023-1학기 강의시간표 공지",
         "[공지] 2023학년도 1학기 재학생 등록기간 안내",
         "[공지] 2023-1학기 수강신청(학부) 일정 안내",
@@ -39,8 +41,6 @@
         "2023학년도 중앙대학교 의과대학 전공의(레지던트 1년차) 모집",
         "임상의학종합평가 자가테스트(CAT) 2차 시행 안내",
         "[소방청] 장애인 소방안전교육 자료 공지",
-        "2022학년도 동계 계절학기 시행 안내",
-        "2022년 재난대응 안전한국훈련 홍보",
-        "주민등록증 모바일 확인서비스 확대 안내"
+        "2022학년도 동계 계절학기 시행 안내"
     ]
 }
