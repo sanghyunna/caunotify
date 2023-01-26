@@ -26,24 +26,29 @@ const crawlEcon = async({ url }) =>{
         if (element.attribs.href != undefined && element.attribs.href.startsWith("/news/__trashed/?uid=")){
             // console.log(element.children);
             url_list.push(`http://econ.cau.ac.kr${element.attribs.href}`);
-            const title = $(element).text().trim();
+            let title = $(element).text().trim();
+            if(title.startsWith("New")) title = title.slice(4,title.length);
+            while(1){
+                if(title.startsWith("\t")) title = title.slice(1,title.length);
+                else break;
+            }
             title_list.push(title);
             // console.log(`${element.attribs}`);
         }
         // console.log(element.attribs);
     });
-     //console.log(url_list);
-     //console.log(title_list);
+     console.log(url_list);
+     console.log(title_list);
     
     return {
         url: url_list,
         title: title_list
-    }
+    } 
 };
 
-//crawlEcon({
-//     url: "http://econ.cau.ac.kr/news/__trashed/",
-// }); // 테스트용
+crawlEcon({
+    url: "http://econ.cau.ac.kr/news/__trashed/",
+}); // 테스트용
 
 export default crawlEcon
 
