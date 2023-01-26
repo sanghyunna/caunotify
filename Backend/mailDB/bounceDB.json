@@ -1,3 +1,201 @@
-[{
-    "test":"dummy"
-}]
+[
+    {
+        "test": "dummy"
+    },
+    {
+        "notificationType": "Bounce",
+        "bounce": {
+            "feedbackId": "01060185d43b414c-7bc44ec6-9a14-4dcf-937d-e0aa1bc13fc4-000000",
+            "bounceType": "Permanent",
+            "bounceSubType": "General",
+            "bouncedRecipients": [
+                {
+                    "emailAddress": "bounce@simulator.amazonses.com",
+                    "action": "failed",
+                    "status": "5.1.1",
+                    "diagnosticCode": "smtp; 550 5.1.1 user unknown"
+                }
+            ],
+            "timestamp": "2023-01-21T12:08:51.000Z",
+            "remoteMtaIp": "52.74.25.205",
+            "reportingMTA": "dns; e234-9.smtp-out.ap-northeast-1.amazonses.com"
+        },
+        "mail": {
+            "timestamp": "2023-01-21T12:08:50.649Z",
+            "source": "mail@caunotify.me",
+            "sourceArn": "arn:aws:ses:ap-northeast-1:042388679582:identity/mail@caunotify.me",
+            "sourceIp": "112.151.156.28",
+            "callerIdentity": "root",
+            "sendingAccountId": "042388679582",
+            "messageId": "01060185d43b3ed9-e57cca3d-6d6c-4033-8bb6-8ba672bec937-000000",
+            "destination": [
+                "bounce@simulator.amazonses.com"
+            ],
+            "headersTruncated": false,
+            "headers": [
+                {
+                    "name": "From",
+                    "value": "mail@caunotify.me"
+                },
+                {
+                    "name": "To",
+                    "value": "bounce@simulator.amazonses.com"
+                },
+                {
+                    "name": "Subject",
+                    "value": "123456789"
+                },
+                {
+                    "name": "MIME-Version",
+                    "value": "1.0"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "multipart/alternative;  boundary=\"----=_Part_2013573_1578242039.1674302930653\""
+                }
+            ],
+            "commonHeaders": {
+                "from": [
+                    "mail@caunotify.me"
+                ],
+                "to": [
+                    "bounce@simulator.amazonses.com"
+                ],
+                "subject": "123456789"
+            }
+        }
+    },
+    {
+        "notificationType": "Bounce",
+        "bounce": {
+            "feedbackId": "01060185d43d29c5-7fe06f38-8f22-4f32-9dd8-40d357bfc455-000000",
+            "bounceType": "Permanent",
+            "bounceSubType": "General",
+            "bouncedRecipients": [
+                {
+                    "emailAddress": "123@caunotify.me",
+                    "action": "failed",
+                    "status": "5.1.1",
+                    "diagnosticCode": "smtp; 550 5.1.1 <123@caunotify.me> User unknown"
+                }
+            ],
+            "timestamp": "2023-01-21T12:10:56.000Z",
+            "remoteMtaIp": "136.143.191.44",
+            "reportingMTA": "dns; e234-9.smtp-out.ap-northeast-1.amazonses.com"
+        },
+        "mail": {
+            "timestamp": "2023-01-21T12:10:53.199Z",
+            "source": "mail@caunotify.me",
+            "sourceArn": "arn:aws:ses:ap-northeast-1:042388679582:identity/mail@caunotify.me",
+            "sourceIp": "54.95.76.235",
+            "callerIdentity": "SES_Test_User",
+            "sendingAccountId": "042388679582",
+            "messageId": "01060185d43d1d8f-54b08125-ae9d-46db-9808-5f7f387024e7-000000",
+            "destination": [
+                "123@caunotify.me"
+            ],
+            "headersTruncated": false,
+            "headers": [
+                {
+                    "name": "From",
+                    "value": "mail@caunotify.me"
+                },
+                {
+                    "name": "To",
+                    "value": "123@caunotify.me"
+                },
+                {
+                    "name": "Subject",
+                    "value": "test님, 구독해주셔서 감사합니다"
+                },
+                {
+                    "name": "MIME-Version",
+                    "value": "1.0"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "text/html; charset=UTF-8"
+                },
+                {
+                    "name": "Content-Transfer-Encoding",
+                    "value": "quoted-printable"
+                }
+            ],
+            "commonHeaders": {
+                "from": [
+                    "mail@caunotify.me"
+                ],
+                "to": [
+                    "123@caunotify.me"
+                ],
+                "subject": "test님, 구독해주셔서 감사합니다"
+            }
+        }
+    },
+    {
+        "notificationType": "Bounce",
+        "bounce": {
+            "feedbackId": "01060185e66565ec-29d3d899-ce5f-4973-8c21-a962fb652376-000000",
+            "bounceType": "Permanent",
+            "bounceSubType": "OnAccountSuppressionList",
+            "bouncedRecipients": [
+                {
+                    "emailAddress": "roganuc@naver.com",
+                    "action": "failed",
+                    "status": "5.1.1",
+                    "diagnosticCode": "Amazon SES did not send the message to this address because it is on the suppression list for your account. For more information about removing addresses from the suppression list, see the Amazon SES Developer Guide at https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-email-suppression-list.html"
+                }
+            ],
+            "timestamp": "2023-01-25T00:48:03.000Z",
+            "reportingMTA": "dns; amazonses.com"
+        },
+        "mail": {
+            "timestamp": "2023-01-25T00:48:02.876Z",
+            "source": "mail@caunotify.me",
+            "sourceArn": "arn:aws:ses:ap-northeast-1:042388679582:identity/mail@caunotify.me",
+            "sourceIp": "54.95.76.235",
+            "callerIdentity": "SES_Test_User",
+            "sendingAccountId": "042388679582",
+            "messageId": "01060185e665653c-ac2ee075-8de9-4866-aca2-08c871cb5e46-000000",
+            "destination": [
+                "roganuc@naver.com"
+            ],
+            "headersTruncated": false,
+            "headers": [
+                {
+                    "name": "From",
+                    "value": "mail@caunotify.me"
+                },
+                {
+                    "name": "To",
+                    "value": "roganuc@naver.com"
+                },
+                {
+                    "name": "Subject",
+                    "value": "김예찬님 새 공지가 게시되었습니다"
+                },
+                {
+                    "name": "MIME-Version",
+                    "value": "1.0"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "text/html; charset=UTF-8"
+                },
+                {
+                    "name": "Content-Transfer-Encoding",
+                    "value": "quoted-printable"
+                }
+            ],
+            "commonHeaders": {
+                "from": [
+                    "mail@caunotify.me"
+                ],
+                "to": [
+                    "roganuc@naver.com"
+                ],
+                "subject": "김예찬님 새 공지가 게시되었습니다"
+            }
+        }
+    }
+]

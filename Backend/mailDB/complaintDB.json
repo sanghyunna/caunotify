@@ -1,3 +1,65 @@
-[{
-    "test":"dummy"
-}]
+[
+    {
+        "test": "dummy"
+    },
+    {
+        "notificationType": "Complaint",
+        "complaint": {
+            "feedbackId": "01060185d442e21c-b20b6455-b5ce-47f6-8ab1-109c01f00d49-000000",
+            "complaintSubType": null,
+            "complainedRecipients": [
+                {
+                    "emailAddress": "complaint@simulator.amazonses.com"
+                }
+            ],
+            "timestamp": "2023-01-21T12:17:11.000Z",
+            "userAgent": "Amazon SES Mailbox Simulator",
+            "complaintFeedbackType": "abuse",
+            "arrivalDate": "2023-01-21T12:17:11.339Z"
+        },
+        "mail": {
+            "timestamp": "2023-01-21T12:17:07.010Z",
+            "source": "mail@caunotify.me",
+            "sourceArn": "arn:aws:ses:ap-northeast-1:042388679582:identity/mail@caunotify.me",
+            "sourceIp": "112.151.156.28",
+            "callerIdentity": "root",
+            "sendingAccountId": "042388679582",
+            "messageId": "01060185d442d1c2-1a7ea212-bcc9-47fb-8750-4f51b34a471b-000000",
+            "destination": [
+                "complaint@simulator.amazonses.com"
+            ],
+            "headersTruncated": false,
+            "headers": [
+                {
+                    "name": "From",
+                    "value": "mail@caunotify.me"
+                },
+                {
+                    "name": "To",
+                    "value": "complaint@simulator.amazonses.com"
+                },
+                {
+                    "name": "Subject",
+                    "value": "456456"
+                },
+                {
+                    "name": "MIME-Version",
+                    "value": "1.0"
+                },
+                {
+                    "name": "Content-Type",
+                    "value": "multipart/alternative;  boundary=\"----=_Part_1162464_1904540216.1674303427013\""
+                }
+            ],
+            "commonHeaders": {
+                "from": [
+                    "mail@caunotify.me"
+                ],
+                "to": [
+                    "complaint@simulator.amazonses.com"
+                ],
+                "subject": "456456"
+            }
+        }
+    }
+]
