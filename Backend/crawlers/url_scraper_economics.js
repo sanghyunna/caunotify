@@ -37,8 +37,8 @@ const crawlEcon = async({ url }) =>{
         }
         // console.log(element.attribs);
     });
-     console.log(url_list);
-     console.log(title_list);
+    //  console.log(url_list);
+    //  console.log(title_list);
     
     return {
         url: url_list,
@@ -46,9 +46,9 @@ const crawlEcon = async({ url }) =>{
     } 
 };
 
-crawlEcon({
-    url: "http://econ.cau.ac.kr/news/__trashed/",
-}); // 테스트용
+// crawlEcon({
+//     url: "http://econ.cau.ac.kr/news/__trashed/",
+// }); // 테스트용
 
 export default crawlEcon
 
