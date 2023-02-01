@@ -153,6 +153,7 @@ export async function refresh(nextIdNum, silentMode){
     let storeDifferences = [];
     function readFileAndCompareWithOriginal(majorName,dataObject){
         if(dataObject.error == "true") {console.log(`***** ${majorName} took too long *****`); return -1;} // 로딩이 너무 오래 걸렸던 게시판들
+        if(dataObject.url == undefined) {console.log("dataObject is undefined for some reason"); return -1;}
         const rawData = fs.readFileSync(path.join(__dirname, 'compare_list', `${majorName}.json`),"utf8")
         const oldContent = JSON.parse(rawData);
         // console.log(`${majorName}:`);
