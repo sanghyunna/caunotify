@@ -158,6 +158,7 @@ export async function refresh(nextIdNum, silentMode){
         const oldContent = JSON.parse(rawData);
         // console.log(`${majorName}:`);
         // console.log(oldContent);
+        console.log(oldContent);
         return compareTwoArrays(dataObject.url, oldContent.url);
     }
 
