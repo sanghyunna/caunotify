@@ -5,8 +5,11 @@ import cheerio from "cheerio";
 
 // package.json 에서 type을 module로 설정해 es6 module scope를 따름
 
-const crawlArchitecture = async({ url }) =>{
+async function crawlArchitecture(url,n){
     url = "http://archicau.com/wordpress/%ea%b3%b5%ec%a7%80%ec%82%ac%ed%95%ad/";
+    if(n == 2){
+        url = "http://archicau.com/wordpress/%ea%b3%b5%ec%a7%80%ec%82%ac%ed%95%ad/?pageid=2&mod=list";
+    }
     let url_list = [];
     let title_list = [];
     const response = await fetch(url);

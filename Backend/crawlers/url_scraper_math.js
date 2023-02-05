@@ -5,8 +5,11 @@ import cheerio from "cheerio";
 
 // package.json 에서 type을 module로 설정해 es6 module scope를 따름
 
-const crawlMath = async({ url }) =>{
+async function crawlMath(url,n){
     url = "https://math.cau.ac.kr/notice/notice.php";
+    if(n == 2){
+        url = "https://math.cau.ac.kr/notice/notice.php?page=2&keyfield=&keyword=&board_table=notice_student";
+    }
     let url_list = [];
     let title_list = [];
     const response = await fetch(url);

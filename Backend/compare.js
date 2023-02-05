@@ -3,9 +3,10 @@
 export function compareTwoArrays(newArray, originalArray){ // 실제 사용시 len은 newArray.length로 대체
     let found = 0;
     let diff = [];
-    const len = newArray.length;
-    for(let i = 0; i < len; i++){
-        for(let j = 0; j < len; j++){
+    const newLength = newArray.length;
+    const originalLength = originalArray.length;
+    for(let i = 0; i < newLength; i++){
+        for(let j = 0; j < originalLength; j++){
             if(newArray[i] == originalArray[j]){
                 found=1;
                 break;
