@@ -224,8 +224,14 @@ app.post('/posttest', (req, res) => { // 정상작동 확인함
 app.post('/refresh', (req, res) => {
     if(isItAuthed(req.body.auth) != 0) return res.send("Not authorized");
     console.log("refresh requested\n");
-    refresh(nextIdNum,0);
+    refresh(nextIdNum,0,"true");
     return res.send("Refreshed");
+});
+app.post('/noMailRefresh', (req, res) => {
+    if(isItAuthed(req.body.auth) != 0) return res.send("Not authorized");
+    console.log("refresh requested\n");
+    refresh(nextIdNum,0,"false");
+    return res.send("No-Mail Refreshed");
 });
 app.post('/currentuserDB', (req, res) => {
     if(isItAuthed(req.body.auth) != 0) return res.send("Not authorized");
@@ -347,7 +353,7 @@ setInterval(() => {
     // refresh(nextIdNum,1);
     if(DayOrNight() == "Day"){
         console.log(`\n${moment().tz("Asia/Seoul").format('YYMMDD_HH_mm_ss')}`);
-        refresh(nextIdNum,1);
+        refresh(nextIdNum,1,"true");
         console.log("*** interval reached");
     }
     else console.log("* interval skipped - Night\n");
