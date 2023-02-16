@@ -5,8 +5,11 @@ import cheerio from "cheerio";
 
 // package.json 에서 type을 module로 설정해 es6 module scope를 따름
 
-const crawlEnerEngineering = async({ url }) =>{
+async function crawlEnerEngineering(url,n){
     url = "http://ese.cau.ac.kr/wordpress/?cat=11p";
+    if(n == 2){
+        url = "http://ese.cau.ac.kr/wordpress/?cat=11p&paged=2";
+    }
     let url_list = [];
     let title_list = [];
     const response = await fetch(url);
@@ -37,18 +40,16 @@ const crawlEnerEngineering = async({ url }) =>{
         }
         // console.log(element.attribs);
     });
-    //  console.log(url_list);
+    // console.log(url_list);
     // console.log(title_list);
     
     return {
         url: url_list,
         title: title_list
     }
-};
+}; 
 
-//  crawlEnerEngineering({
-//      url: "http://ese.cau.ac.kr/wordpress/?cat=11p",
-// }); // 테스트용
+//  crawlEnerEngineering("",1); // 테스트용
 
 export default crawlEnerEngineering
 

@@ -5,8 +5,11 @@ import cheerio from "cheerio";
 
 // package.json 에서 type을 module로 설정해 es6 module scope를 따름
 
-const crawlDavinci = async({ url }) =>{
+async function crawlDavinci(url,n){
     url = "https://ge.cau.ac.kr/board_notice.php";
+    if(n == 2){
+        url = "https://ge.cau.ac.kr/board_notice.php?page=2";
+    }
     let url_list = [];
     let title_list = [];
     const response = await fetch(url);

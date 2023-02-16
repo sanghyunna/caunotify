@@ -6,8 +6,11 @@ import puppeteer from "puppeteer"; // Headless Chrome Crawler
 
 // package.json 에서 type을 module로 설정해 es6 module scope를 따름
 
-const crawlCAUnotice = async({ url }) =>{
+async function crawlCAUnotice(url,n){
     url = "https://www.cau.ac.kr/cms/FR_CON/index.do?MENU_ID=100";
+    if(n == 2){
+        url = "https://www.cau.ac.kr/cms/FR_CON/index.do?MENU_ID=100#page2";
+    }
     let url_list = [];
     let title_list = [];
 

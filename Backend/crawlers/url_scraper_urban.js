@@ -6,8 +6,11 @@ import iconv from "iconv-lite";
 
 // package.json 에서 type을 module로 설정해 es6 module scope를 따름
 
-const crawlUrbanPlanRealEstate = async({ url }) =>{
+async function crawlUrbanPlanRealEstate(url,n){
     url = "http://planning.cau.ac.kr/bbs/board.php?tbl=notice&bbs_option=";
+    if(n == 2){
+        url = "http://planning.cau.ac.kr/bbs/board.php?tbl=notice&&category=&findType=&findWord=&sort1=&sort2=&bbs_option=&page=2";
+    }
     let url_list = [];
     let title_list = [];
     const response = await axios({

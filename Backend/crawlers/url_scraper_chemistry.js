@@ -7,8 +7,11 @@ import puppeteer from "puppeteer";
 
 // package.json 에서 type을 module로 설정해 es6 module scope를 따름
 
-const crawlChem = async({ url }) =>{
+async function crawlChem(url,n){
     url = "https://chem.cau.ac.kr/new_chem/DM/dm_1.php";
+    if(n == 2){
+        url = "https://chem.cau.ac.kr/new_chem/DM/dm_1.php?idx=&p_idx=&s_kind=&s_scroll=&s_key=&p_page=2&code=b_1&p_listtype=&p_mode=list&mode=&p_pgfile=%2Fnew_chem%2FDM%2Fdm_1.php";
+    }
     let url_list = [];
     let title_list = [];
 

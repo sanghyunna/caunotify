@@ -5,8 +5,11 @@ import cheerio from "cheerio";
 
 // package.json 에서 type을 module로 설정해 es6 module scope를 따름
 
-const crawlAi = async({ url }) =>{
+async function crawlAi(url,n){
     url = "https://ai.cau.ac.kr/sub07/sub0701.php?category=1&view=list";
+    if(n == 2){
+        url = "https://ai.cau.ac.kr/sub07/sub0701.php?category=1&view=list&currentPage=2&keyword=&search=title";
+    }
     let url_list = [];
     let title_list = [];
     const response = await fetch(url);
@@ -32,8 +35,8 @@ const crawlAi = async({ url }) =>{
         }
         // console.log(element.attribs);
     });
-  //   console.log(url_list);
-  //   console.log(title_list);
+    // console.log(url_list);
+    // console.log(title_list);
     
     return {
         url: url_list,
@@ -41,9 +44,7 @@ const crawlAi = async({ url }) =>{
     }
 };
 
-// crawlAi({
-//     url: "https://ai.cau.ac.kr/sub07/sub0701.php?category=1&view=list",
-// }); // 테스트용
+// crawlAi("",2); // 테스트용
 
 export default crawlAi
 
