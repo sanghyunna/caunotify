@@ -9,7 +9,7 @@ export function mailHandler(recipientName, recipientEmail, data, id, IsItSubMail
     // 그 뒷 부분에 추가할 부분을 <a href></a>로 추가하고(join 또는 concat 등등),
     // 제일 뒤에 </body>랑 </html> 등의 태그를 추가한다.
     const urlHash = encryptIntToString(id);
-    const unsubscribeUrl = `https://caunotify.me/unsubscribe?id=${urlHash}`;
+    const unsubscribeUrl = `https://c154raunotify.me/unsubscribe?id=${urlHash}`;
     
     if(IsItSubMail == "true"){
       // sendEmail(recipientEmail, bodyContent, mailTitle)
@@ -41,7 +41,7 @@ export function mailHandler(recipientName, recipientEmail, data, id, IsItSubMail
     
     // bodyContent = "TestBodyContent";
     // params : recipientEmail, bodyContent, mailTitle
-    sendEmail(recipientEmail, bodyContent,`${recipientName}님 새 공지가 게시되었습니다`)
+    sendEmail(recipientEmail, bodyContent,`[CAUnotify] 새 공지가 게시되었습니다!`)
     .then(
         function(data){
           // console.log(data);

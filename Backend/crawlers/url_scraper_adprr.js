@@ -6,8 +6,11 @@ import puppeteer from "puppeteer"; // Headless Chrome Crawler
 
 // package.json 에서 type을 module로 설정해 es6 module scope를 따름
 
-const crawladpr = async({ url }) =>{
+async function crawladpr(url,n){
     url = "https://iadpr.org/bbs/class_notice_list.php";
+    if(n == 2){
+        url = "https://iadpr.org/bbs/class_notice_list.php?page=2&blockCount=10&pageCount=10&schText=&schItem=";
+    }
     let url_list = [];
     let title_list = [];
 
@@ -66,9 +69,7 @@ const crawladpr = async({ url }) =>{
     }
 };
 
-// crawladpr({
-//     url: "url",
-// }); // 테스트용
+// crawladpr("",1); // 테스트용
 
 export default crawladpr
 
