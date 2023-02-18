@@ -70,15 +70,6 @@ async function waitWithTimeout(asyncPromise, timeLimit){
             timeLimit);
     });
 
-    async function actualPromise(asyncPromise){
-        try {
-            asyncPromise;
-        } catch (error) {
-            console.log(error);
-            return {"error":"true"};
-        }
-    }
-
     return Promise.race([asyncPromise, timeoutPromise]).then(result => {
         clearTimeout(timeoutHandle);
         return result;
@@ -214,8 +205,8 @@ export async function refresh(nextIdNum, silentMode, sendMail){
     // *** 1.5. 1페이지와 2페이지의 통합본 생성 ***
     // ******************************************
     function combineTwoPages(newObject, secObject){
-        console.log(newObject)
-        console.log(secObject)
+        // console.log(newObject)
+        // console.log(secObject)
         const newLength = newObject.url.length;
         const secLength = secObject.url.length;
         let combLength = newLength+secLength;
