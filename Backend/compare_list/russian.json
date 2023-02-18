@@ -1,8 +1,10 @@
 {
     "url": [
-        "http://caurussia.cau.ac.kr/dm/dm_1.php?p_idx=99&s_scroll=&s_key=&p_page=&code=&PageId=&p_mode=view",
+        "http://caurussia.cau.ac.kr/dm/dm_1.php?p_idx=104&s_scroll=&s_key=&p_page=&code=&PageId=&p_mode=view",
+        "http://caurussia.cau.ac.kr/dm/dm_1.php?p_idx=103&s_scroll=&s_key=&p_page=&code=&PageId=&p_mode=view",
         "http://caurussia.cau.ac.kr/dm/dm_1.php?p_idx=101&s_scroll=&s_key=&p_page=&code=&PageId=&p_mode=view",
         "http://caurussia.cau.ac.kr/dm/dm_1.php?p_idx=100&s_scroll=&s_key=&p_page=&code=&PageId=&p_mode=view",
+        "http://caurussia.cau.ac.kr/dm/dm_1.php?p_idx=99&s_scroll=&s_key=&p_page=&code=&PageId=&p_mode=view",
         "http://caurussia.cau.ac.kr/dm/dm_1.php?p_idx=98&s_scroll=&s_key=&p_page=&code=&PageId=&p_mode=view",
         "http://caurussia.cau.ac.kr/dm/dm_1.php?p_idx=96&s_scroll=&s_key=&p_page=&code=&PageId=&p_mode=view",
         "http://caurussia.cau.ac.kr/dm/dm_1.php?p_idx=95&s_scroll=&s_key=&p_page=&code=&PageId=&p_mode=view",
@@ -10,12 +12,21 @@
         "http://caurussia.cau.ac.kr/dm/dm_1.php?p_idx=93&s_scroll=&s_key=&p_page=&code=&PageId=&p_mode=view",
         "http://caurussia.cau.ac.kr/dm/dm_1.php?p_idx=92&s_scroll=&s_key=&p_page=&code=&PageId=&p_mode=view",
         "http://caurussia.cau.ac.kr/dm/dm_1.php?p_idx=82&s_scroll=&s_key=&p_page=&code=&PageId=&p_mode=view",
-        "http://caurussia.cau.ac.kr/dm/dm_1.php?p_idx=81&s_scroll=&s_key=&p_page=&code=&PageId=&p_mode=view"
+        "http://caurussia.cau.ac.kr/dm/dm_1.php?p_idx=81&s_scroll=&s_key=&p_page=&code=&PageId=&p_mode=view",
+        "http://caurussia.cau.ac.kr/dm/dm_1.php?p_idx=79&s_scroll=&s_key=&p_page=&code=&PageId=&p_mode=view",
+        "http://caurussia.cau.ac.kr/dm/dm_1.php?p_idx=78&s_scroll=&s_key=&p_page=&code=&PageId=&p_mode=view",
+        "http://caurussia.cau.ac.kr/dm/dm_1.php?p_idx=77&s_scroll=&s_key=&p_page=&code=&PageId=&p_mode=view",
+        "http://caurussia.cau.ac.kr/dm/dm_1.php?p_idx=76&s_scroll=&s_key=&p_page=&code=&PageId=&p_mode=view",
+        "http://caurussia.cau.ac.kr/dm/dm_1.php?p_idx=75&s_scroll=&s_key=&p_page=&code=&PageId=&p_mode=view",
+        "http://caurussia.cau.ac.kr/dm/dm_1.php?p_idx=74&s_scroll=&s_key=&p_page=&code=&PageId=&p_mode=view",
+        "http://caurussia.cau.ac.kr/dm/dm_1.php?p_idx=73&s_scroll=&s_key=&p_page=&code=&PageId=&p_mode=view"
     ],
     "title": [
-        "2023년 2월  졸업사정 업무 안내",
+        "실내 마스크 착용 의무 조정 1단계 시행(의무→권고)",
+        "서울캠퍼스 2023년 2월 학위수여식 학위복 대여 안내",
         "2022학년도 2학기 강의평가 실시 안내",
         "2022-2학기 러시아어문학전공 졸업시험 결과 안내",
+        "2023년 2월  졸업사정 업무 안내",
         "관정이종환교육재단 국내대학 장학생 선발 홍보 요청",
         "2023학년도 1학기 다전공 신청 및 선발 일정 안내",
         "2023학년도 주전공 교직과정 이수예정자 선발 안내",
@@ -23,6 +34,13 @@
         "2022학년도 2학기 송정 장학기금 학과추천 장학생 선발 안내",
         "2023-1학기 학과추천 파견 교환학생 선발 안내",
         "2022학년도 1학기 강의평가 실시 안내",
-        "제12회 전국 대학(원)생 러시아어 토론대회 결승 안내"
+        "제12회 전국 대학(원)생 러시아어 토론대회 결승 안내",
+        "2022-1학기, 학과 2차 졸업시험 안내",
+        "2022년 8월 졸업사정 안내",
+        "2022년 5월 법정 정기소독 실시 안내(해충방제)",
+        "2022학년도 2학기 다전공 신청 및 선발 일정 안내",
+        "2022-1학기 학과졸업시험 영역별 합격자 안내 (1차,2차)",
+        "2022-1학기 일취월장 장학 사업 시행 공고",
+        "인문대학 역량강화장학금 시행안내"
     ]
 }
