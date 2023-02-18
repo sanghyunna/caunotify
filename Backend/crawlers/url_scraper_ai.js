@@ -12,8 +12,19 @@ async function crawlAi(url,n){
     }
     let url_list = [];
     let title_list = [];
-    const response = await fetch(url);
-    const body = await response.text();
+
+    try {
+        var response = await fetch(url);
+        var body = await response.text();
+    } catch (error) {
+        console.log(error);
+        return {"error":"true"};
+    }
+
+
+
+    // const response = await fetch(url);
+    // const body = await response.text();
     const $ = cheerio.load(body, { decodeEntities: false }) // 읽어들인 html을 조작 가능하게끔
 
     // let all = $('*');
