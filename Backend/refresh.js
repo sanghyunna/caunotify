@@ -69,6 +69,16 @@ async function waitWithTimeout(asyncPromise, timeLimit){
             () => _resolve({"error":"true"}),
             timeLimit);
     });
+
+    async function actualPromise(asyncPromise){
+        try {
+            asyncPromise;
+        } catch (error) {
+            console.log(error);
+            return {"error":"true"};
+        }
+    }
+
     return Promise.race([asyncPromise, timeoutPromise]).then(result => {
         clearTimeout(timeoutHandle);
         return result;
@@ -95,9 +105,12 @@ export async function refresh(nextIdNum, silentMode, sendMail){
     console.time("** fully loaded 1 in "); // 로딩시간 기록
     // const naw_integEngineering = await waitWithTimeout(crawlIntegEngineerin("url",2),1*60*1000);
     const new_CAUnotice = 	    await waitWithTimeout(crawlCAUnotice("url",1),1*60*1000);			if(!silentMode) console.log("CAUnotice loaded");
+    console.log(new_CAUnotice);
     const new_adpr = 		    await waitWithTimeout(crawladpr("url",1),1*60*1000);			    if(!silentMode) console.log("adpr loaded");
     const new_ai = 			    await waitWithTimeout(crawlAi("url",1),1*60*1000);			        if(!silentMode) console.log("ai loaded");
+    console.log(new_ai);
     const new_appliedStat =     await waitWithTimeout(crawlAppliedStat("url",1),1*60*1000);			if(!silentMode) console.log("appliedStat loaded");
+    console.log(new_appliedStat);
     const new_architecture =    await waitWithTimeout(crawlArchitecture("url",1),1*60*1000);		if(!silentMode) console.log("architecture loaded");
     const new_business = 	    await waitWithTimeout(crawlBusiness("url",1),1*60*1000);			if(!silentMode) console.log("business loaded");
     const new_chem = 		    await waitWithTimeout(crawlChem("url",1),1*60*1000);			    if(!silentMode) console.log("chem loaded");
