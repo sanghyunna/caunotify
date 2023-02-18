@@ -12,8 +12,14 @@ async function crawlArchitecture(url,n){
     }
     let url_list = [];
     let title_list = [];
-    const response = await fetch(url);
-    const body = await response.text();
+    try {
+        var response = await fetch(url);
+        var body = await response.text();
+        // try 블럭 밖에서도 사용 할 수 있도록 var 로 전역변수 선언
+    } catch (error) {
+        console.log(error);
+        return {"error":"true"};
+    }
     const $ = cheerio.load(body, { decodeEntities: false }) // 읽어들인 html을 조작 가능하게끔
 
     // let all = $('*');

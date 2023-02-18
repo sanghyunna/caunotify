@@ -26,16 +26,16 @@ async function crawlNursing(url,n){
     let items = $('*').get();
 
     items.forEach(element => {
-        if (element.attribs.href != undefined && element.attribs.href.startsWith("/pages//bm/bm_7_1_view.php?page=1&s_key=s_word=&idx=")){
+        if (element.attribs.href != undefined && element.attribs.href.startsWith("/pages//bm/bm_7_1_view.php?page")){
             // console.log(element.children);
-            url_list.push(`https://nursing.cau.ac.kr/pages//bm/bm_7_1_view.php?page=1&s_key=s_word=&idx=${element.attribs.href}`);
+            url_list.push(`https://nursing.cau.ac.kr${element.attribs.href}`);
             const title = $(element).text().trim();
             title_list.push(title);
             // console.log(`${element.attribs}`);
         }
         // console.log(element.attribs);
     });
-   //  console.log(url_list);
+    // console.log(url_list);
     // console.log(title_list);
     
     return {
@@ -44,9 +44,7 @@ async function crawlNursing(url,n){
     }
 };
 
-// crawlNursing({
-//     url: "https://nursing.cau.ac.kr/pages//bm/bm_7.php",
- //}); // 테스트용
+// crawlNursing("url",2); // 테스트용
 
 export default crawlNursing
 

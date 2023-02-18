@@ -72,7 +72,7 @@ async function crawlCAUnotice(url,n){
 // crawlCAUnotice({
 //     url: "url",
 // }); // 테스트용
-
+ 
 export default crawlCAUnotice
 
 // 비동기식이기 때문에 url_list의 console.log는 crawl 함수 내에서 이루어져야함.
