@@ -94,110 +94,110 @@ export async function refresh(nextIdNum, silentMode, sendMail){
 
 
     console.time("** fully loaded 1 in "); // 로딩시간 기록
-    // const naw_integEngineering = await waitWithTimeout(crawlIntegEngineerin("url",2),1*60*1000);
-    const new_CAUnotice = 	    await waitWithTimeout(crawlCAUnotice("url",1),1*60*1000);			if(!silentMode) console.log("CAUnotice loaded");
-    const new_adpr = 		    await waitWithTimeout(crawladpr("url",1),1*60*1000);			    if(!silentMode) console.log("adpr loaded");
-    const new_ai = 			    await waitWithTimeout(crawlAi("url",1),1*60*1000);			        if(!silentMode) console.log("ai loaded");
-    const new_appliedStat =     await waitWithTimeout(crawlAppliedStat("url",1),1*60*1000);			if(!silentMode) console.log("appliedStat loaded");
-    const new_architecture =    await waitWithTimeout(crawlArchitecture("url",1),1*60*1000);		if(!silentMode) console.log("architecture loaded");
-    const new_business = 	    await waitWithTimeout(crawlBusiness("url",1),1*60*1000);			if(!silentMode) console.log("business loaded");
-    const new_chem = 		    await waitWithTimeout(crawlChem("url",1),1*60*1000);			    if(!silentMode) console.log("chem loaded");
-    const new_chemEngineering = await waitWithTimeout(crawlChemEngineering("url",1),1*60*1000);		if(!silentMode) console.log("chemEngineering loaded");
-    const new_chinese = 	    await waitWithTimeout(crawlChinese("url",1),1*60*1000);			    if(!silentMode) console.log("chinese loaded");
-    const new_civilEnvPlanEng = await waitWithTimeout(crawlCivilEnvPlanEng("url",1),1*60*1000);		if(!silentMode) console.log("civilEnvPlanEng loaded");
-    const new_davinci = 	    await waitWithTimeout(crawlDavinci("url",1),1*60*1000);			    if(!silentMode) console.log("davinci loaded");
-    const new_dorm = 		    await waitWithTimeout(crawlDorm("url",1),1*60*1000);			    if(!silentMode) console.log("dorm loaded");
-    const new_earlyChildhoodEd = await waitWithTimeout(crawlEarlyChildhoodEd("url",1),1*60*1000);	if(!silentMode) console.log("earlyChildhoodEd loaded");
-    const new_econ = 		    await waitWithTimeout(crawlEcon("url",1),1*60*1000);			    if(!silentMode) console.log("econ loaded");
-    const new_education = 	    await waitWithTimeout(crawlEducation("url",1),1*60*1000);			if(!silentMode) console.log("education loaded");
-    const new_elecEngineering = await waitWithTimeout(crawlElecEngineering("url",1),1*60*1000);		if(!silentMode) console.log("elecEngineering loaded");
-    const new_enerEngineering = await waitWithTimeout(crawlEnerEngineering("url",1),1*60*1000);		if(!silentMode) console.log("enerEngineering loaded");
-    const new_english = 	    await waitWithTimeout(crawlEnglish("url",1),1*60*1000);             if(!silentMode) console.log("english loaded");
-    const new_englishEd = 	    await waitWithTimeout(crawlEnglishEd("url",1),1*60*1000);			if(!silentMode) console.log("englishEd loaded");
-    const new_french = 	        await waitWithTimeout(crawlFrench("url",1),1*60*1000);			    if(!silentMode) console.log("french loaded");
-    const new_german = 		    await waitWithTimeout(crawlGerman("url",1),1*60*1000);			    if(!silentMode) console.log("german loaded");
-    const new_history = 	    await waitWithTimeout(crawlHistory("url",1),1*60*1000);			    if(!silentMode) console.log("history loaded");
-    const new_industSec = 	    await waitWithTimeout(crawlIndustSec("url",1),1*60*1000);			if(!silentMode) console.log("industSec loaded");
-    const new_integEngineering = await waitWithTimeout(crawlIntegEngineering("url",1),1*60*1000);	if(!silentMode) console.log("integEngineering loaded");
-    const new_japanese = 	    await waitWithTimeout(crawlJapanese("url",1),1*60*1000);			if(!silentMode) console.log("japanese loaded");
-    const new_korean = 		    await waitWithTimeout(crawlKorean("url",1),1*60*1000);			    if(!silentMode) console.log("korean loaded");
-    const new_libInfoScience = 	await waitWithTimeout(crawlLibInfoScience("url",1),1*60*1000);		if(!silentMode) console.log("libInfoScience loaded");
-    const new_lifeScience =     await waitWithTimeout(crawlLifeScience("url",1),1*60*1000);			if(!silentMode) console.log("lifeScience loaded");
-    const new_logistics = 	    await waitWithTimeout(crawlLogistics("url",1),1*60*1000);			if(!silentMode) console.log("logistics loaded");
-    const new_math = 		    await waitWithTimeout(crawlMath("url",1),1*60*1000);			    if(!silentMode) console.log("math loaded");
-    const new_mechEngineering = await waitWithTimeout(crawlMechEngineering("url",1),1*60*1000);		if(!silentMode) console.log("mechEngineering loaded");
-    const new_med = 		    await waitWithTimeout(crawlMed("url",1),1*60*1000);			        if(!silentMode) console.log("med loaded");
-    const new_mediaComm = 	    await waitWithTimeout(crawlMediaComm("url",1),1*60*1000);			if(!silentMode) console.log("mediaComm loaded");
-    const new_nursing = 	    await waitWithTimeout(crawlNursing("url",1),1*60*1000);			    if(!silentMode) console.log("nursing loaded");
-    const new_pharm = 		    await waitWithTimeout(crawlPharm("url",1),1*60*1000);			    if(!silentMode) console.log("pharm loaded");
-    const new_philosophy = 	    await waitWithTimeout(crawlPhilosophy("url",1),1*60*1000);			if(!silentMode) console.log("philosophy loaded");
-    const new_physicalEd = 	    await waitWithTimeout(crawlPhysicalEd("url",1),1*60*1000);			if(!silentMode) console.log("physicalEd loaded");
-    const new_physics = 	    await waitWithTimeout(crawlPhysics("url",1),1*60*1000);			    if(!silentMode) console.log("physics loaded");
-    const new_polaris = 	    await waitWithTimeout(crawlPolaris("url",1),1*60*1000);			    if(!silentMode) console.log("polaris loaded");
-    const new_politics = 	    await waitWithTimeout(crawlPolitics("url",1),1*60*1000);			if(!silentMode) console.log("politics loaded");
-    const new_psychology = 	    await waitWithTimeout(crawlPsychology("url",1),1*60*1000);			if(!silentMode) console.log("psychology loaded");
-    const new_publicService =   await waitWithTimeout(crawlPublicService("url",1),1*60*1000);		if(!silentMode) console.log("publicService loaded");
-    const new_russian = 	    await waitWithTimeout(crawlRussian("url",1),1*60*1000);			    if(!silentMode) console.log("russian loaded");
-    const new_socialWelfare =   await waitWithTimeout(crawlSocialWelfare("url",1),1*60*1000);		if(!silentMode) console.log("socialWelfare loaded");
-    const new_sociology = 	    await waitWithTimeout(crawlSociology("url",1),1*60*1000);			if(!silentMode) console.log("sociology loaded");
-    const new_software = 	    await waitWithTimeout(crawlSoftware("url",1),1*60*1000);			if(!silentMode) console.log("software loaded");
-    const new_upreJob = 	    await waitWithTimeout(crawlupreJob("url",1),1*60*1000);			    if(!silentMode) console.log("upreJob loaded");
-    const new_urbanEngineering = await waitWithTimeout(crawlUrbanEngineering("url",1),1*60*1000);	if(!silentMode) console.log("urbanEngineering loaded");
-    const new_urbanPlanRealEstate = await waitWithTimeout(crawlUrbanPlanRealEstate("url",1),1*60*1000);	if(!silentMode) console.log("urbanPlanRealEstate loaded");
+    // const naw_integEngineering = await waitWithTimeout(crawlIntegEngineerin("url",2),30*1000);
+    const new_CAUnotice = 	    await waitWithTimeout(crawlCAUnotice("url",1),30*1000);			if(!silentMode) console.log("CAUnotice loaded");
+    const new_adpr = 		    await waitWithTimeout(crawladpr("url",1),30*1000);			    if(!silentMode) console.log("adpr loaded");
+    const new_ai = 			    await waitWithTimeout(crawlAi("url",1),30*1000);			        if(!silentMode) console.log("ai loaded");
+    const new_appliedStat =     await waitWithTimeout(crawlAppliedStat("url",1),30*1000);			if(!silentMode) console.log("appliedStat loaded");
+    const new_architecture =    await waitWithTimeout(crawlArchitecture("url",1),30*1000);		if(!silentMode) console.log("architecture loaded");
+    const new_business = 	    await waitWithTimeout(crawlBusiness("url",1),30*1000);			if(!silentMode) console.log("business loaded");
+    const new_chem = 		    await waitWithTimeout(crawlChem("url",1),30*1000);			    if(!silentMode) console.log("chem loaded");
+    const new_chemEngineering = await waitWithTimeout(crawlChemEngineering("url",1),30*1000);		if(!silentMode) console.log("chemEngineering loaded");
+    const new_chinese = 	    await waitWithTimeout(crawlChinese("url",1),30*1000);			    if(!silentMode) console.log("chinese loaded");
+    const new_civilEnvPlanEng = await waitWithTimeout(crawlCivilEnvPlanEng("url",1),30*1000);		if(!silentMode) console.log("civilEnvPlanEng loaded");
+    const new_davinci = 	    await waitWithTimeout(crawlDavinci("url",1),30*1000);			    if(!silentMode) console.log("davinci loaded");
+    const new_dorm = 		    await waitWithTimeout(crawlDorm("url",1),30*1000);			    if(!silentMode) console.log("dorm loaded");
+    const new_earlyChildhoodEd = await waitWithTimeout(crawlEarlyChildhoodEd("url",1),30*1000);	if(!silentMode) console.log("earlyChildhoodEd loaded");
+    const new_econ = 		    await waitWithTimeout(crawlEcon("url",1),30*1000);			    if(!silentMode) console.log("econ loaded");
+    const new_education = 	    await waitWithTimeout(crawlEducation("url",1),30*1000);			if(!silentMode) console.log("education loaded");
+    const new_elecEngineering = await waitWithTimeout(crawlElecEngineering("url",1),30*1000);		if(!silentMode) console.log("elecEngineering loaded");
+    const new_enerEngineering = await waitWithTimeout(crawlEnerEngineering("url",1),30*1000);		if(!silentMode) console.log("enerEngineering loaded");
+    const new_english = 	    await waitWithTimeout(crawlEnglish("url",1),30*1000);             if(!silentMode) console.log("english loaded");
+    const new_englishEd = 	    await waitWithTimeout(crawlEnglishEd("url",1),30*1000);			if(!silentMode) console.log("englishEd loaded");
+    const new_french = 	        await waitWithTimeout(crawlFrench("url",1),30*1000);			    if(!silentMode) console.log("french loaded");
+    const new_german = 		    await waitWithTimeout(crawlGerman("url",1),30*1000);			    if(!silentMode) console.log("german loaded");
+    const new_history = 	    await waitWithTimeout(crawlHistory("url",1),30*1000);			    if(!silentMode) console.log("history loaded");
+    const new_industSec = 	    await waitWithTimeout(crawlIndustSec("url",1),30*1000);			if(!silentMode) console.log("industSec loaded");
+    const new_integEngineering = await waitWithTimeout(crawlIntegEngineering("url",1),30*1000);	if(!silentMode) console.log("integEngineering loaded");
+    const new_japanese = 	    await waitWithTimeout(crawlJapanese("url",1),30*1000);			if(!silentMode) console.log("japanese loaded");
+    const new_korean = 		    await waitWithTimeout(crawlKorean("url",1),30*1000);			    if(!silentMode) console.log("korean loaded");
+    const new_libInfoScience = 	await waitWithTimeout(crawlLibInfoScience("url",1),30*1000);		if(!silentMode) console.log("libInfoScience loaded");
+    const new_lifeScience =     await waitWithTimeout(crawlLifeScience("url",1),30*1000);			if(!silentMode) console.log("lifeScience loaded");
+    const new_logistics = 	    await waitWithTimeout(crawlLogistics("url",1),30*1000);			if(!silentMode) console.log("logistics loaded");
+    const new_math = 		    await waitWithTimeout(crawlMath("url",1),30*1000);			    if(!silentMode) console.log("math loaded");
+    const new_mechEngineering = await waitWithTimeout(crawlMechEngineering("url",1),30*1000);		if(!silentMode) console.log("mechEngineering loaded");
+    const new_med = 		    await waitWithTimeout(crawlMed("url",1),30*1000);			        if(!silentMode) console.log("med loaded");
+    const new_mediaComm = 	    await waitWithTimeout(crawlMediaComm("url",1),30*1000);			if(!silentMode) console.log("mediaComm loaded");
+    const new_nursing = 	    await waitWithTimeout(crawlNursing("url",1),30*1000);			    if(!silentMode) console.log("nursing loaded");
+    const new_pharm = 		    await waitWithTimeout(crawlPharm("url",1),30*1000);			    if(!silentMode) console.log("pharm loaded");
+    const new_philosophy = 	    await waitWithTimeout(crawlPhilosophy("url",1),30*1000);			if(!silentMode) console.log("philosophy loaded");
+    const new_physicalEd = 	    await waitWithTimeout(crawlPhysicalEd("url",1),30*1000);			if(!silentMode) console.log("physicalEd loaded");
+    const new_physics = 	    await waitWithTimeout(crawlPhysics("url",1),30*1000);			    if(!silentMode) console.log("physics loaded");
+    const new_polaris = 	    await waitWithTimeout(crawlPolaris("url",1),30*1000);			    if(!silentMode) console.log("polaris loaded");
+    const new_politics = 	    await waitWithTimeout(crawlPolitics("url",1),30*1000);			if(!silentMode) console.log("politics loaded");
+    const new_psychology = 	    await waitWithTimeout(crawlPsychology("url",1),30*1000);			if(!silentMode) console.log("psychology loaded");
+    const new_publicService =   await waitWithTimeout(crawlPublicService("url",1),30*1000);		if(!silentMode) console.log("publicService loaded");
+    const new_russian = 	    await waitWithTimeout(crawlRussian("url",1),30*1000);			    if(!silentMode) console.log("russian loaded");
+    const new_socialWelfare =   await waitWithTimeout(crawlSocialWelfare("url",1),30*1000);		if(!silentMode) console.log("socialWelfare loaded");
+    const new_sociology = 	    await waitWithTimeout(crawlSociology("url",1),30*1000);			if(!silentMode) console.log("sociology loaded");
+    const new_software = 	    await waitWithTimeout(crawlSoftware("url",1),30*1000);			if(!silentMode) console.log("software loaded");
+    const new_upreJob = 	    await waitWithTimeout(crawlupreJob("url",1),30*1000);			    if(!silentMode) console.log("upreJob loaded");
+    const new_urbanEngineering = await waitWithTimeout(crawlUrbanEngineering("url",1),30*1000);	if(!silentMode) console.log("urbanEngineering loaded");
+    const new_urbanPlanRealEstate = await waitWithTimeout(crawlUrbanPlanRealEstate("url",1),30*1000);	if(!silentMode) console.log("urbanPlanRealEstate loaded");
 
     console.timeEnd("** fully loaded 1 in ");
     if(!silentMode) console.log("\n");
     console.time("** fully loaded 2 in ");
 
-    const sec_CAUnotice = 	    await waitWithTimeout(crawlCAUnotice("url",2),1*60*1000);			if(!silentMode) console.log("CAUnotice loaded");
-    const sec_adpr = 		    await waitWithTimeout(crawladpr("url",2),1*60*1000);			    if(!silentMode) console.log("adpr loaded");
-    const sec_ai = 			    await waitWithTimeout(crawlAi("url",2),1*60*1000);			        if(!silentMode) console.log("ai loaded");
-    const sec_appliedStat =     await waitWithTimeout(crawlAppliedStat("url",2),1*60*1000);			if(!silentMode) console.log("appliedStat loaded");
-    const sec_architecture =    await waitWithTimeout(crawlArchitecture("url",2),1*60*1000);		if(!silentMode) console.log("architecture loaded");
-    const sec_business = 	    await waitWithTimeout(crawlBusiness("url",2),1*60*1000);			if(!silentMode) console.log("business loaded");
-    const sec_chem = 		    await waitWithTimeout(crawlChem("url",2),1*60*1000);			    if(!silentMode) console.log("chem loaded");
-    const sec_chemEngineering = await waitWithTimeout(crawlChemEngineering("url",2),1*60*1000);		if(!silentMode) console.log("chemEngineering loaded");
-    const sec_chinese = 	    await waitWithTimeout(crawlChinese("url",2),1*60*1000);			    if(!silentMode) console.log("chinese loaded");
-    const sec_civilEnvPlanEng = await waitWithTimeout(crawlCivilEnvPlanEng("url",2),1*60*1000);		if(!silentMode) console.log("civilEnvPlanEng loaded");
-    const sec_davinci = 	    await waitWithTimeout(crawlDavinci("url",2),1*60*1000);			    if(!silentMode) console.log("davinci loaded");
-    const sec_dorm = 		    await waitWithTimeout(crawlDorm("url",2),1*60*1000);			    if(!silentMode) console.log("dorm loaded");
-    const sec_earlyChildhoodEd = await waitWithTimeout(crawlEarlyChildhoodEd("url",2),1*60*1000);	if(!silentMode) console.log("earlyChildhoodEd loaded");
-    const sec_econ = 		    await waitWithTimeout(crawlEcon("url",2),1*60*1000);			    if(!silentMode) console.log("econ loaded");
-    const sec_education = 	    await waitWithTimeout(crawlEducation("url",2),1*60*1000);			if(!silentMode) console.log("education loaded");
-    const sec_elecEngineering = await waitWithTimeout(crawlElecEngineering("url",2),1*60*1000);		if(!silentMode) console.log("elecEngineering loaded");
-    const sec_enerEngineering = await waitWithTimeout(crawlEnerEngineering("url",2),1*60*1000);		if(!silentMode) console.log("enerEngineering loaded");
-    const sec_english = 	    await waitWithTimeout(crawlEnglish("url",2),1*60*1000);             if(!silentMode) console.log("english loaded");
-    const sec_englishEd = 	    await waitWithTimeout(crawlEnglishEd("url",2),1*60*1000);			if(!silentMode) console.log("englishEd loaded");
-    const sec_french = 	        await waitWithTimeout(crawlFrench("url",2),1*60*1000);			    if(!silentMode) console.log("french loaded");
-    const sec_german = 		    await waitWithTimeout(crawlGerman("url",2),1*60*1000);			    if(!silentMode) console.log("german loaded");
-    const sec_history = 	    await waitWithTimeout(crawlHistory("url",2),1*60*1000);			    if(!silentMode) console.log("history loaded");
-    const sec_industSec = 	    await waitWithTimeout(crawlIndustSec("url",2),1*60*1000);			if(!silentMode) console.log("industSec loaded");
-    const sec_integEngineering = await waitWithTimeout(crawlIntegEngineering("url",2),1*60*1000);	if(!silentMode) console.log("integEngineering loaded");
-    const sec_japanese = 	    await waitWithTimeout(crawlJapanese("url",2),1*60*1000);			if(!silentMode) console.log("japanese loaded");
-    const sec_korean = 		    await waitWithTimeout(crawlKorean("url",2),1*60*1000);			    if(!silentMode) console.log("korean loaded");
-    const sec_libInfoScience = 	await waitWithTimeout(crawlLibInfoScience("url",2),1*60*1000);		if(!silentMode) console.log("libInfoScience loaded");
-    const sec_lifeScience =     await waitWithTimeout(crawlLifeScience("url",2),1*60*1000);			if(!silentMode) console.log("lifeScience loaded");
-    const sec_logistics = 	    await waitWithTimeout(crawlLogistics("url",2),1*60*1000);			if(!silentMode) console.log("logistics loaded");
-    const sec_math = 		    await waitWithTimeout(crawlMath("url",2),1*60*1000);			    if(!silentMode) console.log("math loaded");
-    const sec_mechEngineering = await waitWithTimeout(crawlMechEngineering("url",2),1*60*1000);		if(!silentMode) console.log("mechEngineering loaded");
-    const sec_med = 		    await waitWithTimeout(crawlMed("url",2),1*60*1000);			        if(!silentMode) console.log("med loaded");
-    const sec_mediaComm = 	    await waitWithTimeout(crawlMediaComm("url",2),1*60*1000);			if(!silentMode) console.log("mediaComm loaded");
-    const sec_nursing = 	    await waitWithTimeout(crawlNursing("url",2),1*60*1000);			    if(!silentMode) console.log("nursing loaded");
-    const sec_pharm = 		    await waitWithTimeout(crawlPharm("url",2),1*60*1000);			    if(!silentMode) console.log("pharm loaded");
-    const sec_philosophy = 	    await waitWithTimeout(crawlPhilosophy("url",2),1*60*1000);			if(!silentMode) console.log("philosophy loaded");
-    const sec_physicalEd = 	    await waitWithTimeout(crawlPhysicalEd("url",2),1*60*1000);			if(!silentMode) console.log("physicalEd loaded");
-    const sec_physics = 	    await waitWithTimeout(crawlPhysics("url",2),1*60*1000);			    if(!silentMode) console.log("physics loaded");
-    const sec_polaris = 	    await waitWithTimeout(crawlPolaris("url",2),1*60*1000);			    if(!silentMode) console.log("polaris loaded");
-    const sec_politics = 	    await waitWithTimeout(crawlPolitics("url",2),1*60*1000);			if(!silentMode) console.log("politics loaded");
-    const sec_psychology = 	    await waitWithTimeout(crawlPsychology("url",2),1*60*1000);			if(!silentMode) console.log("psychology loaded");
-    const sec_publicService =   await waitWithTimeout(crawlPublicService("url",2),1*60*1000);		if(!silentMode) console.log("publicService loaded");
-    const sec_russian = 	    await waitWithTimeout(crawlRussian("url",2),1*60*1000);			    if(!silentMode) console.log("russian loaded");
-    const sec_socialWelfare =   await waitWithTimeout(crawlSocialWelfare("url",2),1*60*1000);		if(!silentMode) console.log("socialWelfare loaded");
-    const sec_sociology = 	    await waitWithTimeout(crawlSociology("url",2),1*60*1000);			if(!silentMode) console.log("sociology loaded");
-    const sec_software = 	    await waitWithTimeout(crawlSoftware("url",2),1*60*1000);			if(!silentMode) console.log("software loaded");
-    const sec_upreJob = 	    await waitWithTimeout(crawlupreJob("url",2),1*60*1000);			    if(!silentMode) console.log("upreJob loaded");
-    const sec_urbanEngineering = await waitWithTimeout(crawlUrbanEngineering("url",2),1*60*1000);	if(!silentMode) console.log("urbanEngineering loaded");
-    const sec_urbanPlanRealEstate = await waitWithTimeout(crawlUrbanPlanRealEstate("url",2),1*60*1000);	if(!silentMode) console.log("urbanPlanRealEstate loaded");
+    const sec_CAUnotice = 	    await waitWithTimeout(crawlCAUnotice("url",2),30*1000);			if(!silentMode) console.log("CAUnotice loaded");
+    const sec_adpr = 		    await waitWithTimeout(crawladpr("url",2),30*1000);			    if(!silentMode) console.log("adpr loaded");
+    const sec_ai = 			    await waitWithTimeout(crawlAi("url",2),30*1000);			        if(!silentMode) console.log("ai loaded");
+    const sec_appliedStat =     await waitWithTimeout(crawlAppliedStat("url",2),30*1000);			if(!silentMode) console.log("appliedStat loaded");
+    const sec_architecture =    await waitWithTimeout(crawlArchitecture("url",2),30*1000);		if(!silentMode) console.log("architecture loaded");
+    const sec_business = 	    await waitWithTimeout(crawlBusiness("url",2),30*1000);			if(!silentMode) console.log("business loaded");
+    const sec_chem = 		    await waitWithTimeout(crawlChem("url",2),30*1000);			    if(!silentMode) console.log("chem loaded");
+    const sec_chemEngineering = await waitWithTimeout(crawlChemEngineering("url",2),30*1000);		if(!silentMode) console.log("chemEngineering loaded");
+    const sec_chinese = 	    await waitWithTimeout(crawlChinese("url",2),30*1000);			    if(!silentMode) console.log("chinese loaded");
+    const sec_civilEnvPlanEng = await waitWithTimeout(crawlCivilEnvPlanEng("url",2),30*1000);		if(!silentMode) console.log("civilEnvPlanEng loaded");
+    const sec_davinci = 	    await waitWithTimeout(crawlDavinci("url",2),30*1000);			    if(!silentMode) console.log("davinci loaded");
+    const sec_dorm = 		    await waitWithTimeout(crawlDorm("url",2),30*1000);			    if(!silentMode) console.log("dorm loaded");
+    const sec_earlyChildhoodEd = await waitWithTimeout(crawlEarlyChildhoodEd("url",2),30*1000);	if(!silentMode) console.log("earlyChildhoodEd loaded");
+    const sec_econ = 		    await waitWithTimeout(crawlEcon("url",2),30*1000);			    if(!silentMode) console.log("econ loaded");
+    const sec_education = 	    await waitWithTimeout(crawlEducation("url",2),30*1000);			if(!silentMode) console.log("education loaded");
+    const sec_elecEngineering = await waitWithTimeout(crawlElecEngineering("url",2),30*1000);		if(!silentMode) console.log("elecEngineering loaded");
+    const sec_enerEngineering = await waitWithTimeout(crawlEnerEngineering("url",2),30*1000);		if(!silentMode) console.log("enerEngineering loaded");
+    const sec_english = 	    await waitWithTimeout(crawlEnglish("url",2),30*1000);             if(!silentMode) console.log("english loaded");
+    const sec_englishEd = 	    await waitWithTimeout(crawlEnglishEd("url",2),30*1000);			if(!silentMode) console.log("englishEd loaded");
+    const sec_french = 	        await waitWithTimeout(crawlFrench("url",2),30*1000);			    if(!silentMode) console.log("french loaded");
+    const sec_german = 		    await waitWithTimeout(crawlGerman("url",2),30*1000);			    if(!silentMode) console.log("german loaded");
+    const sec_history = 	    await waitWithTimeout(crawlHistory("url",2),30*1000);			    if(!silentMode) console.log("history loaded");
+    const sec_industSec = 	    await waitWithTimeout(crawlIndustSec("url",2),30*1000);			if(!silentMode) console.log("industSec loaded");
+    const sec_integEngineering = await waitWithTimeout(crawlIntegEngineering("url",2),30*1000);	if(!silentMode) console.log("integEngineering loaded");
+    const sec_japanese = 	    await waitWithTimeout(crawlJapanese("url",2),30*1000);			if(!silentMode) console.log("japanese loaded");
+    const sec_korean = 		    await waitWithTimeout(crawlKorean("url",2),30*1000);			    if(!silentMode) console.log("korean loaded");
+    const sec_libInfoScience = 	await waitWithTimeout(crawlLibInfoScience("url",2),30*1000);		if(!silentMode) console.log("libInfoScience loaded");
+    const sec_lifeScience =     await waitWithTimeout(crawlLifeScience("url",2),30*1000);			if(!silentMode) console.log("lifeScience loaded");
+    const sec_logistics = 	    await waitWithTimeout(crawlLogistics("url",2),30*1000);			if(!silentMode) console.log("logistics loaded");
+    const sec_math = 		    await waitWithTimeout(crawlMath("url",2),30*1000);			    if(!silentMode) console.log("math loaded");
+    const sec_mechEngineering = await waitWithTimeout(crawlMechEngineering("url",2),30*1000);		if(!silentMode) console.log("mechEngineering loaded");
+    const sec_med = 		    await waitWithTimeout(crawlMed("url",2),30*1000);			        if(!silentMode) console.log("med loaded");
+    const sec_mediaComm = 	    await waitWithTimeout(crawlMediaComm("url",2),30*1000);			if(!silentMode) console.log("mediaComm loaded");
+    const sec_nursing = 	    await waitWithTimeout(crawlNursing("url",2),30*1000);			    if(!silentMode) console.log("nursing loaded");
+    const sec_pharm = 		    await waitWithTimeout(crawlPharm("url",2),30*1000);			    if(!silentMode) console.log("pharm loaded");
+    const sec_philosophy = 	    await waitWithTimeout(crawlPhilosophy("url",2),30*1000);			if(!silentMode) console.log("philosophy loaded");
+    const sec_physicalEd = 	    await waitWithTimeout(crawlPhysicalEd("url",2),30*1000);			if(!silentMode) console.log("physicalEd loaded");
+    const sec_physics = 	    await waitWithTimeout(crawlPhysics("url",2),30*1000);			    if(!silentMode) console.log("physics loaded");
+    const sec_polaris = 	    await waitWithTimeout(crawlPolaris("url",2),30*1000);			    if(!silentMode) console.log("polaris loaded");
+    const sec_politics = 	    await waitWithTimeout(crawlPolitics("url",2),30*1000);			if(!silentMode) console.log("politics loaded");
+    const sec_psychology = 	    await waitWithTimeout(crawlPsychology("url",2),30*1000);			if(!silentMode) console.log("psychology loaded");
+    const sec_publicService =   await waitWithTimeout(crawlPublicService("url",2),30*1000);		if(!silentMode) console.log("publicService loaded");
+    const sec_russian = 	    await waitWithTimeout(crawlRussian("url",2),30*1000);			    if(!silentMode) console.log("russian loaded");
+    const sec_socialWelfare =   await waitWithTimeout(crawlSocialWelfare("url",2),30*1000);		if(!silentMode) console.log("socialWelfare loaded");
+    const sec_sociology = 	    await waitWithTimeout(crawlSociology("url",2),30*1000);			if(!silentMode) console.log("sociology loaded");
+    const sec_software = 	    await waitWithTimeout(crawlSoftware("url",2),30*1000);			if(!silentMode) console.log("software loaded");
+    const sec_upreJob = 	    await waitWithTimeout(crawlupreJob("url",2),30*1000);			    if(!silentMode) console.log("upreJob loaded");
+    const sec_urbanEngineering = await waitWithTimeout(crawlUrbanEngineering("url",2),30*1000);	if(!silentMode) console.log("urbanEngineering loaded");
+    const sec_urbanPlanRealEstate = await waitWithTimeout(crawlUrbanPlanRealEstate("url",2),30*1000);	if(!silentMode) console.log("urbanPlanRealEstate loaded");
     
     console.timeEnd("** fully loaded 2 in ");
 
@@ -207,6 +207,8 @@ export async function refresh(nextIdNum, silentMode, sendMail){
     function combineTwoPages(newObject, secObject){
         // console.log(newObject)
         // console.log(secObject)
+        if(newObject.url == undefined) return {"error":"true"};
+        if(secObject.url == undefined) return {"error":"true"};
         const newLength = newObject.url.length;
         const secLength = secObject.url.length;
         let combLength = newLength+secLength;
@@ -876,444 +878,836 @@ export async function refresh(nextIdNum, silentMode, sendMail){
     // *** 5. 변경 사항이 있었던 게시판들은 초기화 ***
     // ********************************************
     if (storeDifferences.CAUnotice.length != 0) {
+        if (comb_CAUnotice.url == undefined) {
+            console.log("CAUnotice not saved");
+            return;
+        }
         let CAUnoticeObject = {
             url: comb_CAUnotice.url,
             title: comb_CAUnotice.title
         };
         fs.writeFile("./compare_list/CAUnotice.json", JSON.stringify(CAUnoticeObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("CAUnotice updated"); }
+            if (err) {
+                console.log(err);
+            } else {
+                console.log("CAUnotice updated");
+            }
         });
     }
     if (storeDifferences.adpr.length != 0) {
+        if (comb_adpr.url == undefined) {
+            console.log("adpr not saved");
+            return;
+        }
         let adprObject = {
             url: comb_adpr.url,
             title: comb_adpr.title
         };
         fs.writeFile("./compare_list/adpr.json", JSON.stringify(adprObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("adpr updated"); }
+            if (err) {
+                console.log(err);
+            } else {
+                console.log("adpr updated");
+            }
         });
     }
     if (storeDifferences.ai.length != 0) {
+        if (comb_ai.url == undefined) {
+            console.log("ai not saved");
+            return;
+        }
         let aiObject = {
             url: comb_ai.url,
             title: comb_ai.title
         };
         fs.writeFile("./compare_list/ai.json", JSON.stringify(aiObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("ai updated"); }
+            if (err) {
+                console.log(err);
+            } else {
+                console.log("ai updated");
+            }
         });
     }
     if (storeDifferences.appliedStat.length != 0) {
+        if (comb_appliedStat.url == undefined) {
+            console.log("appliedStat not saved");
+            return;
+        }
         let appliedStatObject = {
             url: comb_appliedStat.url,
             title: comb_appliedStat.title
         };
         fs.writeFile("./compare_list/appliedStat.json", JSON.stringify(appliedStatObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("appliedStat updated"); }
+            if (err) {
+                console.log(err);
+            } else {
+                console.log("appliedStat updated");
+            }
         });
     }
     if (storeDifferences.architecture.length != 0) {
+        if (comb_architecture.url == undefined) {
+            console.log("architecture not saved");
+            return;
+        }
         let architectureObject = {
             url: comb_architecture.url,
             title: comb_architecture.title
         };
         fs.writeFile("./compare_list/architecture.json", JSON.stringify(architectureObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("architecture updated"); }
+            if (err) {
+                console.log(err);
+            } else {
+                console.log("architecture updated");
+            }
         });
     }
     if (storeDifferences.business.length != 0) {
+        if (comb_business.url == undefined) {
+            console.log("business not saved");
+            return;
+        }
         let businessObject = {
             url: comb_business.url,
             title: comb_business.title
         };
         fs.writeFile("./compare_list/business.json", JSON.stringify(businessObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("business updated"); }
+            if (err) {
+                console.log(err);
+            } else {
+                console.log("business updated");
+            }
         });
     }
     if (storeDifferences.chem.length != 0) {
+        if (comb_chem.url == undefined) {
+            console.log("chem not saved");
+            return;
+        }
         let chemObject = {
             url: comb_chem.url,
             title: comb_chem.title
         };
         fs.writeFile("./compare_list/chem.json", JSON.stringify(chemObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("chem updated"); }
+            if (err) {
+                console.log(err);
+            } else {
+                console.log("chem updated");
+            }
         });
     }
     if (storeDifferences.chemEngineering.length != 0) {
+        if (comb_chemEngineering.url == undefined) {
+            console.log("chemEngineering not saved");
+            return;
+        }
         let chemEngineeringObject = {
             url: comb_chemEngineering.url,
             title: comb_chemEngineering.title
         };
         fs.writeFile("./compare_list/chemEngineering.json", JSON.stringify(chemEngineeringObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("chemEngineering updated"); }
+            if (err) {
+                console.log(err);
+            } else {
+                console.log("chemEngineering updated");
+            }
         });
     }
     if (storeDifferences.chinese.length != 0) {
+        if (comb_chinese.url == undefined) {
+            console.log("chinese not saved");
+            return;
+        }
         let chineseObject = {
             url: comb_chinese.url,
             title: comb_chinese.title
         };
         fs.writeFile("./compare_list/chinese.json", JSON.stringify(chineseObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("chinese updated"); }
+            if (err) {
+                console.log(err);
+            } else {
+                console.log("chinese updated");
+            }
         });
     }
     if (storeDifferences.civilEnvPlanEng.length != 0) {
+        if (comb_civilEnvPlanEng.url == undefined) {
+            console.log("civilEnvPlanEng not saved");
+            return;
+        }
         let civilEnvPlanEngObject = {
             url: comb_civilEnvPlanEng.url,
             title: comb_civilEnvPlanEng.title
         };
         fs.writeFile("./compare_list/civilEnvPlanEng.json", JSON.stringify(civilEnvPlanEngObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("civilEnvPlanEng updated"); }
+            if (err) {
+                console.log(err);
+            } else {
+                console.log("civilEnvPlanEng updated");
+            }
         });
     }
     if (storeDifferences.davinci.length != 0) {
+        if (comb_davinci.url == undefined) {
+            console.log("davinci not saved");
+            return;
+        }
         let davinciObject = {
             url: comb_davinci.url,
             title: comb_davinci.title
         };
         fs.writeFile("./compare_list/davinci.json", JSON.stringify(davinciObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("davinci updated"); }
+            if (err) {
+                console.log(err);
+            } else {
+                console.log("davinci updated");
+            }
         });
     }
     if (storeDifferences.dorm.length != 0) {
+        if (comb_dorm.url == undefined) {
+            console.log("dorm not saved");
+            return;
+        }
         let dormObject = {
             url: comb_dorm.url,
             title: comb_dorm.title
         };
         fs.writeFile("./compare_list/dorm.json", JSON.stringify(dormObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("dorm updated"); }
+            if (err) {
+                console.log(err);
+            } else {
+                console.log("dorm updated");
+            }
         });
     }
     if (storeDifferences.earlyChildhoodEd.length != 0) {
+        if (comb_earlyChildhoodEd.url == undefined) {
+            console.log("earlyChildhoodEd not saved");
+            return;
+        }
         let earlyChildhoodEdObject = {
             url: comb_earlyChildhoodEd.url,
             title: comb_earlyChildhoodEd.title
         };
         fs.writeFile("./compare_list/earlyChildhoodEd.json", JSON.stringify(earlyChildhoodEdObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("earlyChildhoodEd updated"); }
+            if (err) {
+                console.log(err);
+            } else {
+                console.log("earlyChildhoodEd updated");
+            }
         });
     }
     if (storeDifferences.econ.length != 0) {
+        if (comb_econ.url == undefined) {
+            console.log("econ not saved");
+            return;
+        }
         let econObject = {
             url: comb_econ.url,
             title: comb_econ.title
         };
         fs.writeFile("./compare_list/econ.json", JSON.stringify(econObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("econ updated"); }
+            if (err) {
+                console.log(err);
+            } else {
+                console.log("econ updated");
+            }
         });
     }
     if (storeDifferences.education.length != 0) {
+        if (comb_education.url == undefined) {
+            console.log("education not saved");
+            return;
+        }
         let educationObject = {
             url: comb_education.url,
             title: comb_education.title
         };
         fs.writeFile("./compare_list/education.json", JSON.stringify(educationObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("education updated"); }
+            if (err) {
+                console.log(err);
+            } else {
+                console.log("education updated");
+            }
         });
     }
     if (storeDifferences.elecEngineering.length != 0) {
+        if (comb_elecEngineering.url == undefined) {
+            console.log("elecEngineering not saved");
+            return;
+        }
         let elecEngineeringObject = {
             url: comb_elecEngineering.url,
             title: comb_elecEngineering.title
         };
         fs.writeFile("./compare_list/elecEngineering.json", JSON.stringify(elecEngineeringObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("elecEngineering updated"); }
+            if (err) {
+                console.log(err);
+            } else {
+                console.log("elecEngineering updated");
+            }
         });
     }
     if (storeDifferences.enerEngineering.length != 0) {
+        if (comb_enerEngineering.url == undefined) {
+            console.log("enerEngineering not saved");
+            return;
+        }
         let enerEngineeringObject = {
             url: comb_enerEngineering.url,
             title: comb_enerEngineering.title
         };
         fs.writeFile("./compare_list/enerEngineering.json", JSON.stringify(enerEngineeringObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("enerEngineering updated"); }
+            if (err) {
+                console.log(err);
+            } else {
+                console.log("enerEngineering updated");
+            }
         });
     }
     if (storeDifferences.english.length != 0) {
+        if (comb_english.url == undefined) {
+            console.log("english not saved");
+            return;
+        }
         let englishObject = {
             url: comb_english.url,
             title: comb_english.title
         };
         fs.writeFile("./compare_list/english.json", JSON.stringify(englishObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("english updated"); }
+            if (err) {
+                console.log(err);
+            } else {
+                console.log("english updated");
+            }
         });
     }
     if (storeDifferences.englishEd.length != 0) {
+        if (comb_englishEd.url == undefined) {
+            console.log("englishEd not saved");
+            return;
+        }
         let englishEdObject = {
             url: comb_englishEd.url,
             title: comb_englishEd.title
         };
         fs.writeFile("./compare_list/englishEd.json", JSON.stringify(englishEdObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("englishEd updated"); }
+            if (err) {
+                console.log(err);
+            } else {
+                console.log("englishEd updated");
+            }
         });
     }
     if (storeDifferences.french.length != 0) {
+        if (comb_french.url == undefined) {
+            console.log("french not saved");
+            return;
+        }
         let frenchObject = {
             url: comb_french.url,
             title: comb_french.title
         };
         fs.writeFile("./compare_list/french.json", JSON.stringify(frenchObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("french updated"); }
+            if (err) {
+                console.log(err);
+            } else {
+                console.log("french updated");
+            }
         });
     }
     if (storeDifferences.german.length != 0) {
+        if (comb_german.url == undefined) {
+            console.log("german not saved");
+            return;
+        }
         let germanObject = {
             url: comb_german.url,
             title: comb_german.title
         };
         fs.writeFile("./compare_list/german.json", JSON.stringify(germanObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("german updated"); }
+            if (err) {
+                console.log(err);
+            } else {
+                console.log("german updated");
+            }
         });
     }
     if (storeDifferences.history.length != 0) {
+        if (comb_history.url == undefined) {
+            console.log("history not saved");
+            return;
+        }
         let historyObject = {
             url: comb_history.url,
             title: comb_history.title
         };
         fs.writeFile("./compare_list/history.json", JSON.stringify(historyObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("history updated"); }
+            if (err) {
+                console.log(err);
+            } else {
+                console.log("history updated");
+            }
         });
     }
     if (storeDifferences.industSec.length != 0) {
+        if (comb_industSec.url == undefined) {
+            console.log("industSec not saved");
+            return;
+        }
         let industSecObject = {
             url: comb_industSec.url,
             title: comb_industSec.title
         };
         fs.writeFile("./compare_list/industSec.json", JSON.stringify(industSecObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("industSec updated"); }
+            if (err) {
+                console.log(err);
+            } else {
+                console.log("industSec updated");
+            }
         });
     }
     if (storeDifferences.integEngineering.length != 0) {
+        if (comb_integEngineering.url == undefined) {
+            console.log("integEngineering not saved");
+            return;
+        }
         let integEngineeringObject = {
             url: comb_integEngineering.url,
             title: comb_integEngineering.title
         };
         fs.writeFile("./compare_list/integEngineering.json", JSON.stringify(integEngineeringObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("integEngineering updated"); }
+            if (err) {
+                console.log(err);
+            } else {
+                console.log("integEngineering updated");
+            }
         });
     }
     if (storeDifferences.japanese.length != 0) {
+        if (comb_japanese.url == undefined) {
+            console.log("japanese not saved");
+            return;
+        }
         let japaneseObject = {
             url: comb_japanese.url,
             title: comb_japanese.title
         };
         fs.writeFile("./compare_list/japanese.json", JSON.stringify(japaneseObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("japanese updated"); }
+            if (err) {
+                console.log(err);
+            } else {
+                console.log("japanese updated");
+            }
         });
     }
     if (storeDifferences.korean.length != 0) {
+        if (comb_korean.url == undefined) {
+            console.log("korean not saved");
+            return;
+        }
         let koreanObject = {
             url: comb_korean.url,
             title: comb_korean.title
         };
         fs.writeFile("./compare_list/korean.json", JSON.stringify(koreanObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("korean updated"); }
+            if (err) {
+                console.log(err);
+            } else {
+                console.log("korean updated");
+            }
         });
     }
     if (storeDifferences.libInfoScience.length != 0) {
+        if (comb_libInfoScience.url == undefined) {
+            console.log("libInfoScience not saved");
+            return;
+        }
         let libInfoScienceObject = {
             url: comb_libInfoScience.url,
             title: comb_libInfoScience.title
         };
         fs.writeFile("./compare_list/libInfoScience.json", JSON.stringify(libInfoScienceObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("libInfoScience updated"); }
+            if (err) {
+                console.log(err);
+            } else {
+                console.log("libInfoScience updated");
+            }
         });
     }
     if (storeDifferences.lifeScience.length != 0) {
+        if (comb_lifeScience.url == undefined) {
+            console.log("lifeScience not saved");
+            return;
+        }
         let lifeScienceObject = {
             url: comb_lifeScience.url,
             title: comb_lifeScience.title
         };
         fs.writeFile("./compare_list/lifeScience.json", JSON.stringify(lifeScienceObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("lifeScience updated"); }
+            if (err) {
+                console.log(err);
+            } else {
+                console.log("lifeScience updated");
+            }
         });
     }
     if (storeDifferences.logistics.length != 0) {
+        if (comb_logistics.url == undefined) {
+            console.log("logistics not saved");
+            return;
+        }
         let logisticsObject = {
             url: comb_logistics.url,
             title: comb_logistics.title
         };
         fs.writeFile("./compare_list/logistics.json", JSON.stringify(logisticsObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("logistics updated"); }
+            if (err) {
+                console.log(err);
+            } else {
+                console.log("logistics updated");
+            }
         });
     }
     if (storeDifferences.math.length != 0) {
+        if (comb_math.url == undefined) {
+            console.log("math not saved");
+            return;
+        }
         let mathObject = {
             url: comb_math.url,
             title: comb_math.title
         };
         fs.writeFile("./compare_list/math.json", JSON.stringify(mathObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("math updated"); }
+            if (err) {
+                console.log(err);
+            } else {
+                console.log("math updated");
+            }
         });
     }
     if (storeDifferences.mechEngineering.length != 0) {
+        if (comb_mechEngineering.url == undefined) {
+            console.log("mechEngineering not saved");
+            return;
+        }
         let mechEngineeringObject = {
             url: comb_mechEngineering.url,
             title: comb_mechEngineering.title
         };
         fs.writeFile("./compare_list/mechEngineering.json", JSON.stringify(mechEngineeringObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("mechEngineering updated"); }
+            if (err) {
+                console.log(err);
+            } else {
+                console.log("mechEngineering updated");
+            }
         });
     }
     if (storeDifferences.med.length != 0) {
+        if (comb_med.url == undefined) {
+            console.log("med not saved");
+            return;
+        }
         let medObject = {
             url: comb_med.url,
             title: comb_med.title
         };
         fs.writeFile("./compare_list/med.json", JSON.stringify(medObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("med updated"); }
+            if (err) {
+                console.log(err);
+            } else {
+                console.log("med updated");
+            }
         });
     }
     if (storeDifferences.mediaComm.length != 0) {
+        if (comb_mediaComm.url == undefined) {
+            console.log("mediaComm not saved");
+            return;
+        }
         let mediaCommObject = {
             url: comb_mediaComm.url,
             title: comb_mediaComm.title
         };
         fs.writeFile("./compare_list/mediaComm.json", JSON.stringify(mediaCommObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("mediaComm updated"); }
+            if (err) {
+                console.log(err);
+            } else {
+                console.log("mediaComm updated");
+            }
         });
     }
     if (storeDifferences.nursing.length != 0) {
+        if (comb_nursing.url == undefined) {
+            console.log("nursing not saved");
+            return;
+        }
         let nursingObject = {
             url: comb_nursing.url,
             title: comb_nursing.title
         };
         fs.writeFile("./compare_list/nursing.json", JSON.stringify(nursingObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("nursing updated"); }
+            if (err) {
+                console.log(err);
+            } else {
+                console.log("nursing updated");
+            }
         });
     }
     if (storeDifferences.pharm.length != 0) {
+        if (comb_pharm.url == undefined) {
+            console.log("pharm not saved");
+            return;
+        }
         let pharmObject = {
             url: comb_pharm.url,
             title: comb_pharm.title
         };
         fs.writeFile("./compare_list/pharm.json", JSON.stringify(pharmObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("pharm updated"); }
+            if (err) {
+                console.log(err);
+            } else {
+                console.log("pharm updated");
+            }
         });
     }
     if (storeDifferences.philosophy.length != 0) {
+        if (comb_philosophy.url == undefined) {
+            console.log("philosophy not saved");
+            return;
+        }
         let philosophyObject = {
             url: comb_philosophy.url,
             title: comb_philosophy.title
         };
         fs.writeFile("./compare_list/philosophy.json", JSON.stringify(philosophyObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("philosophy updated"); }
+            if (err) {
+                console.log(err);
+            } else {
+                console.log("philosophy updated");
+            }
         });
     }
     if (storeDifferences.physicalEd.length != 0) {
+        if (comb_physicalEd.url == undefined) {
+            console.log("physicalEd not saved");
+            return;
+        }
         let physicalEdObject = {
             url: comb_physicalEd.url,
             title: comb_physicalEd.title
         };
         fs.writeFile("./compare_list/physicalEd.json", JSON.stringify(physicalEdObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("physicalEd updated"); }
+            if (err) {
+                console.log(err);
+            } else {
+                console.log("physicalEd updated");
+            }
         });
     }
     if (storeDifferences.physics.length != 0) {
+        if (comb_physics.url == undefined) {
+            console.log("physics not saved");
+            return;
+        }
         let physicsObject = {
             url: comb_physics.url,
             title: comb_physics.title
         };
         fs.writeFile("./compare_list/physics.json", JSON.stringify(physicsObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("physics updated"); }
+            if (err) {
+                console.log(err);
+            } else {
+                console.log("physics updated");
+            }
         });
     }
     if (storeDifferences.polaris.length != 0) {
+        if (comb_polaris.url == undefined) {
+            console.log("polaris not saved");
+            return;
+        }
         let polarisObject = {
             url: comb_polaris.url,
             title: comb_polaris.title
         };
         fs.writeFile("./compare_list/polaris.json", JSON.stringify(polarisObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("polaris updated"); }
+            if (err) {
+                console.log(err);
+            } else {
+                console.log("polaris updated");
+            }
         });
     }
     if (storeDifferences.politics.length != 0) {
+        if (comb_politics.url == undefined) {
+            console.log("politics not saved");
+            return;
+        }
         let politicsObject = {
             url: comb_politics.url,
             title: comb_politics.title
         };
         fs.writeFile("./compare_list/politics.json", JSON.stringify(politicsObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("politics updated"); }
+            if (err) {
+                console.log(err);
+            } else {
+                console.log("politics updated");
+            }
         });
     }
     if (storeDifferences.psychology.length != 0) {
+        if (comb_psychology.url == undefined) {
+            console.log("psychology not saved");
+            return;
+        }
         let psychologyObject = {
             url: comb_psychology.url,
             title: comb_psychology.title
         };
         fs.writeFile("./compare_list/psychology.json", JSON.stringify(psychologyObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("psychology updated"); }
+            if (err) {
+                console.log(err);
+            } else {
+                console.log("psychology updated");
+            }
         });
     }
     if (storeDifferences.publicService.length != 0) {
+        if (comb_publicService.url == undefined) {
+            console.log("publicService not saved");
+            return;
+        }
         let publicServiceObject = {
             url: comb_publicService.url,
             title: comb_publicService.title
         };
         fs.writeFile("./compare_list/publicService.json", JSON.stringify(publicServiceObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("publicService updated"); }
+            if (err) {
+                console.log(err);
+            } else {
+                console.log("publicService updated");
+            }
         });
     }
     if (storeDifferences.russian.length != 0) {
+        if (comb_russian.url == undefined) {
+            console.log("russian not saved");
+            return;
+        }
         let russianObject = {
             url: comb_russian.url,
             title: comb_russian.title
         };
         fs.writeFile("./compare_list/russian.json", JSON.stringify(russianObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("russian updated"); }
+            if (err) {
+                console.log(err);
+            } else {
+                console.log("russian updated");
+            }
         });
     }
     if (storeDifferences.socialWelfare.length != 0) {
+        if (comb_socialWelfare.url == undefined) {
+            console.log("socialWelfare not saved");
+            return;
+        }
         let socialWelfareObject = {
             url: comb_socialWelfare.url,
             title: comb_socialWelfare.title
         };
         fs.writeFile("./compare_list/socialWelfare.json", JSON.stringify(socialWelfareObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("socialWelfare updated"); }
+            if (err) {
+                console.log(err);
+            } else {
+                console.log("socialWelfare updated");
+            }
         });
     }
     if (storeDifferences.sociology.length != 0) {
+        if (comb_sociology.url == undefined) {
+            console.log("sociology not saved");
+            return;
+        }
         let sociologyObject = {
             url: comb_sociology.url,
             title: comb_sociology.title
         };
         fs.writeFile("./compare_list/sociology.json", JSON.stringify(sociologyObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("sociology updated"); }
+            if (err) {
+                console.log(err);
+            } else {
+                console.log("sociology updated");
+            }
         });
     }
     if (storeDifferences.software.length != 0) {
+        if (comb_software.url == undefined) {
+            console.log("software not saved");
+            return;
+        }
         let softwareObject = {
             url: comb_software.url,
             title: comb_software.title
         };
         fs.writeFile("./compare_list/software.json", JSON.stringify(softwareObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("software updated"); }
+            if (err) {
+                console.log(err);
+            } else {
+                console.log("software updated");
+            }
         });
     }
     if (storeDifferences.upreJob.length != 0) {
+        if (comb_upreJob.url == undefined) {
+            console.log("upreJob not saved");
+            return;
+        }
         let upreJobObject = {
             url: comb_upreJob.url,
             title: comb_upreJob.title
         };
         fs.writeFile("./compare_list/upreJob.json", JSON.stringify(upreJobObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("upreJob updated"); }
+            if (err) {
+                console.log(err);
+            } else {
+                console.log("upreJob updated");
+            }
         });
     }
     if (storeDifferences.urbanEngineering.length != 0) {
+        if (comb_urbanEngineering.url == undefined) {
+            console.log("urbanEngineering not saved");
+            return;
+        }
         let urbanEngineeringObject = {
             url: comb_urbanEngineering.url,
             title: comb_urbanEngineering.title
         };
         fs.writeFile("./compare_list/urbanEngineering.json", JSON.stringify(urbanEngineeringObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("urbanEngineering updated"); }
+            if (err) {
+                console.log(err);
+            } else {
+                console.log("urbanEngineering updated");
+            }
         });
     }
     if (storeDifferences.urbanPlanRealEstate.length != 0) {
+        if (comb_urbanPlanRealEstate.url == undefined) {
+            console.log("urbanPlanRealEstate not saved");
+            return;
+        }
         let urbanPlanRealEstateObject = {
             url: comb_urbanPlanRealEstate.url,
             title: comb_urbanPlanRealEstate.title
         };
         fs.writeFile("./compare_list/urbanPlanRealEstate.json", JSON.stringify(urbanPlanRealEstateObject, null, 4), (err) => {
-            if (err) { console.log(err); } else { console.log("urbanPlanRealEstate updated"); }
+            if (err) {
+                console.log(err);
+            } else {
+                console.log("urbanPlanRealEstate updated");
+            }
         });
     }
     
@@ -1331,7 +1725,7 @@ if(ON == "true") refresh(1,0,"false");
 // 결과값 리턴
 
 
-// const new_industSec = await waitWithTimeout(crawlIndustSe("url",2),1*60*1000); // 이 반환값에 .title 또는 .url을 이용해 값에 접근할 수 있음
+// const new_industSec = await waitWithTimeout(crawlIndustSe("url",2),30*1000); // 이 반환값에 .title 또는 .url을 이용해 값에 접근할 수 있음
 // fs.writeFileSync("industSec.json", JSON.stringify(new_industSec), "utf8");
 // console.log(new_industSec);
 // console.log(JSON.stringify(new_industSec));
