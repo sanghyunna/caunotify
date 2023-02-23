@@ -1,5 +1,7 @@
 {
     "url": [
+        "http://med.cau.ac.kr/site/program/board/basicboard/view.do?currentpage=1&menuid=001002001001&pagesize=20&boardtypeid=3&boardid=3746",
+        "http://med.cau.ac.kr/site/program/board/basicboard/view.do?currentpage=1&menuid=001002001001&pagesize=20&boardtypeid=3&boardid=3743",
         "http://med.cau.ac.kr/site/program/board/basicboard/view.do?currentpage=1&menuid=001002001001&pagesize=20&boardtypeid=3&boardid=3741",
         "http://med.cau.ac.kr/site/program/board/basicboard/view.do?currentpage=1&menuid=001002001001&pagesize=20&boardtypeid=3&boardid=3740",
         "http://med.cau.ac.kr/site/program/board/basicboard/view.do?currentpage=1&menuid=001002001001&pagesize=20&boardtypeid=3&boardid=3739",
@@ -10,18 +12,18 @@
         "http://med.cau.ac.kr/site/program/board/basicboard/view.do?currentpage=1&menuid=001002001001&pagesize=20&boardtypeid=3&boardid=3719",
         "http://med.cau.ac.kr/site/program/board/basicboard/view.do?currentpage=1&menuid=001002001001&pagesize=20&boardtypeid=3&boardid=3718",
         "http://med.cau.ac.kr/site/program/board/basicboard/view.do?currentpage=1&menuid=001002001001&pagesize=20&boardtypeid=3&boardid=3713",
+        "http://med.cau.ac.kr/site/program/board/basicboard/view.do?currentpage=1&menuid=001002001001&pagesize=20&boardtypeid=3&boardid=3745",
         "http://med.cau.ac.kr/site/program/board/basicboard/view.do?currentpage=1&menuid=001002001001&pagesize=20&boardtypeid=3&boardid=3742",
         "http://med.cau.ac.kr/site/program/board/basicboard/view.do?currentpage=1&menuid=001002001001&pagesize=20&boardtypeid=3&boardid=3738",
         "http://med.cau.ac.kr/site/program/board/basicboard/view.do?currentpage=1&menuid=001002001001&pagesize=20&boardtypeid=3&boardid=3737",
         "http://med.cau.ac.kr/site/program/board/basicboard/view.do?currentpage=1&menuid=001002001001&pagesize=20&boardtypeid=3&boardid=3731",
         "http://med.cau.ac.kr/site/program/board/basicboard/view.do?currentpage=1&menuid=001002001001&pagesize=20&boardtypeid=3&boardid=3727",
         "http://med.cau.ac.kr/site/program/board/basicboard/view.do?currentpage=1&menuid=001002001001&pagesize=20&boardtypeid=3&boardid=3726",
-        "http://med.cau.ac.kr/site/program/board/basicboard/view.do?currentpage=1&menuid=001002001001&pagesize=20&boardtypeid=3&boardid=3725",
-        "http://med.cau.ac.kr/site/program/board/basicboard/view.do?currentpage=1&menuid=001002001001&pagesize=20&boardtypeid=3&boardid=3723",
-        "http://med.cau.ac.kr/site/program/board/basicboard/view.do?currentpage=1&menuid=001002001001&pagesize=20&boardtypeid=3&boardid=3722",
-        "http://med.cau.ac.kr/site/program/board/basicboard/view.do?currentpage=1&menuid=001002001001&pagesize=20&boardtypeid=3&boardid=3717"
+        "http://med.cau.ac.kr/site/program/board/basicboard/view.do?currentpage=1&menuid=001002001001&pagesize=20&boardtypeid=3&boardid=3725"
     ],
     "title": [
+        "[공지] 2023학년도 신입생 오리엔테이션 자료",
+        "[공지] 2023학년도 신입생 학번 조회 및 중앙대 포털 가입안내",
         "[공지] 2023학년도 의과대학 신입생 입학식 및 오리엔테이션 안내",
         "[공지] 정보서비스 중단 안내",
         "[공지] 2023학년도 1학기 연구실안전 법정교육 실시 안내",
@@ -32,15 +34,13 @@
         "[공지] 2023-1학기 강의시간표 공지",
         "[공지] 2023학년도 1학기 재학생 등록기간 안내",
         "[공지] 2023-1학기 수강신청(학부) 일정 안내",
+        "[서울대학교] 의사과학자양성사업단 심포지엄 개최 안내",
         "2023학년도 셔틀버스(노량진/흑석역) 운영계획 안내",
         "서울시 정년정책 현황 공지",
         "2023학년도 등록금 책정 안내",
         "2023-1학기 수강신청 안내 (신입생 및 복학생 포함)",
         "2023년 2월 졸업자 영문명 확인 안내",
         "실내 마스크 착용 의무 조정에 따른 학교 적용사항 안내",
-        "2023-1학기 다빈치 창의학점제 신청 안내",
-        "2023년 봄철 산불조심기간 공고 안내",
-        "실내 마스크 착용 의무 조정 1단계 시행(의무→권고)",
-        "POLARIS SIF 2023 행사 안내"
+        "2023-1학기 다빈치 창의학점제 신청 안내"
     ]
 }
