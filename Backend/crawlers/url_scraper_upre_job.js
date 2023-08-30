@@ -6,7 +6,7 @@ import iconv from "iconv-lite";
 
 // package.json 에서 type을 module로 설정해 es6 module scope를 따름
 
-async function crawlupreJob(url,n){
+async function crawlUpreJob(url,n){
     url = "http://planning.cau.ac.kr/bbs/board.php?tbl=jobboard";
     if(n == 2){
         url = "http://planning.cau.ac.kr/bbs/board.php?tbl=jobboard&&category=&findType=&findWord=&sort1=&sort2=&bbs_option=&page=2";
@@ -57,6 +57,6 @@ async function crawlupreJob(url,n){
 //     url: "http://security.cau.ac.kr/board.htm?bbsid=notice",
 // }); // 테스트용
 
-export default crawlupreJob
+export default crawlUpreJob
 
 // 비동기식이기 때문에 url_list의 console.log는 crawl 함수 내에서 이루어져야함.

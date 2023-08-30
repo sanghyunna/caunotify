@@ -6,7 +6,7 @@ import puppeteer from "puppeteer"; // Headless Chrome Crawler
 
 // package.json 에서 type을 module로 설정해 es6 module scope를 따름
 
-async function crawladpr(url,n){
+async function crawlAdpr(url,n){
     url = "https://iadpr.org/bbs/class_notice_list.php";
     if(n == 2){
         url = "https://iadpr.org/bbs/class_notice_list.php?page=2&blockCount=10&pageCount=10&schText=&schItem=";
@@ -71,6 +71,6 @@ async function crawladpr(url,n){
 
 // crawladpr("",1); // 테스트용
 
-export default crawladpr
+export default crawlAdpr
 
 // 비동기식이기 때문에 url_list의 console.log는 crawl 함수 내에서 이루어져야함.
