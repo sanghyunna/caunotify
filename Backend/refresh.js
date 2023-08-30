@@ -94,7 +94,6 @@ export async function refresh(nextIdNum, silentMode, sendMail){
 
 
     console.time("** fully loaded 1 in "); // 로딩시간 기록
-    // const naw_integEngineering = await waitWithTimeout(crawlIntegEngineerin("url",2),30*1000);
     const new_CAUnotice = 	    await waitWithTimeout(crawlCAUnotice("url",1),30*1000);			if(!silentMode) console.log("CAUnotice loaded");
     const new_adpr = 		    await waitWithTimeout(crawladpr("url",1),30*1000);			    if(!silentMode) console.log("adpr loaded");
     const new_ai = 			    await waitWithTimeout(crawlAi("url",1),30*1000);			        if(!silentMode) console.log("ai loaded");
@@ -553,7 +552,7 @@ export async function refresh(nextIdNum, silentMode, sendMail){
         updatedContentStorage.earlyChildhoodEd = compareWithCombinedList(updatedContentStorage.earlyChildhoodEd, DB_earlyChildhoodEd);
         if (updatedContentStorage.earlyChildhoodEd.url.length == 0) delete updatedContentStorage.earlyChildhoodEd;
     }
-    if (updatedContentStorage.econ != undefined && updatedContentStorage.econ.url.length > 0) {
+   if (updatedContentStorage.econ != undefined && updatedContentStorage.econ.url.length > 0) {
         const rawData = fs.readFileSync(path.join(__dirname, 'compare_list', 'econ.json'), "utf8");
         const DB_econ = JSON.parse(rawData);
         updatedContentStorage.econ = compareWithCombinedList(updatedContentStorage.econ, DB_econ);

@@ -68,7 +68,7 @@ const __dirname = path.dirname(__filename);
 const PORT = 3000;
 const app = express();
 const server = http.createServer(app);
-const refreshTimeInMinutes = 30; // 30분에 한번씩 refresh() 실행
+const refreshTimeInMinutes = 90; // 30분에 한번씩 refresh() 실행
 
 
 // 유저별 구독 정보 저장

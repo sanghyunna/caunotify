@@ -86,7 +86,7 @@ async function updateFiles(){
     const new_davinci = 	    await waitWithTimeout(crawlDavinci("url",1),1*60*1000);			    
     const new_dorm = 		    await waitWithTimeout(crawlDorm("url",1),1*60*1000);			    
     const new_earlyChildhoodEd = await waitWithTimeout(crawlEarlyChildhoodEd("url",1),1*60*1000);	
-    const new_econ = 		    await waitWithTimeout(crawlEcon("url",1),1*60*1000);			    
+//    const new_econ = 		    await waitWithTimeout(crawlEcon("url",1),1*60*1000);			    
     const new_education = 	    await waitWithTimeout(crawlEducation("url",1),1*60*1000);			
     const new_elecEngineering = await waitWithTimeout(crawlElecEngineering("url",1),1*60*1000);		
     const new_enerEngineering = await waitWithTimeout(crawlEnerEngineering("url",1),1*60*1000);		
@@ -138,7 +138,7 @@ async function updateFiles(){
     const sec_davinci = 	    await waitWithTimeout(crawlDavinci("url",2),1*60*1000);			    
     const sec_dorm = 		    await waitWithTimeout(crawlDorm("url",2),1*60*1000);			    
     const sec_earlyChildhoodEd = await waitWithTimeout(crawlEarlyChildhoodEd("url",2),1*60*1000);	
-    const sec_econ = 		    await waitWithTimeout(crawlEcon("url",2),1*60*1000);			    
+//    const sec_econ = 		    await waitWithTimeout(crawlEcon("url",2),1*60*1000);			    
     const sec_education = 	    await waitWithTimeout(crawlEducation("url",2),1*60*1000);			
     const sec_elecEngineering = await waitWithTimeout(crawlElecEngineering("url",2),1*60*1000);		
     const sec_enerEngineering = await waitWithTimeout(crawlEnerEngineering("url",2),1*60*1000);		
@@ -219,7 +219,7 @@ async function updateFiles(){
     const comb_davinci = combineTwoPages(new_davinci, sec_davinci);
     const comb_dorm = combineTwoPages(new_dorm, sec_dorm);
     const comb_earlyChildhoodEd = combineTwoPages(new_earlyChildhoodEd, sec_earlyChildhoodEd);
-    const comb_econ = combineTwoPages(new_econ, sec_econ);
+//    const comb_econ = combineTwoPages(new_econ, sec_econ);
     const comb_education = combineTwoPages(new_education, sec_education);
     const comb_elecEngineering = combineTwoPages(new_elecEngineering, sec_elecEngineering);
     const comb_enerEngineering = combineTwoPages(new_enerEngineering, sec_enerEngineering);
@@ -309,10 +309,10 @@ async function updateFiles(){
         if (err) console.log(err);
         else console.log("earlyChildhoodEd.json written successfully");
     });
-    fs.writeFile("./compare_list/econ.json", JSON.stringify(comb_econ, null, 4), "utf8", (err) => {
+/*    fs.writeFile("./compare_list/econ.json", JSON.stringify(comb_econ, null, 4), "utf8", (err) => {
         if (err) console.log(err);
         else console.log("econ.json written successfully");
-    });
+    });*/
     fs.writeFile("./compare_list/education.json", JSON.stringify(comb_education, null, 4), "utf8", (err) => {
         if (err) console.log(err);
         else console.log("education.json written successfully");
