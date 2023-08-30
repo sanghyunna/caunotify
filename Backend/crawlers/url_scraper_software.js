@@ -30,7 +30,13 @@ async function crawlSoftware(url,n){
             // console.log(element.children);
             url_list.push(`https://cse.cau.ac.kr/sub05/sub0501.php${element.attribs.href}`);
             const title = $(element).text().trim();
-            title_list.push(title);
+            // if title ends with "NEW", remove it
+            if(title.endsWith("NEW")){
+                title_list.push(title.slice(0,-3));
+            }
+            else{
+                title_list.push(title);
+            }
             // console.log(`${element.attribs}`);
         }
         // console.log(element.attribs);
