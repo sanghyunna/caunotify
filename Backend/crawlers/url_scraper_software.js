@@ -32,7 +32,7 @@ async function crawlSoftware(url,n){
             const title = $(element).text().trim();
             // if title ends with "NEW", remove it
             if(title.endsWith("NEW")){
-                title_list.push(title.slice(0,-3));
+                title_list.push(title.slice(0,-4));
             }
             else{
                 title_list.push(title);
